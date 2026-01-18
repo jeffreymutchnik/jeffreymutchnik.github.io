@@ -1,0 +1,401 @@
+/* ===========================================
+   DESIGN SYSTEM - FORM COMPONENTS
+   Premium Form Styles
+   =========================================== */
+
+/* ===========================================
+   INPUT BASE
+   =========================================== */
+
+.form-input,
+.form-textarea,
+.form-select {
+  /* Reset */
+  appearance: none;
+
+  /* Layout */
+  display: block;
+  width: 100%;
+
+  /* Typography */
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  line-height: var(--leading-normal);
+  color: var(--color-primary-900);
+
+  /* Sizing */
+  padding: var(--space-3) var(--space-4);
+  min-height: 48px;
+
+  /* Shape */
+  background: var(--surface-elevated);
+  border: 1.5px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+
+  /* Transitions */
+  transition: var(--transition-all);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-neutral-400);
+}
+
+/* Focus state */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-accent-500);
+  box-shadow: 0 0 0 3px rgba(181, 99, 77, 0.15);
+}
+
+/* Hover state */
+.form-input:hover:not(:focus),
+.form-textarea:hover:not(:focus),
+.form-select:hover:not(:focus) {
+  border-color: var(--color-neutral-300);
+}
+
+/* Disabled state */
+.form-input:disabled,
+.form-textarea:disabled,
+.form-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-neutral-50);
+}
+
+/* ===========================================
+   INPUT SIZES
+   =========================================== */
+
+.form-input-sm {
+  font-size: var(--text-body-sm);
+  padding: var(--space-2) var(--space-3);
+  min-height: 40px;
+}
+
+.form-input-lg {
+  font-size: var(--text-body-lg);
+  padding: var(--space-4) var(--space-5);
+  min-height: 56px;
+}
+
+/* ===========================================
+   TEXTAREA
+   =========================================== */
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-textarea-auto {
+  resize: none;
+  overflow: hidden;
+}
+
+/* ===========================================
+   SELECT
+   =========================================== */
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2352525E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right var(--space-3) center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}
+
+/* ===========================================
+   LABELS
+   =========================================== */
+
+.form-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-primary-800);
+  margin-bottom: var(--space-2);
+}
+
+.form-label-required::after {
+  content: ' *';
+  color: var(--color-error-500);
+}
+
+/* Optional label styling */
+.form-label-optional::after {
+  content: ' (optional)';
+  font-weight: var(--font-normal);
+  color: var(--color-neutral-500);
+}
+
+/* ===========================================
+   HELPER TEXT & ERRORS
+   =========================================== */
+
+.form-helper {
+  display: block;
+  font-size: var(--text-body-xs);
+  color: var(--color-neutral-500);
+  margin-top: var(--space-1-5);
+}
+
+.form-error {
+  display: block;
+  font-size: var(--text-body-xs);
+  color: var(--color-error-500);
+  margin-top: var(--space-1-5);
+}
+
+/* Error state styling */
+.form-input.is-error,
+.form-textarea.is-error,
+.form-select.is-error {
+  border-color: var(--color-error-500);
+}
+
+.form-input.is-error:focus,
+.form-textarea.is-error:focus,
+.form-select.is-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+/* Success state styling */
+.form-input.is-success,
+.form-textarea.is-success,
+.form-select.is-success {
+  border-color: var(--color-success-500);
+}
+
+.form-input.is-success:focus,
+.form-textarea.is-success:focus,
+.form-select.is-success:focus {
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* ===========================================
+   FORM GROUP
+   =========================================== */
+
+.form-group {
+  margin-bottom: var(--space-5);
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================================
+   CHECKBOX & RADIO
+   =========================================== */
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background: var(--surface-elevated);
+  border: 1.5px solid var(--color-neutral-300);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-all);
+  cursor: pointer;
+}
+
+.form-check-input:hover {
+  border-color: var(--color-accent-500);
+}
+
+.form-check-input:focus {
+  outline: none;
+  border-color: var(--color-accent-500);
+  box-shadow: 0 0 0 3px rgba(181, 99, 77, 0.15);
+}
+
+.form-check-input:checked {
+  background: var(--color-accent-500);
+  border-color: var(--color-accent-500);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3e%3cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3e%3c/svg%3e");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Radio specific */
+.form-check-input[type="radio"] {
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type="radio"]:checked {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3ccircle cx='10' cy='10' r='5' fill='white'/%3e%3c/svg%3e");
+  background-size: 20px;
+}
+
+.form-check-label {
+  font-size: var(--text-body-sm);
+  color: var(--color-primary-800);
+  line-height: var(--leading-normal);
+  cursor: pointer;
+}
+
+/* ===========================================
+   INPUT WITH ICON
+   =========================================== */
+
+.form-input-wrapper {
+  position: relative;
+}
+
+.form-input-icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-neutral-400);
+  pointer-events: none;
+}
+
+.form-input-wrapper .form-input {
+  padding-left: calc(var(--space-4) + 20px + var(--space-2));
+}
+
+.form-input-icon-right {
+  left: auto;
+  right: var(--space-4);
+}
+
+.form-input-wrapper .form-input.has-icon-right {
+  padding-left: var(--space-4);
+  padding-right: calc(var(--space-4) + 20px + var(--space-2));
+}
+
+/* ===========================================
+   FLOATING LABELS
+   =========================================== */
+
+.form-floating {
+  position: relative;
+}
+
+.form-floating .form-input,
+.form-floating .form-textarea {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-2);
+}
+
+.form-floating .form-label {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  margin-bottom: 0;
+  color: var(--color-neutral-400);
+  pointer-events: none;
+  transition: var(--transition-all);
+  transform-origin: left top;
+}
+
+.form-floating .form-textarea ~ .form-label {
+  top: var(--space-4);
+  transform: translateY(0);
+}
+
+.form-floating .form-input:focus ~ .form-label,
+.form-floating .form-input:not(:placeholder-shown) ~ .form-label,
+.form-floating .form-textarea:focus ~ .form-label,
+.form-floating .form-textarea:not(:placeholder-shown) ~ .form-label {
+  top: var(--space-2);
+  transform: translateY(0) scale(0.85);
+  color: var(--color-accent-500);
+}
+
+/* ===========================================
+   SEARCH INPUT
+   =========================================== */
+
+.form-search {
+  position: relative;
+}
+
+.form-search .form-input {
+  padding-left: calc(var(--space-4) + 20px + var(--space-2));
+  padding-right: var(--space-4);
+}
+
+.form-search-icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-neutral-400);
+  pointer-events: none;
+}
+
+/* ===========================================
+   INLINE FORM
+   =========================================== */
+
+.form-inline {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+.form-inline .form-group {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-inline .btn {
+    width: 100%;
+  }
+}
+
+/* ===========================================
+   DARK THEME OVERRIDES
+   (Applied via parent .dark class)
+   =========================================== */
+
+.dark .form-input,
+.dark .form-textarea,
+.dark .form-select {
+  background: var(--surface-dark-tertiary);
+  border-color: var(--color-neutral-700);
+  color: var(--color-neutral-100);
+}
+
+.dark .form-input::placeholder,
+.dark .form-textarea::placeholder {
+  color: var(--color-neutral-500);
+}
+
+.dark .form-label {
+  color: var(--color-neutral-200);
+}
+
+.dark .form-check-input {
+  background: var(--surface-dark-tertiary);
+  border-color: var(--color-neutral-600);
+}
+
+.dark .form-check-label {
+  color: var(--color-neutral-200);
+}

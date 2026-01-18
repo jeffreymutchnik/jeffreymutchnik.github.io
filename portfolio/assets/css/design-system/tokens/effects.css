@@ -1,0 +1,275 @@
+/* ===========================================
+   DESIGN SYSTEM - EFFECTS TOKENS
+   Shadows, Animations, Transitions
+   =========================================== */
+
+:root {
+  /* ===========================================
+     SHADOW SYSTEM
+     =========================================== */
+
+  /* Subtle elevation - Borders and dividers */
+  --shadow-xs:
+    0 1px 2px 0 rgb(0 0 0 / 0.03);
+
+  /* Low elevation - Resting cards */
+  --shadow-sm:
+    0 1px 2px 0 rgb(0 0 0 / 0.03),
+    0 1px 3px 0 rgb(0 0 0 / 0.06);
+
+  /* Medium elevation - Hover states */
+  --shadow-md:
+    0 2px 4px -1px rgb(0 0 0 / 0.04),
+    0 4px 6px -1px rgb(0 0 0 / 0.06);
+
+  /* High elevation - Active cards, dropdowns */
+  --shadow-lg:
+    0 4px 6px -2px rgb(0 0 0 / 0.03),
+    0 10px 15px -3px rgb(0 0 0 / 0.08);
+
+  /* Highest elevation - Modals, popovers */
+  --shadow-xl:
+    0 10px 15px -3px rgb(0 0 0 / 0.05),
+    0 20px 25px -5px rgb(0 0 0 / 0.08);
+
+  /* Dramatic - Hero elements */
+  --shadow-2xl:
+    0 25px 50px -12px rgb(0 0 0 / 0.15);
+
+  /* Inner shadow - Inputs, pressed states */
+  --shadow-inner:
+    inset 0 2px 4px 0 rgb(0 0 0 / 0.04);
+
+  /* Colored shadows */
+  --shadow-accent:
+    0 4px 14px 0 rgb(181 99 77 / 0.25);
+
+  --shadow-accent-lg:
+    0 10px 40px 0 rgb(181 99 77 / 0.3);
+
+  /* Glow effects */
+  --glow-accent:
+    0 0 20px rgb(181 99 77 / 0.4),
+    0 0 60px rgb(181 99 77 / 0.2);
+
+  /* ===========================================
+     TIMING FUNCTIONS
+     =========================================== */
+
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Expressive easing */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* ===========================================
+     DURATION TOKENS
+     =========================================== */
+
+  --duration-instant: 0ms;
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+  --duration-slowest: 700ms;
+
+  /* ===========================================
+     ANIMATION PRESETS
+     =========================================== */
+
+  --transition-colors:
+    color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+
+  --transition-transform:
+    transform var(--duration-normal) var(--ease-out);
+
+  --transition-shadow:
+    box-shadow var(--duration-normal) var(--ease-out);
+
+  --transition-opacity:
+    opacity var(--duration-normal) var(--ease-out);
+
+  --transition-all:
+    all var(--duration-normal) var(--ease-out);
+}
+
+/* ===========================================
+   KEYFRAME ANIMATIONS
+   =========================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 48px;
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===========================================
+   ANIMATION UTILITY CLASSES
+   =========================================== */
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Stagger animation utility */
+.animate-stagger > * {
+  animation: fadeInUp 0.6s var(--ease-out) both;
+}
+
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 100ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 200ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 300ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 400ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 500ms; }
+.animate-stagger > *:nth-child(7) { animation-delay: 600ms; }
+.animate-stagger > *:nth-child(8) { animation-delay: 700ms; }
+
+/* Delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-700 { animation-delay: 700ms; }
+
+/* ===========================================
+   REDUCED MOTION
+   =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

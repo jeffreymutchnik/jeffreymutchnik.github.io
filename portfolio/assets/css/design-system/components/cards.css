@@ -1,0 +1,384 @@
+/* ===========================================
+   DESIGN SYSTEM - CARD COMPONENTS
+   Premium Card Styles
+   =========================================== */
+
+/* ===========================================
+   CARD BASE
+   =========================================== */
+
+.card {
+  background: var(--surface-elevated);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border: 1px solid var(--color-neutral-100);
+  transition: var(--transition-all);
+}
+
+.card-body {
+  padding: var(--space-6);
+}
+
+.card-header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.card-footer {
+  padding: var(--space-5) var(--space-6);
+  border-top: 1px solid var(--color-neutral-100);
+  background: var(--surface-secondary);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h4);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-900);
+  margin-bottom: var(--space-2);
+}
+
+.card-subtitle {
+  font-size: var(--text-body-sm);
+  color: var(--color-neutral-500);
+  margin-bottom: var(--space-3);
+}
+
+.card-text {
+  color: var(--color-neutral-600);
+  line-height: var(--leading-relaxed);
+}
+
+/* ===========================================
+   CARD VARIANTS
+   =========================================== */
+
+/* Interactive card with hover */
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-neutral-200);
+}
+
+.card-interactive:active {
+  transform: translateY(-2px);
+}
+
+/* Featured card with accent */
+.card-featured {
+  border: none;
+  background: linear-gradient(
+    135deg,
+    var(--surface-elevated) 0%,
+    var(--color-accent-100) 100%
+  );
+  box-shadow: var(--shadow-md);
+}
+
+.card-featured:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Bordered card */
+.card-bordered {
+  border: 2px solid var(--color-neutral-200);
+}
+
+.card-bordered:hover {
+  border-color: var(--color-accent-300);
+}
+
+/* Accent border card */
+.card-accent {
+  border-left: 4px solid var(--color-accent-500);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+/* Dark card variant */
+.card-dark {
+  background: var(--surface-dark-tertiary);
+  border-color: var(--color-neutral-700);
+  color: var(--color-neutral-100);
+}
+
+.card-dark .card-title {
+  color: var(--color-neutral-0);
+}
+
+.card-dark .card-text {
+  color: var(--color-neutral-400);
+}
+
+/* Flat card - no elevation */
+.card-flat {
+  box-shadow: none;
+  border: 1px solid var(--color-neutral-200);
+}
+
+.card-flat:hover {
+  box-shadow: none;
+  background: var(--surface-secondary);
+}
+
+/* ===========================================
+   PROJECT CARD
+   Specific component for portfolio pieces
+   =========================================== */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.project-card__image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.project-card:hover .project-card__image img {
+  transform: scale(1.05);
+}
+
+.project-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.project-card__content {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex-grow: 1;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.project-card__tag {
+  font-size: var(--text-body-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-accent-600);
+  background: var(--color-accent-100);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.project-card__title {
+  font-size: var(--text-h4);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-900);
+  margin: 0;
+}
+
+.project-card__description {
+  font-size: var(--text-body-sm);
+  color: var(--color-neutral-600);
+  line-height: var(--leading-relaxed);
+  flex-grow: 1;
+}
+
+.project-card__link {
+  margin-top: auto;
+}
+
+/* ===========================================
+   STAT CARD
+   For metrics and statistics
+   =========================================== */
+
+.stat-card {
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+}
+
+.stat-card__value {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-accent-500);
+  line-height: var(--leading-none);
+  margin-bottom: var(--space-2);
+}
+
+.stat-card__label {
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Compact stat card */
+.stat-card-compact {
+  padding: var(--space-5) var(--space-4);
+}
+
+.stat-card-compact .stat-card__value {
+  font-size: var(--text-h2);
+}
+
+/* ===========================================
+   TESTIMONIAL CARD
+   =========================================== */
+
+.testimonial-card {
+  padding: var(--space-8);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-6);
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--color-accent-200);
+  line-height: 1;
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-display);
+  font-size: var(--text-body-xl);
+  font-style: italic;
+  color: var(--color-primary-800);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+  padding-top: var(--space-4);
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.testimonial-card__name {
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-900);
+  margin-bottom: var(--space-0-5);
+}
+
+.testimonial-card__role {
+  font-size: var(--text-body-sm);
+  color: var(--color-neutral-500);
+}
+
+/* ===========================================
+   FEATURE CARD
+   For features/services
+   =========================================== */
+
+.feature-card {
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.feature-card__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-100);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent-500);
+}
+
+.feature-card__icon i {
+  font-size: 28px;
+}
+
+.feature-card__title {
+  font-size: var(--text-h5);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+}
+
+.feature-card__text {
+  font-size: var(--text-body-sm);
+  color: var(--color-neutral-600);
+}
+
+/* ===========================================
+   CARD SIZING
+   =========================================== */
+
+.card-sm {
+  padding: var(--space-4);
+}
+
+.card-lg {
+  padding: var(--space-8);
+}
+
+.card-xl {
+  padding: var(--space-10);
+}
+
+/* ===========================================
+   CARD GRID LAYOUTS
+   =========================================== */
+
+.card-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .card-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .card-grid-4,
+  .card-grid-3,
+  .card-grid-2 { grid-template-columns: 1fr; }
+}

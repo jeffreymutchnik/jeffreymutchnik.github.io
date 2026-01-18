@@ -1,0 +1,517 @@
+/* ===========================================
+   DESIGN SYSTEM - DARK THEME
+   Dark mode color overrides
+   =========================================== */
+
+/* ===========================================
+   DARK MODE ACTIVATION
+   Toggle via .dark class on <html> or <body>
+   =========================================== */
+
+.dark {
+  /* ===========================================
+     SURFACE COLORS - Dark Mode
+     =========================================== */
+
+  --surface-primary: var(--surface-dark-primary);
+  --surface-secondary: var(--surface-dark-secondary);
+  --surface-elevated: var(--surface-dark-tertiary);
+
+  /* ===========================================
+     TEXT COLORS - Dark Mode
+     =========================================== */
+
+  --color-primary-900: var(--color-neutral-0);
+  --color-primary-800: var(--color-neutral-100);
+  --color-primary-700: var(--color-neutral-200);
+  --color-primary-600: var(--color-neutral-300);
+
+  /* ===========================================
+     BORDER COLORS - Dark Mode
+     =========================================== */
+
+  --color-neutral-100: var(--color-neutral-800);
+  --color-neutral-200: var(--color-neutral-700);
+  --color-neutral-300: var(--color-neutral-600);
+}
+
+/* ===========================================
+   BODY STYLES
+   =========================================== */
+
+.dark body {
+  background-color: var(--surface-dark-primary);
+  color: var(--color-neutral-100);
+}
+
+/* ===========================================
+   TYPOGRAPHY - Dark Mode
+   =========================================== */
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--color-neutral-0);
+}
+
+.dark p {
+  color: var(--color-neutral-300);
+}
+
+.dark a {
+  color: var(--color-accent-400);
+}
+
+.dark a:hover {
+  color: var(--color-accent-300);
+}
+
+/* Display text */
+.dark .text-display-2xl,
+.dark .text-display-xl,
+.dark .text-display-lg {
+  color: var(--color-neutral-0);
+}
+
+/* Heading text */
+.dark .text-h1,
+.dark .text-h2,
+.dark .text-h3,
+.dark .text-h4,
+.dark .text-h5,
+.dark .text-h6 {
+  color: var(--color-neutral-0);
+}
+
+/* Body text */
+.dark .text-body-xl,
+.dark .text-body-lg,
+.dark .text-body-md,
+.dark .text-body-sm,
+.dark .text-body-xs {
+  color: var(--color-neutral-300);
+}
+
+/* Special text */
+.dark .text-lead {
+  color: var(--color-neutral-400);
+}
+
+.dark .text-muted {
+  color: var(--color-neutral-500);
+}
+
+.dark .text-code {
+  background-color: var(--surface-dark-tertiary);
+  color: var(--color-accent-300);
+}
+
+/* ===========================================
+   CARDS - Dark Mode
+   =========================================== */
+
+.dark .card {
+  background: var(--surface-dark-secondary);
+  border-color: var(--color-neutral-700);
+}
+
+.dark .card-interactive:hover {
+  border-color: var(--color-neutral-600);
+}
+
+.dark .card-title {
+  color: var(--color-neutral-0);
+}
+
+.dark .card-subtitle {
+  color: var(--color-neutral-400);
+}
+
+.dark .card-text {
+  color: var(--color-neutral-400);
+}
+
+.dark .card-header {
+  border-bottom-color: var(--color-neutral-700);
+}
+
+.dark .card-footer {
+  background: var(--surface-dark-tertiary);
+  border-top-color: var(--color-neutral-700);
+}
+
+/* Project card */
+.dark .project-card__title {
+  color: var(--color-neutral-0);
+}
+
+.dark .project-card__description {
+  color: var(--color-neutral-400);
+}
+
+.dark .project-card__tag {
+  background: rgba(181, 99, 77, 0.2);
+  color: var(--color-accent-400);
+}
+
+/* Stat card */
+.dark .stat-card__label {
+  color: var(--color-neutral-400);
+}
+
+/* Testimonial card */
+.dark .testimonial-card::before {
+  color: var(--color-neutral-700);
+}
+
+.dark .testimonial-card__quote {
+  color: var(--color-neutral-200);
+}
+
+.dark .testimonial-card__name {
+  color: var(--color-neutral-0);
+}
+
+.dark .testimonial-card__role {
+  color: var(--color-neutral-500);
+}
+
+/* Feature card */
+.dark .feature-card__icon {
+  background: rgba(181, 99, 77, 0.2);
+}
+
+.dark .feature-card__title {
+  color: var(--color-neutral-0);
+}
+
+.dark .feature-card__text {
+  color: var(--color-neutral-400);
+}
+
+/* ===========================================
+   BUTTONS - Dark Mode
+   =========================================== */
+
+.dark .btn-secondary {
+  color: var(--color-neutral-100);
+  border-color: var(--color-neutral-600);
+}
+
+.dark .btn-secondary:hover {
+  border-color: var(--color-neutral-400);
+  background: var(--surface-dark-tertiary);
+}
+
+.dark .btn-ghost {
+  color: var(--color-neutral-100);
+}
+
+.dark .btn-ghost:hover {
+  background: var(--surface-dark-tertiary);
+}
+
+.dark .btn-link {
+  color: var(--color-accent-400);
+}
+
+.dark .btn-link:hover {
+  color: var(--color-accent-300);
+}
+
+/* ===========================================
+   HERO - Dark Mode
+   =========================================== */
+
+.dark .hero {
+  background: var(--surface-dark-primary);
+}
+
+.dark .hero__title {
+  color: var(--color-neutral-0);
+}
+
+.dark .hero__subtitle {
+  color: var(--color-neutral-400);
+}
+
+.dark .hero--with-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* ===========================================
+   PAGE HEADER - Dark Mode
+   =========================================== */
+
+.dark .page-header {
+  background: var(--surface-dark-secondary);
+}
+
+.dark .page-header__title {
+  color: var(--color-neutral-0);
+}
+
+.dark .page-header__description {
+  color: var(--color-neutral-400);
+}
+
+/* ===========================================
+   STATS - Dark Mode
+   =========================================== */
+
+.dark .stat__label {
+  color: var(--color-neutral-500);
+}
+
+/* ===========================================
+   TIMELINE - Dark Mode
+   =========================================== */
+
+.dark .timeline::before {
+  background: var(--color-neutral-700);
+}
+
+.dark .timeline__marker {
+  background: var(--surface-dark-primary);
+}
+
+.dark .timeline__title {
+  color: var(--color-neutral-0);
+}
+
+.dark .timeline__company {
+  color: var(--color-neutral-500);
+}
+
+.dark .timeline__description {
+  color: var(--color-neutral-400);
+}
+
+/* ===========================================
+   PROSE / CONTENT - Dark Mode
+   =========================================== */
+
+.dark .prose {
+  color: var(--color-neutral-300);
+}
+
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4 {
+  color: var(--color-neutral-0);
+}
+
+.dark .prose blockquote {
+  color: var(--color-neutral-200);
+}
+
+.dark .prose code {
+  background: var(--surface-dark-tertiary);
+  color: var(--color-accent-400);
+}
+
+/* ===========================================
+   GALLERY - Dark Mode
+   =========================================== */
+
+.dark .gallery-item {
+  background: var(--surface-dark-secondary);
+}
+
+/* ===========================================
+   TESTIMONIALS - Dark Mode
+   =========================================== */
+
+.dark .testimonials-section {
+  background: var(--surface-dark-secondary);
+}
+
+/* ===========================================
+   UTILITY OVERRIDES - Dark Mode
+   =========================================== */
+
+.dark .bg-primary {
+  background-color: var(--surface-dark-primary);
+}
+
+.dark .bg-secondary {
+  background-color: var(--surface-dark-secondary);
+}
+
+.dark .bg-elevated {
+  background-color: var(--surface-dark-tertiary);
+}
+
+.dark .border {
+  border-color: var(--color-neutral-700);
+}
+
+.dark .border-t,
+.dark .border-b {
+  border-color: var(--color-neutral-700);
+}
+
+.dark .divider {
+  background: var(--color-neutral-700);
+}
+
+/* Badge */
+.dark .badge {
+  background: var(--surface-dark-tertiary);
+  color: var(--color-neutral-300);
+}
+
+/* Breadcrumbs */
+.dark .breadcrumbs__item {
+  color: var(--color-neutral-500);
+}
+
+.dark .breadcrumbs__item::after {
+  color: var(--color-neutral-600);
+}
+
+.dark .breadcrumbs__link {
+  color: var(--color-neutral-500);
+}
+
+.dark .breadcrumbs__link:hover {
+  color: var(--color-accent-400);
+}
+
+.dark .breadcrumbs__item:last-child {
+  color: var(--color-neutral-200);
+}
+
+/* Pagination */
+.dark .pagination__link {
+  color: var(--color-neutral-300);
+  border-color: var(--color-neutral-700);
+}
+
+.dark .pagination__link:hover {
+  background: var(--surface-dark-tertiary);
+  border-color: var(--color-neutral-600);
+}
+
+/* Tabs */
+.dark .tabs {
+  border-bottom-color: var(--color-neutral-700);
+}
+
+.dark .tabs__item {
+  color: var(--color-neutral-500);
+}
+
+.dark .tabs__item:hover {
+  color: var(--color-neutral-200);
+}
+
+/* ===========================================
+   TOOLTIP - Dark Mode
+   =========================================== */
+
+.dark [data-tooltip]::after {
+  background: var(--surface-elevated);
+  color: var(--color-neutral-0);
+}
+
+/* ===========================================
+   SCROLLBAR - Dark Mode
+   =========================================== */
+
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--surface-dark-primary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-700);
+  border-radius: var(--radius-full);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-600);
+}
+
+/* ===========================================
+   SYSTEM PREFERENCE DETECTION
+   Auto dark mode based on OS preference
+   =========================================== */
+
+@media (prefers-color-scheme: dark) {
+  .auto-dark {
+    /* Apply same styles as .dark class */
+    --surface-primary: var(--surface-dark-primary);
+    --surface-secondary: var(--surface-dark-secondary);
+    --surface-elevated: var(--surface-dark-tertiary);
+  }
+
+  .auto-dark body {
+    background-color: var(--surface-dark-primary);
+    color: var(--color-neutral-100);
+  }
+}
+
+/* ===========================================
+   DARK MODE TOGGLE BUTTON
+   =========================================== */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.theme-toggle:hover {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-300);
+}
+
+.theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Sun icon visible in light mode */
+.theme-toggle__icon--sun {
+  display: block;
+}
+
+.theme-toggle__icon--moon {
+  display: none;
+}
+
+/* Moon icon visible in dark mode */
+.dark .theme-toggle {
+  border-color: var(--color-neutral-600);
+}
+
+.dark .theme-toggle:hover {
+  background: var(--surface-dark-tertiary);
+  border-color: var(--color-neutral-500);
+}
+
+.dark .theme-toggle__icon--sun {
+  display: none;
+}
+
+.dark .theme-toggle__icon--moon {
+  display: block;
+}

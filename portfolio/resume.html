@@ -5,206 +5,264 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Jeffrey Mutchnik Resume - Marketing Technology Manager with 8+ years in B2B healthcare technology.">
   <title>Resume - Jeffrey Mutchnik</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/portfolio.css">
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Jeffrey Mutchnik</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="case-studies/index.html">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="creative-work.html">Creative Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1 class="mb-3">Resume</h1>
-      <p class="lead mb-4">8+ years driving revenue growth for B2B healthcare technology companies.</p>
-      <a href="assets/Jeffrey_Mutchnik_Resume.pdf" class="btn btn-light btn-lg" download>
-        <i class="bi bi-download me-2"></i>Download Resume (PDF)
-      </a>
+  <!-- Design System -->
+  <link rel="stylesheet" href="assets/css/design-system.css">
+</head>
+<body class="page-transition">
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="site-header site-header--scrolled" id="site-header">
+    <div class="site-header__container">
+      <a class="site-logo" href="index.html">Jeffrey Mutchnik</a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-toggle">
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link is-active" href="resume.html">Resume</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="case-studies/index.html">Case Studies</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="skills.html">Skills</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="projects.html">Projects</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="creative-work.html">Creative Work</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="blog/index.html">Blog</a></li>
+        </ul>
+        <div class="site-nav__cta">
+          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Resume Content -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="card shadow-sm">
-            <div class="card-body p-4 p-md-5">
-              <!-- Summary -->
-              <section class="mb-5">
-                <h3 class="border-bottom pb-2 mb-3"><i class="bi bi-person-badge me-2"></i>Summary</h3>
-                <p class="text-muted mb-0">Marketing Technology Manager with 8+ years driving revenue growth for B2B healthcare technology companies. Track record as first marketing hire at 3 startups—generating $20M+ pipeline, contributing to $20M Series B, and building full-stack marketing technology infrastructure from the ground up. HubSpot and Salesforce expert with deep experience in marketing operations, marketing automation, and emerging technologies including AI-powered tools.</p>
-              </section>
-
-              <!-- Experience -->
-              <section class="mb-5">
-                <h3 class="border-bottom pb-2 mb-4"><i class="bi bi-briefcase me-2"></i>Professional Experience</h3>
-
-                <!-- Consulting -->
-                <div class="mb-4">
-                  <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                    <div>
-                      <h5 class="mb-1">Marketing Technology Consultant</h5>
-                      <p class="text-muted mb-0">Self-Employed</p>
-                    </div>
-                    <span class="badge bg-light text-dark">Jan 2023 - Present</span>
-                  </div>
-                  <ul class="text-muted">
-                    <li>Generated $2.5M in annual recurring revenue within 30 days for Ambience Healthcare through go-to-market strategy and HubSpot implementation</li>
-                    <li>Advising early-stage startups on marketing technology strategy, CRM selection, and lead lifecycle design</li>
-                    <li>Building expertise in emerging technologies including Python, API integration, and AI-powered tools for marketing automation</li>
-                  </ul>
-                </div>
-
-                <!-- AASM -->
-                <div class="mb-4">
-                  <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                    <div>
-                      <h5 class="mb-1">Marketing Technology Manager</h5>
-                      <p class="text-muted mb-0">American Academy of Sleep Medicine</p>
-                    </div>
-                    <span class="badge bg-light text-dark">Oct 2023 - Apr 2025</span>
-                  </div>
-                  <ul class="text-muted">
-                    <li>Increased webinar registrations by 1,200% year-over-year through automated nurture campaigns</li>
-                    <li>Rebuilt 8 web properties serving 13,000+ members through cross-functional collaboration</li>
-                    <li>Led enterprise CRM migration to HubSpot with 100% data integrity; expanded to Service Hub with AI chatbot</li>
-                    <li>Built Shopify e-commerce platform generating $500K+ in annual sales</li>
-                    <li>Managed team of 3 specialists with highly organized marketing operations processes</li>
-                  </ul>
-                </div>
-
-                <!-- PatientIQ -->
-                <div class="mb-4">
-                  <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                    <div>
-                      <h5 class="mb-1">Senior Marketing Manager</h5>
-                      <p class="text-muted mb-0">PatientIQ</p>
-                    </div>
-                    <span class="badge bg-light text-dark">Jul 2020 - May 2023</span>
-                  </div>
-                  <ul class="text-muted">
-                    <li>Generated 44% of company pipeline totaling $6M ARR through integrated ABM strategy</li>
-                    <li>Increased annual recurring revenue by 10x from $300K to $3M</li>
-                    <li>Contributed to $20M Series B fundraise through investor deck design and sales enablement</li>
-                    <li>Increased organic traffic by 235% after rebuilding website on Webflow</li>
-                    <li>Scaled marketing qualified leads from 0 to 50 MQLs per month as first marketing hire</li>
-                  </ul>
-                </div>
-
-                <!-- cliexa -->
-                <div class="mb-4">
-                  <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                    <div>
-                      <h5 class="mb-1">Creative Director & Marketing Manager</h5>
-                      <p class="text-muted mb-0">cliexa</p>
-                    </div>
-                    <span class="badge bg-light text-dark">May 2017 - Jul 2020</span>
-                  </div>
-                  <ul class="text-muted">
-                    <li>Increased organic traffic by 826% and lead capture by 4,350% through SEO optimization</li>
-                    <li>Secured American College of Cardiology partnership; ACC Innovation Challenge finalist</li>
-                    <li>Denver Startup of the Year finalist 2019</li>
-                    <li>First marketing hire; established marketing technology infrastructure from early stage</li>
-                  </ul>
-                </div>
-              </section>
-
-              <!-- Skills -->
-              <section class="mb-5">
-                <h3 class="border-bottom pb-2 mb-3"><i class="bi bi-tools me-2"></i>Skills & Tools</h3>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="badge bg-primary">HubSpot (All Hubs)</span>
-                  <span class="badge bg-primary">Salesforce</span>
-                  <span class="badge bg-primary">Marketing Automation</span>
-                  <span class="badge bg-primary">CRM Architecture</span>
-                  <span class="badge bg-primary">Lead Lifecycle</span>
-                  <span class="badge bg-primary">ABM Campaigns</span>
-                  <span class="badge bg-primary">SEO/SEM</span>
-                  <span class="badge bg-primary">Email Marketing</span>
-                  <span class="badge bg-light text-dark">Google Analytics 4</span>
-                  <span class="badge bg-light text-dark">HTML/CSS/JavaScript</span>
-                  <span class="badge bg-light text-dark">SQL & Python</span>
-                  <span class="badge bg-light text-dark">API Integration</span>
-                  <span class="badge bg-light text-dark">WordPress / Webflow / Shopify</span>
-                  <span class="badge bg-light text-dark">ZoomInfo / 6Sense</span>
-                  <span class="badge bg-light text-dark">Figma</span>
-                </div>
-              </section>
-
-              <!-- Education -->
-              <section>
-                <h3 class="border-bottom pb-2 mb-3"><i class="bi bi-mortarboard me-2"></i>Education & Certifications</h3>
-                <div class="mb-3">
-                  <h6 class="mb-1">University of Denver</h6>
-                  <p class="text-muted mb-0">BA, Emergent Digital Practices | Minors: Marketing, Studio Art | Dean's List, 2018</p>
-                </div>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="badge bg-light text-dark"><i class="bi bi-patch-check me-1"></i>HubSpot Marketing Software (3x)</span>
-                  <span class="badge bg-light text-dark"><i class="bi bi-patch-check me-1"></i>Google Digital Marketing</span>
-                  <span class="badge bg-light text-dark"><i class="bi bi-patch-check me-1"></i>Google AI Essentials</span>
-                  <span class="badge bg-light text-dark"><i class="bi bi-patch-check me-1"></i>ZoomInfo MarketingOS</span>
-                  <span class="badge bg-light text-dark"><i class="bi bi-patch-check me-1"></i>Google Ads</span>
-                </div>
-              </section>
-            </div>
-          </div>
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="page-header__container">
+        <div class="page-header__content text-center mx-auto">
+          <span class="text-overline mb-3 d-block">Professional Background</span>
+          <h1 class="page-header__title">Resume</h1>
+          <p class="page-header__description mb-6">8+ years driving revenue growth for B2B healthcare technology companies.</p>
+          <a href="assets/Jeffrey_Mutchnik_Resume.pdf" class="btn btn-primary btn-lg" download>
+            <i class="bi bi-download me-2"></i>Download Resume (PDF)
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Resume Content -->
+    <section class="section">
+      <div class="container-content">
+        <div class="card card-lg reveal">
+          <!-- Summary -->
+          <section class="mb-8">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <span class="accent-line"></span>
+              <h3 class="text-h3 m-0">Summary</h3>
+            </div>
+            <p class="text-lead mb-0">Marketing Technology Manager with 8+ years driving revenue growth for B2B healthcare technology companies. Track record as first marketing hire at 3 startups—generating $20M+ pipeline, contributing to $20M Series B, and building full-stack marketing technology infrastructure from the ground up. HubSpot and Salesforce expert with deep experience in marketing operations, marketing automation, and emerging technologies including AI-powered tools.</p>
+          </section>
+
+          <!-- Experience -->
+          <section class="mb-8">
+            <div class="d-flex align-items-center gap-3 mb-6">
+              <span class="accent-line"></span>
+              <h3 class="text-h3 m-0">Professional Experience</h3>
+            </div>
+
+            <div class="timeline">
+              <!-- Consulting -->
+              <div class="timeline__item is-active">
+                <div class="timeline__marker"></div>
+                <div class="timeline__date">Jan 2023 - Present</div>
+                <h4 class="timeline__title">Marketing Technology Consultant</h4>
+                <div class="timeline__company">Self-Employed</div>
+                <ul class="timeline__description list-disc ps-4 mb-0">
+                  <li class="mb-2">Generated $2.5M in annual recurring revenue within 30 days for Ambience Healthcare through go-to-market strategy and HubSpot implementation</li>
+                  <li class="mb-2">Advising early-stage startups on marketing technology strategy, CRM selection, and lead lifecycle design</li>
+                  <li>Building expertise in emerging technologies including Python, API integration, and AI-powered tools for marketing automation</li>
+                </ul>
+              </div>
+
+              <!-- AASM -->
+              <div class="timeline__item">
+                <div class="timeline__marker"></div>
+                <div class="timeline__date">Oct 2023 - Apr 2025</div>
+                <h4 class="timeline__title">Marketing Technology Manager</h4>
+                <div class="timeline__company">American Academy of Sleep Medicine</div>
+                <ul class="timeline__description list-disc ps-4 mb-0">
+                  <li class="mb-2">Increased webinar registrations by 1,200% year-over-year through automated nurture campaigns</li>
+                  <li class="mb-2">Rebuilt 8 web properties serving 13,000+ members through cross-functional collaboration</li>
+                  <li class="mb-2">Led enterprise CRM migration to HubSpot with 100% data integrity; expanded to Service Hub with AI chatbot</li>
+                  <li class="mb-2">Built Shopify e-commerce platform generating $500K+ in annual sales</li>
+                  <li>Managed team of 3 specialists with highly organized marketing operations processes</li>
+                </ul>
+              </div>
+
+              <!-- PatientIQ -->
+              <div class="timeline__item">
+                <div class="timeline__marker"></div>
+                <div class="timeline__date">Jul 2020 - May 2023</div>
+                <h4 class="timeline__title">Senior Marketing Manager</h4>
+                <div class="timeline__company">PatientIQ</div>
+                <ul class="timeline__description list-disc ps-4 mb-0">
+                  <li class="mb-2">Generated 44% of company pipeline totaling $6M ARR through integrated ABM strategy</li>
+                  <li class="mb-2">Increased annual recurring revenue by 10x from $300K to $3M</li>
+                  <li class="mb-2">Contributed to $20M Series B fundraise through investor deck design and sales enablement</li>
+                  <li class="mb-2">Increased organic traffic by 235% after rebuilding website on Webflow</li>
+                  <li>Scaled marketing qualified leads from 0 to 50 MQLs per month as first marketing hire</li>
+                </ul>
+              </div>
+
+              <!-- cliexa -->
+              <div class="timeline__item">
+                <div class="timeline__marker"></div>
+                <div class="timeline__date">May 2017 - Jul 2020</div>
+                <h4 class="timeline__title">Creative Director & Marketing Manager</h4>
+                <div class="timeline__company">cliexa</div>
+                <ul class="timeline__description list-disc ps-4 mb-0">
+                  <li class="mb-2">Increased organic traffic by 826% and lead capture by 4,350% through SEO optimization</li>
+                  <li class="mb-2">Secured American College of Cardiology partnership; ACC Innovation Challenge finalist</li>
+                  <li class="mb-2">Denver Startup of the Year finalist 2019</li>
+                  <li>First marketing hire; established marketing technology infrastructure from early stage</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section class="mb-8">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <span class="accent-line"></span>
+              <h3 class="text-h3 m-0">Skills & Tools</h3>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge badge--accent">HubSpot (All Hubs)</span>
+              <span class="badge badge--accent">Salesforce</span>
+              <span class="badge badge--accent">Marketing Automation</span>
+              <span class="badge badge--accent">CRM Architecture</span>
+              <span class="badge badge--accent">Lead Lifecycle</span>
+              <span class="badge badge--accent">ABM Campaigns</span>
+              <span class="badge badge--accent">SEO/SEM</span>
+              <span class="badge badge--accent">Email Marketing</span>
+              <span class="badge">Google Analytics 4</span>
+              <span class="badge">HTML/CSS/JavaScript</span>
+              <span class="badge">SQL & Python</span>
+              <span class="badge">API Integration</span>
+              <span class="badge">WordPress / Webflow / Shopify</span>
+              <span class="badge">ZoomInfo / 6Sense</span>
+              <span class="badge">Figma</span>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section>
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <span class="accent-line"></span>
+              <h3 class="text-h3 m-0">Education & Certifications</h3>
+            </div>
+            <div class="mb-4">
+              <h5 class="text-h5 mb-1">University of Denver</h5>
+              <p class="text-secondary mb-0">BA, Emergent Digital Practices | Minors: Marketing, Studio Art | Dean's List, 2018</p>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge"><i class="bi bi-patch-check me-1"></i>HubSpot Marketing Software (3x)</span>
+              <span class="badge"><i class="bi bi-patch-check me-1"></i>Google Digital Marketing</span>
+              <span class="badge"><i class="bi bi-patch-check me-1"></i>Google AI Essentials</span>
+              <span class="badge"><i class="bi bi-patch-check me-1"></i>ZoomInfo MarketingOS</span>
+              <span class="badge"><i class="bi bi-patch-check me-1"></i>Google Ads</span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h5 class="mb-3">Jeffrey Mutchnik</h5>
-          <p class="mb-0">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <div class="site-footer__logo">Jeffrey Mutchnik</div>
+          <p class="site-footer__tagline">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology. Specializing in HubSpot, Salesforce, and marketing automation.</p>
         </div>
-        <div class="col-6 col-lg-3 offset-lg-1">
-          <h6 class="mb-3">Quick Links</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="resume.html">Resume</a></li>
-            <li class="mb-2"><a href="case-studies/index.html">Case Studies</a></li>
-            <li class="mb-2"><a href="skills.html">Skills</a></li>
-            <li class="mb-2"><a href="blog/index.html">Blog</a></li>
+        <div>
+          <h6 class="site-footer__column-title">Navigation</h6>
+          <ul class="site-footer__links">
+            <li><a href="index.html" class="site-footer__link">Home</a></li>
+            <li><a href="resume.html" class="site-footer__link">Resume</a></li>
+            <li><a href="case-studies/index.html" class="site-footer__link">Case Studies</a></li>
+            <li><a href="skills.html" class="site-footer__link">Skills</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Contact</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
-            <li class="mb-2"><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
-            <li class="mb-2"><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+        <div>
+          <h6 class="site-footer__column-title">More</h6>
+          <ul class="site-footer__links">
+            <li><a href="projects.html" class="site-footer__link">Projects</a></li>
+            <li><a href="creative-work.html" class="site-footer__link">Creative Work</a></li>
+            <li><a href="blog/index.html" class="site-footer__link">Blog</a></li>
+            <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="site-footer__column-title">Contact</h6>
+          <ul class="site-footer__links">
+            <li><a href="mailto:jmutchnik21@gmail.com" class="site-footer__link"><i class="bi bi-envelope me-2"></i>Email</a></li>
+            <li><a href="tel:+18477679719" class="site-footer__link"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
+            <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__link"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <p class="text-center mb-0 small">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+        <div class="site-footer__social">
+          <a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__social-link" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="mailto:jmutchnik21@gmail.com" class="site-footer__social-link" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const siteNav = document.getElementById('site-nav');
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('is-active');
+      siteNav.classList.toggle('is-open');
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
 </body>
 </html>

@@ -1,0 +1,208 @@
+/* ===========================================
+   DESIGN SYSTEM - MAIN IMPORT FILE
+   Premium Portfolio Design System
+
+   Author: Jeffrey Mutchnik
+   Version: 1.0.0
+
+   A sophisticated, editorial-quality design
+   system built for premium portfolios.
+   =========================================== */
+
+/* ===========================================
+   TABLE OF CONTENTS
+
+   1. Design Tokens
+      - Colors
+      - Typography
+      - Spacing
+      - Effects
+
+   2. Components
+      - Buttons
+      - Cards
+      - Forms
+      - Navigation
+
+   3. Layouts
+      - Sections
+      - Utilities
+
+   4. Themes
+      - Dark Mode
+   =========================================== */
+
+/* ===========================================
+   1. DESIGN TOKENS
+   Foundation layer - CSS custom properties
+   =========================================== */
+
+@import url('design-system/tokens/colors.css');
+@import url('design-system/tokens/typography.css');
+@import url('design-system/tokens/spacing.css');
+@import url('design-system/tokens/effects.css');
+
+/* ===========================================
+   2. COMPONENTS
+   Reusable UI components
+   =========================================== */
+
+@import url('design-system/components/buttons.css');
+@import url('design-system/components/cards.css');
+@import url('design-system/components/forms.css');
+@import url('design-system/components/navigation.css');
+
+/* ===========================================
+   3. LAYOUTS
+   Page sections and utility classes
+   =========================================== */
+
+@import url('design-system/layouts/sections.css');
+@import url('design-system/layouts/utilities.css');
+
+/* ===========================================
+   4. THEMES
+   Color scheme variations
+   =========================================== */
+
+@import url('design-system/themes/dark.css');
+
+/* ===========================================
+   BOOTSTRAP OVERRIDES
+   Ensure design system takes precedence
+   =========================================== */
+
+/* Reset Bootstrap button styles */
+.btn {
+  --bs-btn-padding-x: var(--space-5);
+  --bs-btn-padding-y: var(--space-3);
+  --bs-btn-font-family: var(--font-body);
+  --bs-btn-font-size: var(--text-body-sm);
+  --bs-btn-font-weight: var(--font-medium);
+  --bs-btn-border-radius: var(--radius-md);
+}
+
+/* Reset Bootstrap card styles */
+.card {
+  --bs-card-spacer-y: var(--space-6);
+  --bs-card-spacer-x: var(--space-6);
+  --bs-card-border-radius: var(--radius-xl);
+  --bs-card-border-color: var(--color-neutral-100);
+  --bs-card-bg: var(--surface-elevated);
+}
+
+/* Reset Bootstrap form styles */
+.form-control {
+  --bs-border-color: var(--color-neutral-200);
+  --bs-border-radius: var(--radius-md);
+}
+
+.form-control:focus {
+  border-color: var(--color-accent-500);
+  box-shadow: 0 0 0 3px rgba(181, 99, 77, 0.15);
+}
+
+/* Reset Bootstrap link colors */
+a {
+  --bs-link-color: var(--color-accent-500);
+  --bs-link-hover-color: var(--color-accent-600);
+}
+
+/* ===========================================
+   GLOBAL STYLES
+   Page-level defaults
+   =========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  line-height: var(--leading-normal);
+  color: var(--color-primary-900);
+  background-color: var(--surface-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent-500);
+  outline-offset: 2px;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--color-accent-200);
+  color: var(--color-primary-900);
+}
+
+/* ===========================================
+   PAGE TRANSITION
+   Smooth fade on page load
+   =========================================== */
+
+.page-transition {
+  animation: fadeIn 0.4s var(--ease-out) both;
+}
+
+/* ===========================================
+   SCROLL REVEAL
+   Elements animate in on scroll
+   =========================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s var(--ease-out),
+              transform 0.6s var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered reveal for multiple elements */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 500ms; }
+
+/* ===========================================
+   REDUCED MOTION
+   Respect user preferences
+   =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

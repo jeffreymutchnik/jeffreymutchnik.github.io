@@ -5,295 +5,380 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Jeffrey Mutchnik - Marketing Technology Manager specializing in B2B healthcare technology. HubSpot expert with 8+ years of experience.">
   <title>Jeffrey Mutchnik - Marketing Technology Manager</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/portfolio.css">
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="assets/css/design-system.css">
 </head>
-<body>
+<body class="page-transition">
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Jeffrey Mutchnik</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <header class="site-header site-header--transparent" id="site-header">
+    <div class="site-header__container">
+      <a class="site-logo" href="index.html">Jeffrey Mutchnik</a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-toggle">
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="case-studies/index.html">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="creative-work.html">Creative Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link is-active" href="index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="resume.html">Resume</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="case-studies/index.html">Case Studies</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="skills.html">Skills</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="projects.html">Projects</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="creative-work.html">Creative Work</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="blog/index.html">Blog</a></li>
         </ul>
-      </div>
+        <div class="site-nav__cta">
+          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero text-center">
-    <div class="container">
-      <h1 class="display-4 fw-bold mb-2">Jeffrey Mutchnik</h1>
-      <p class="fs-4 mb-3" style="color: rgba(255,255,255,0.9);">Marketing Technology Manager</p>
-      <p class="lead mb-4 mx-auto" style="max-width: 700px;">8+ years driving revenue growth for B2B healthcare technology companies. First marketing hire at 3 startups. HubSpot and Salesforce expert.</p>
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="resume.html" class="btn btn-light btn-lg px-4">View Resume</a>
-        <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Get in Touch</a>
-      </div>
-      <!-- Award Badges -->
-      <div class="mt-4 d-flex gap-3 justify-content-center flex-wrap">
-        <span class="badge award-badge px-3 py-2"><i class="bi bi-trophy me-1"></i> ACC Innovation Finalist</span>
-        <span class="badge award-badge px-3 py-2"><i class="bi bi-award me-1"></i> Denver Startup of the Year Finalist</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">$20M+</div>
-          <div class="stat-label">Pipeline Generated</div>
-        </div>
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">1,200%</div>
-          <div class="stat-label">Webinar Growth YoY</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">3</div>
-          <div class="stat-label">Startups as First Hire</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">$20M</div>
-          <div class="stat-label">Series B Contribution</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Case Studies -->
-  <section class="section">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">Featured Work</h2>
-        <p class="text-muted mx-auto" style="max-width: 600px;">Selected case studies showcasing marketing technology strategy, CRM implementation, and revenue growth.</p>
-      </div>
-      <div class="row g-4">
-        <!-- PatientIQ -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">PatientIQ</h5>
-              <p class="card-text text-muted">Built demand generation engine from scratch as first marketing hire, generating 44% of company pipeline and contributing to $20M Series B.</p>
-              <div class="d-flex gap-4 my-3">
-                <div class="metric-card p-0">
-                  <div class="metric-value">44%</div>
-                  <div class="metric-label">of Pipeline</div>
-                </div>
-                <div class="metric-card p-0">
-                  <div class="metric-value">10x</div>
-                  <div class="metric-label">ARR Growth</div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pt-0">
-              <a href="case-studies/patientiq.html" class="btn btn-outline-primary btn-sm">View Case Study <i class="bi bi-arrow-right"></i></a>
-            </div>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero hero--dark hero--with-grid grid-overlay--light">
+      <div class="hero__container">
+        <div class="hero__content hero--centered">
+          <div class="hero__overline">
+            <span class="accent-line accent-line--animated"></span>
+            <span class="text-overline">Marketing Technology Leader</span>
           </div>
-        </div>
-        <!-- AASM -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">American Academy of Sleep Medicine</h5>
-              <p class="card-text text-muted">Led enterprise HubSpot migration and rebuilt 8+ web properties serving 13,000+ members with e-commerce integration.</p>
-              <div class="d-flex gap-4 my-3">
-                <div class="metric-card p-0">
-                  <div class="metric-value">1,200%</div>
-                  <div class="metric-label">Webinar Growth</div>
-                </div>
-                <div class="metric-card p-0">
-                  <div class="metric-value">8+</div>
-                  <div class="metric-label">Web Properties</div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pt-0">
-              <a href="case-studies/aasm.html" class="btn btn-outline-primary btn-sm">View Case Study <i class="bi bi-arrow-right"></i></a>
-            </div>
+          <h1 class="hero__title">Jeffrey Mutchnik</h1>
+          <p class="hero__subtitle mx-auto">8+ years driving revenue growth for B2B healthcare technology companies. First marketing hire at 3 startups. HubSpot and Salesforce expert.</p>
+          <div class="hero__actions justify-content-center">
+            <a href="resume.html" class="btn btn-light btn-lg">View Resume</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Get in Touch</a>
           </div>
-        </div>
-        <!-- cliexa -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">cliexa</h5>
-              <p class="card-text text-muted">Established marketing from scratch at digital health startup, securing American College of Cardiology partnership and achieving explosive growth.</p>
-              <div class="d-flex gap-4 my-3">
-                <div class="metric-card p-0">
-                  <div class="metric-value">826%</div>
-                  <div class="metric-label">Traffic Growth</div>
-                </div>
-                <div class="metric-card p-0">
-                  <div class="metric-value">4,350%</div>
-                  <div class="metric-label">Lead Capture</div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0 pt-0">
-              <a href="case-studies/cliexa.html" class="btn btn-outline-primary btn-sm">View Case Study <i class="bi bi-arrow-right"></i></a>
-            </div>
+          <!-- Award Badges -->
+          <div class="mt-8 d-flex gap-3 justify-content-center flex-wrap">
+            <span class="badge badge--accent"><i class="bi bi-trophy me-1"></i> ACC Innovation Finalist</span>
+            <span class="badge badge--accent"><i class="bi bi-award me-1"></i> Denver Startup of the Year Finalist</span>
           </div>
         </div>
       </div>
-      <div class="text-center mt-4">
-        <a href="case-studies/index.html" class="btn btn-primary">View All Case Studies</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills Overview -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">Core Expertise</h2>
-        <p class="text-muted mx-auto" style="max-width: 600px;">Specialized in marketing technology, CRM architecture, and B2B demand generation.</p>
+    <!-- Stats Section -->
+    <section class="stats-section section bg-secondary">
+      <div class="container-wide">
+        <div class="stats-grid reveal-stagger">
+          <div class="stat card card-flat reveal">
+            <div class="stat__value">$20M+</div>
+            <div class="stat__label">Pipeline Generated</div>
+          </div>
+          <div class="stat card card-flat reveal">
+            <div class="stat__value">1,200%</div>
+            <div class="stat__label">Webinar Growth YoY</div>
+          </div>
+          <div class="stat card card-flat reveal">
+            <div class="stat__value">3</div>
+            <div class="stat__label">Startups as First Hire</div>
+          </div>
+          <div class="stat card card-flat reveal">
+            <div class="stat__value">$20M</div>
+            <div class="stat__label">Series B Contribution</div>
+          </div>
+        </div>
       </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="skill-category">
-            <h4 class="mb-3"><i class="bi bi-gear text-primary me-2"></i>Marketing Technology</h4>
-            <ul class="list-unstyled text-muted">
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Marketing Automation</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>CRM Architecture & Migration</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Lead Lifecycle (MQL/SQL)</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Attribution Modeling</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Revenue Operations</li>
+    </section>
+
+    <!-- Featured Case Studies -->
+    <section class="section">
+      <div class="container-wide">
+        <div class="text-center mb-12">
+          <span class="text-overline mb-3 d-block">Portfolio</span>
+          <h2 class="text-h1 mb-4">Featured Work</h2>
+          <p class="text-lead mx-auto" style="max-width: 600px;">Selected case studies showcasing marketing technology strategy, CRM implementation, and revenue growth.</p>
+        </div>
+        <div class="card-grid card-grid-3 reveal-stagger">
+          <!-- PatientIQ -->
+          <article class="card card-interactive project-card reveal">
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="project-card__tag">B2B SaaS</span>
+                <span class="project-card__tag">Healthcare</span>
+              </div>
+              <h3 class="project-card__title">PatientIQ</h3>
+              <p class="project-card__description">Built demand generation engine from scratch as first marketing hire, generating 44% of company pipeline and contributing to $20M Series B.</p>
+              <div class="d-flex gap-6 mb-4">
+                <div>
+                  <div class="text-metric" style="font-size: var(--text-h2);">44%</div>
+                  <div class="text-body-xs text-muted text-uppercase">of Pipeline</div>
+                </div>
+                <div>
+                  <div class="text-metric" style="font-size: var(--text-h2);">10x</div>
+                  <div class="text-body-xs text-muted text-uppercase">ARR Growth</div>
+                </div>
+              </div>
+              <a href="case-studies/patientiq.html" class="btn btn-secondary btn-sm">View Case Study <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </article>
+
+          <!-- AASM -->
+          <article class="card card-interactive project-card reveal">
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="project-card__tag">Enterprise</span>
+                <span class="project-card__tag">Association</span>
+              </div>
+              <h3 class="project-card__title">American Academy of Sleep Medicine</h3>
+              <p class="project-card__description">Led enterprise HubSpot migration and rebuilt 8+ web properties serving 13,000+ members with e-commerce integration.</p>
+              <div class="d-flex gap-6 mb-4">
+                <div>
+                  <div class="text-metric" style="font-size: var(--text-h2);">1,200%</div>
+                  <div class="text-body-xs text-muted text-uppercase">Webinar Growth</div>
+                </div>
+                <div>
+                  <div class="text-metric" style="font-size: var(--text-h2);">8+</div>
+                  <div class="text-body-xs text-muted text-uppercase">Web Properties</div>
+                </div>
+              </div>
+              <a href="case-studies/aasm.html" class="btn btn-secondary btn-sm">View Case Study <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </article>
+
+          <!-- cliexa -->
+          <article class="card card-interactive project-card reveal">
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="project-card__tag">Digital Health</span>
+                <span class="project-card__tag">Startup</span>
+              </div>
+              <h3 class="project-card__title">cliexa</h3>
+              <p class="project-card__description">Established marketing from scratch at digital health startup, securing American College of Cardiology partnership and achieving explosive growth.</p>
+              <div class="d-flex gap-6 mb-4">
+                <div>
+                  <div class="text-metric" style="font-size: var(--text-h2);">826%</div>
+                  <div class="text-body-xs text-muted text-uppercase">Traffic Growth</div>
+                </div>
+                <div>
+                  <div class="text-metric" style="font-size: var(--text-h2);">4,350%</div>
+                  <div class="text-body-xs text-muted text-uppercase">Lead Capture</div>
+                </div>
+              </div>
+              <a href="case-studies/cliexa.html" class="btn btn-secondary btn-sm">View Case Study <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="text-center mt-8">
+          <a href="case-studies/index.html" class="btn btn-primary btn-lg">View All Case Studies</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Overview -->
+    <section class="section bg-secondary">
+      <div class="container-wide">
+        <div class="text-center mb-12">
+          <span class="text-overline mb-3 d-block">Capabilities</span>
+          <h2 class="text-h1 mb-4">Core Expertise</h2>
+          <p class="text-lead mx-auto" style="max-width: 600px;">Specialized in marketing technology, CRM architecture, and B2B demand generation.</p>
+        </div>
+        <div class="card-grid card-grid-3 reveal-stagger">
+          <div class="card feature-card reveal">
+            <div class="feature-card__icon">
+              <i class="bi bi-gear"></i>
+            </div>
+            <h4 class="feature-card__title">Marketing Technology</h4>
+            <ul class="list-none p-0 m-0 text-left">
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Marketing Automation</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>CRM Architecture & Migration</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Lead Lifecycle (MQL/SQL)</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Attribution Modeling</li>
+              <li class="mb-0 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Revenue Operations</li>
+            </ul>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-card__icon">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h4 class="feature-card__title">Digital Marketing</h4>
+            <ul class="list-none p-0 m-0 text-left">
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Demand Generation</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>ABM Campaigns</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>SEO/SEM Strategy</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Email Marketing</li>
+              <li class="mb-0 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Content Strategy</li>
+            </ul>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-card__icon">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h4 class="feature-card__title">Technical Skills</h4>
+            <ul class="list-none p-0 m-0 text-left">
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>HubSpot (Admin - All Hubs)</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>Salesforce / Pardot</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>HTML/CSS/JavaScript</li>
+              <li class="mb-2 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>SQL & Python</li>
+              <li class="mb-0 text-secondary"><i class="bi bi-check2 text-accent me-2"></i>API Integration</li>
             </ul>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="skill-category">
-            <h4 class="mb-3"><i class="bi bi-graph-up text-primary me-2"></i>Digital Marketing</h4>
-            <ul class="list-unstyled text-muted">
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Demand Generation</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>ABM Campaigns</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>SEO/SEM Strategy</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Email Marketing</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Content Strategy</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="skill-category">
-            <h4 class="mb-3"><i class="bi bi-code-slash text-primary me-2"></i>Technical Skills</h4>
-            <ul class="list-unstyled text-muted">
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>HubSpot (Admin - All Hubs)</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Salesforce / Pardot</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>HTML/CSS/JavaScript</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>SQL & Python</li>
-              <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>API Integration</li>
-            </ul>
-          </div>
+        <div class="text-center mt-8">
+          <a href="skills.html" class="btn btn-primary btn-lg">View All Skills</a>
         </div>
       </div>
-      <div class="text-center mt-4">
-        <a href="skills.html" class="btn btn-primary">View All Skills</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Key Learnings -->
-  <section class="section">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">What I've Learned</h2>
-        <p class="text-muted mx-auto" style="max-width: 600px;">Insights from building marketing at 3 startups and leading enterprise implementations.</p>
+    <!-- Key Learnings -->
+    <section class="section">
+      <div class="container-wide">
+        <div class="text-center mb-12">
+          <span class="text-overline mb-3 d-block">Insights</span>
+          <h2 class="text-h1 mb-4">What I've Learned</h2>
+          <p class="text-lead mx-auto" style="max-width: 600px;">Insights from building marketing at 3 startups and leading enterprise implementations.</p>
+        </div>
+        <div class="row g-4 reveal-stagger">
+          <div class="col-md-6">
+            <div class="card card-accent h-100 reveal">
+              <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-building text-accent me-2"></i>Start with Infrastructure</h5>
+                <p class="card-text mb-0">Building a solid CRM foundation enables everything else. Lead scoring, attribution, and reporting that inform strategic decisions all depend on clean data architecture.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-accent h-100 reveal">
+              <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-people text-accent me-2"></i>Customer Partnerships Multiply Impact</h5>
+                <p class="card-text mb-0">Co-marketing with marquee customers like Cleveland Clinic and Northwestern Medicine provided credibility that accelerated sales cycles dramatically.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-accent h-100 reveal">
+              <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-bullseye text-accent me-2"></i>ABM Works in Healthcare</h5>
+                <p class="card-text mb-0">Targeted campaigns at conference attendees and specific health systems drove higher conversion rates than broad awareness campaigns.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-accent h-100 reveal">
+              <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-lightning text-accent me-2"></i>Automation Multiplies Impact</h5>
+                <p class="card-text mb-0">70+ workflows meant the team could focus on strategy while nurture sequences handled routine engagement automatically.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card h-100 border-0 bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-building text-primary me-2"></i>Start with Infrastructure</h5>
-              <p class="card-text text-muted mb-0">Building a solid CRM foundation enables everything else. Lead scoring, attribution, and reporting that inform strategic decisions all depend on clean data architecture.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-people text-primary me-2"></i>Customer Partnerships Multiply Impact</h5>
-              <p class="card-text text-muted mb-0">Co-marketing with marquee customers like Cleveland Clinic and Northwestern Medicine provided credibility that accelerated sales cycles dramatically.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-bullseye text-primary me-2"></i>ABM Works in Healthcare</h5>
-              <p class="card-text text-muted mb-0">Targeted campaigns at conference attendees and specific health systems drove higher conversion rates than broad awareness campaigns.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-lightning text-primary me-2"></i>Automation Multiplies Impact</h5>
-              <p class="card-text text-muted mb-0">70+ workflows meant the team could focus on strategy while nurture sequences handled routine engagement automatically.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="section section-alt">
-    <div class="container text-center">
-      <h2 class="mb-3">Let's Work Together</h2>
-      <p class="text-muted mx-auto mb-4" style="max-width: 600px;">Looking for a marketing technology leader who can build from scratch, scale operations, and drive measurable revenue growth.</p>
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="contact.html" class="btn btn-primary btn-lg px-4">Get in Touch</a>
-        <a href="resume.html" class="btn btn-outline-primary btn-lg px-4">Download Resume</a>
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-section__container">
+        <span class="accent-line accent-line--lg mx-auto mb-6 d-block"></span>
+        <h2 class="cta-section__title">Let's Work Together</h2>
+        <p class="cta-section__description">Looking for a marketing technology leader who can build from scratch, scale operations, and drive measurable revenue growth.</p>
+        <div class="cta-section__actions">
+          <a href="contact.html" class="btn btn-light btn-lg">Get in Touch</a>
+          <a href="resume.html" class="btn btn-outline-light btn-lg">Download Resume</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h5 class="mb-3">Jeffrey Mutchnik</h5>
-          <p class="mb-0">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology. Specializing in HubSpot, Salesforce, and marketing automation.</p>
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <div class="site-footer__logo">Jeffrey Mutchnik</div>
+          <p class="site-footer__tagline">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology. Specializing in HubSpot, Salesforce, and marketing automation.</p>
         </div>
-        <div class="col-6 col-lg-3 offset-lg-1">
-          <h6 class="mb-3">Quick Links</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="resume.html">Resume</a></li>
-            <li class="mb-2"><a href="case-studies/index.html">Case Studies</a></li>
-            <li class="mb-2"><a href="skills.html">Skills</a></li>
-            <li class="mb-2"><a href="blog/index.html">Blog</a></li>
+        <div>
+          <h6 class="site-footer__column-title">Navigation</h6>
+          <ul class="site-footer__links">
+            <li><a href="index.html" class="site-footer__link">Home</a></li>
+            <li><a href="resume.html" class="site-footer__link">Resume</a></li>
+            <li><a href="case-studies/index.html" class="site-footer__link">Case Studies</a></li>
+            <li><a href="skills.html" class="site-footer__link">Skills</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Contact</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
-            <li class="mb-2"><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
-            <li class="mb-2"><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
-            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Chicago, IL</li>
+        <div>
+          <h6 class="site-footer__column-title">More</h6>
+          <ul class="site-footer__links">
+            <li><a href="projects.html" class="site-footer__link">Projects</a></li>
+            <li><a href="creative-work.html" class="site-footer__link">Creative Work</a></li>
+            <li><a href="blog/index.html" class="site-footer__link">Blog</a></li>
+            <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="site-footer__column-title">Contact</h6>
+          <ul class="site-footer__links">
+            <li><a href="mailto:jmutchnik21@gmail.com" class="site-footer__link"><i class="bi bi-envelope me-2"></i>Email</a></li>
+            <li><a href="tel:+18477679719" class="site-footer__link"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
+            <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__link"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+            <li><span class="site-footer__link"><i class="bi bi-geo-alt me-2"></i>Chicago, IL</span></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <p class="text-center mb-0 small">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+        <div class="site-footer__social">
+          <a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__social-link" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="mailto:jmutchnik21@gmail.com" class="site-footer__social-link" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('site-header--scrolled');
+        header.classList.remove('site-header--transparent');
+      } else {
+        header.classList.remove('site-header--scrolled');
+        header.classList.add('site-header--transparent');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const siteNav = document.getElementById('site-nav');
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('is-active');
+      siteNav.classList.toggle('is-open');
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
 </body>
 </html>
