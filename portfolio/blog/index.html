@@ -5,58 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Blog - Jeffrey Mutchnik's thoughts on marketing technology, B2B healthcare, and professional growth.">
   <title>Blog - Jeffrey Mutchnik</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/portfolio.css">
+  <link rel="stylesheet" href="../assets/css/design-system.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">Jeffrey Mutchnik</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="../case-studies/index.html">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="../skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="../creative-work.html">Creative Work</a></li>
-          <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1 class="mb-3">Blog</h1>
-      <p class="lead mb-0">Thoughts on marketing technology, B2B healthcare, and lessons learned from building marketing at startups.</p>
+  <!-- Navigation -->
+  <header class="site-header site-header--scrolled" id="site-header">
+    <div class="site-header__container">
+      <a class="site-logo" href="../index.html">Jeffrey Mutchnik</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-toggle">
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="../index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../resume.html">Resume</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../case-studies/index.html">Case Studies</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../skills.html">Skills</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../projects.html">Projects</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../creative-work.html">Creative Work</a></li>
+          <li class="site-nav__item"><a class="site-nav__link is-active" href="index.html">Blog</a></li>
+        </ul>
+        <div class="site-nav__cta">
+          <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </nav>
     </div>
   </header>
 
+  <!-- Page Header -->
+  <section class="page-header" id="main-content">
+    <div class="container">
+      <span class="text-overline">Insights & Articles</span>
+      <h1>Blog</h1>
+      <p class="page-header__subtitle">Thoughts on marketing technology, B2B healthcare, and lessons learned from building marketing at startups.</p>
+    </div>
+  </section>
+
   <!-- Blog Posts -->
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div class="row g-4">
         <!-- Featured Post -->
-        <div class="col-12">
-          <div class="card border-primary">
+        <div class="col-12 reveal">
+          <div class="card card-interactive card-featured">
             <div class="card-body p-4">
               <div class="row align-items-center">
                 <div class="col-lg-8">
-                  <span class="badge bg-primary mb-2">Featured</span>
+                  <span class="badge badge--accent mb-2">Featured</span>
                   <h3 class="card-title mb-3">What I Learned from 4 HubSpot Implementations</h3>
                   <p class="card-text text-muted">After leading HubSpot implementations at PatientIQ, AASM, Ambience Healthcare, and cliexa, I've developed a framework for successful CRM deployments. Here's what actually works—and what to avoid.</p>
                   <div class="d-flex gap-2 mb-3">
-                    <span class="badge bg-light text-dark">HubSpot</span>
-                    <span class="badge bg-light text-dark">CRM</span>
-                    <span class="badge bg-light text-dark">Marketing Technology</span>
+                    <span class="badge badge--accent">HubSpot</span>
+                    <span class="badge badge--accent">CRM</span>
+                    <span class="badge badge--accent">Marketing Technology</span>
                   </div>
                   <a href="hubspot-lessons.html" class="btn btn-primary">Read Article <i class="bi bi-arrow-right"></i></a>
                 </div>
@@ -69,15 +80,15 @@
         </div>
 
         <!-- Post 2 -->
-        <div class="col-md-6">
-          <div class="card h-100">
+        <div class="col-md-6 reveal">
+          <div class="card card-interactive h-100">
             <div class="card-body">
-              <span class="badge bg-light text-dark mb-2">Career</span>
+              <span class="badge badge--accent mb-2">Career</span>
               <h4 class="card-title">Building Marketing as the First Hire at 3 Startups</h4>
               <p class="card-text text-muted">Being the first marketing hire is equal parts terrifying and exhilarating. Here's what I wish someone had told me about building marketing from scratch at early-stage companies.</p>
               <div class="d-flex gap-2 mb-3">
-                <span class="badge bg-light text-dark">Startups</span>
-                <span class="badge bg-light text-dark">Leadership</span>
+                <span class="badge badge--accent">Startups</span>
+                <span class="badge badge--accent">Leadership</span>
               </div>
             </div>
             <div class="card-footer bg-transparent border-0">
@@ -87,8 +98,8 @@
         </div>
 
         <!-- Coming Soon Card -->
-        <div class="col-md-6">
-          <div class="card h-100 bg-light border-0">
+        <div class="col-md-6 reveal">
+          <div class="card card-interactive h-100 bg-light border-0">
             <div class="card-body d-flex flex-column justify-content-center text-center">
               <i class="bi bi-pencil-square text-muted mb-3" style="font-size: 3rem;"></i>
               <h4 class="card-title text-muted">More Coming Soon</h4>
@@ -102,15 +113,16 @@
   </section>
 
   <!-- Topics Section -->
-  <section class="section section-alt">
+  <section class="section section-alt reveal">
     <div class="container">
       <div class="text-center mb-5">
+        <span class="text-overline">Areas of Expertise</span>
         <h2 class="mb-3">Topics I Write About</h2>
         <p class="text-muted">Insights from 8+ years in B2B healthcare marketing technology.</p>
       </div>
       <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 text-center border-0">
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="card card-interactive h-100 text-center border-0">
             <div class="card-body">
               <i class="bi bi-gear text-primary mb-3" style="font-size: 2.5rem;"></i>
               <h5 class="card-title">Marketing Technology</h5>
@@ -118,8 +130,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 text-center border-0">
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="card card-interactive h-100 text-center border-0">
             <div class="card-body">
               <i class="bi bi-graph-up-arrow text-primary mb-3" style="font-size: 2.5rem;"></i>
               <h5 class="card-title">B2B Demand Gen</h5>
@@ -127,8 +139,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 text-center border-0">
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="card card-interactive h-100 text-center border-0">
             <div class="card-body">
               <i class="bi bi-hospital text-primary mb-3" style="font-size: 2.5rem;"></i>
               <h5 class="card-title">Healthcare Marketing</h5>
@@ -136,8 +148,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 text-center border-0">
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="card card-interactive h-100 text-center border-0">
             <div class="card-body">
               <i class="bi bi-rocket-takeoff text-primary mb-3" style="font-size: 2.5rem;"></i>
               <h5 class="card-title">Startup Growth</h5>
@@ -150,36 +162,94 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h5 class="mb-3">Jeffrey Mutchnik</h5>
-          <p class="mb-0">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="../index.html" class="site-footer__logo">Jeffrey Mutchnik</a>
+          <p class="site-footer__tagline">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
         </div>
-        <div class="col-6 col-lg-3 offset-lg-1">
-          <h6 class="mb-3">Quick Links</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="../resume.html">Resume</a></li>
-            <li class="mb-2"><a href="../case-studies/index.html">Case Studies</a></li>
-            <li class="mb-2"><a href="../skills.html">Skills</a></li>
-            <li class="mb-2"><a href="index.html">Blog</a></li>
+        <div class="site-footer__links">
+          <h6 class="site-footer__heading">Quick Links</h6>
+          <ul class="site-footer__list">
+            <li><a href="../resume.html" class="site-footer__link">Resume</a></li>
+            <li><a href="../case-studies/index.html" class="site-footer__link">Case Studies</a></li>
+            <li><a href="../skills.html" class="site-footer__link">Skills</a></li>
+            <li><a href="index.html" class="site-footer__link">Blog</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Contact</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
-            <li class="mb-2"><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
-            <li class="mb-2"><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+        <div class="site-footer__contact">
+          <h6 class="site-footer__heading">Contact</h6>
+          <ul class="site-footer__list">
+            <li><a href="mailto:jmutchnik21@gmail.com" class="site-footer__link"><i class="bi bi-envelope me-2"></i>Email</a></li>
+            <li><a href="tel:+18477679719" class="site-footer__link"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
+            <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__link"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <p class="text-center mb-0 small">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Mobile Menu JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const siteNav = document.getElementById('site-nav');
+    const siteHeader = document.getElementById('site-header');
+
+    if (mobileToggle && siteNav) {
+      mobileToggle.addEventListener('click', function() {
+        this.classList.toggle('is-active');
+        siteNav.classList.toggle('is-open');
+        document.body.classList.toggle('menu-open');
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = siteNav.querySelectorAll('.site-nav__link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('is-active');
+          siteNav.classList.remove('is-open');
+          document.body.classList.remove('menu-open');
+        });
+      });
+    }
+
+    // Header scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 100) {
+        siteHeader.classList.add('site-header--scrolled');
+      } else {
+        siteHeader.classList.remove('site-header--scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+
+  <!-- Scroll Reveal JavaScript -->
+  <script>
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add('is-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>

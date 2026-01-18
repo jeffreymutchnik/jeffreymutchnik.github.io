@@ -5,669 +5,886 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative Work - Jeffrey Mutchnik's design and copywriting portfolio showcasing B2B healthcare marketing assets.">
   <title>Creative Work - Jeffrey Mutchnik</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-  <link rel="stylesheet" href="assets/css/portfolio.css">
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Jeffrey Mutchnik</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="case-studies/index.html">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link active" href="creative-work.html">Creative Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Page Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <h1 class="mb-3">Creative Work</h1>
-      <p class="lead mb-0">Design and copywriting samples from B2B healthcare marketing campaigns.</p>
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="assets/css/design-system.css">
+
+  <style>
+    /* Gallery-specific styles */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+
+    @media (max-width: 991px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .gallery-item {
+      transition: opacity var(--duration-normal) var(--ease-out);
+    }
+
+    .gallery-item.hidden {
+      display: none;
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--surface-elevated);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--duration-normal) var(--ease-out);
+      aspect-ratio: 1;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--duration-normal) var(--ease-out);
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-4);
+      background: linear-gradient(to top, rgba(13, 13, 15, 0.9), transparent);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-2);
+      opacity: 0;
+      transition: opacity var(--duration-normal) var(--ease-out);
+    }
+
+    .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-title {
+      color: white;
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+    }
+
+    .gallery-link {
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Filter button styles */
+    .filter-section {
+      background: var(--surface-secondary);
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--border-primary);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+    }
+
+    .filter-label {
+      color: var(--text-tertiary);
+      font-size: var(--text-sm);
+      margin-right: var(--space-2);
+    }
+
+    .filter-btn {
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      border: 1px solid var(--border-primary);
+      background: var(--surface-elevated);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-out);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--color-accent-500);
+      color: var(--color-accent-500);
+    }
+
+    .filter-btn.active {
+      background: var(--color-primary-900);
+      color: white;
+      border-color: var(--color-primary-900);
+    }
+
+    .type-filter-btn {
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      border: 1px solid var(--border-secondary);
+      background: transparent;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-out);
+    }
+
+    .type-filter-btn:hover {
+      border-color: var(--color-accent-500);
+      color: var(--color-accent-500);
+    }
+
+    .type-filter-btn.active {
+      background: var(--color-accent-500);
+      color: white;
+      border-color: var(--color-accent-500);
+    }
+
+    /* Company badge colors */
+    .badge-patientiq {
+      background: var(--color-primary-800);
+      color: white;
+    }
+
+    .badge-cliexa {
+      background: #2a9d8f;
+      color: white;
+    }
+
+    .badge-ambience {
+      background: #e9c46a;
+      color: var(--color-primary-900);
+    }
+  </style>
+</head>
+<body class="page-transition">
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="site-header site-header--scrolled" id="site-header">
+    <div class="site-header__container">
+      <a class="site-logo" href="index.html">Jeffrey Mutchnik</a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-toggle">
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="resume.html">Resume</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="case-studies/index.html">Case Studies</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="skills.html">Skills</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="projects.html">Projects</a></li>
+          <li class="site-nav__item"><a class="site-nav__link is-active" href="creative-work.html">Creative Work</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="blog/index.html">Blog</a></li>
+        </ul>
+        <div class="site-nav__cta">
+          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Stats -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">50+</div>
-          <div class="stat-label">Marketing Assets</div>
-        </div>
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">3</div>
-          <div class="stat-label">Companies</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">5+</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">B2B</div>
-          <div class="stat-label">Healthcare Focus</div>
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="page-header__container">
+        <div class="page-header__content text-center mx-auto">
+          <span class="text-overline mb-3 d-block">Design Portfolio</span>
+          <h1 class="page-header__title">Creative Work</h1>
+          <p class="page-header__description">Design and copywriting samples from B2B healthcare marketing campaigns.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Filter Bar -->
-  <section class="section pb-0">
-    <div class="container">
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-        <span class="text-muted me-2 align-self-center">Filter by company:</span>
-        <button class="btn btn-sm btn-primary filter-btn active" data-filter="all">All Work</button>
-        <button class="btn btn-sm btn-outline-primary filter-btn" data-filter="patientiq">PatientIQ</button>
-        <button class="btn btn-sm btn-outline-primary filter-btn" data-filter="cliexa">cliexa</button>
-        <button class="btn btn-sm btn-outline-primary filter-btn" data-filter="ambience">Ambience</button>
+    <!-- Stats -->
+    <section class="stats-section reveal">
+      <div class="stats-section__container">
+        <div class="stat-item">
+          <span class="stat-item__value">50+</span>
+          <span class="stat-item__label">Marketing Assets</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__value">3</span>
+          <span class="stat-item__label">Companies</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__value">5+</span>
+          <span class="stat-item__label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__value">B2B</span>
+          <span class="stat-item__label">Healthcare Focus</span>
+        </div>
       </div>
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-        <span class="text-muted me-2 align-self-center">Filter by type:</span>
-        <button class="btn btn-sm btn-outline-secondary type-filter-btn active" data-type="all">All Types</button>
-        <button class="btn btn-sm btn-outline-secondary type-filter-btn" data-type="ads">Ads & Social</button>
-        <button class="btn btn-sm btn-outline-secondary type-filter-btn" data-type="content">Content & Whitepapers</button>
-        <button class="btn btn-sm btn-outline-secondary type-filter-btn" data-type="email">Email & Events</button>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-section reveal">
+      <div class="container-wide">
+        <div class="filter-group mb-4">
+          <span class="filter-label">Filter by company:</span>
+          <button class="filter-btn active" data-filter="all">All Work</button>
+          <button class="filter-btn" data-filter="patientiq">PatientIQ</button>
+          <button class="filter-btn" data-filter="cliexa">cliexa</button>
+          <button class="filter-btn" data-filter="ambience">Ambience</button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Filter by type:</span>
+          <button class="type-filter-btn active" data-type="all">All Types</button>
+          <button class="type-filter-btn" data-type="ads">Ads & Social</button>
+          <button class="type-filter-btn" data-type="content">Content & Whitepapers</button>
+          <button class="type-filter-btn" data-type="email">Email & Events</button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Gallery Grid -->
-  <section class="section pt-3">
-    <div class="container">
-      <div class="row g-3" id="gallery-grid">
+    <!-- Gallery Grid -->
+    <section class="section">
+      <div class="container-wide">
+        <div class="gallery-grid" id="gallery-grid">
 
-        <!-- PatientIQ Assets -->
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/sponsored-ad-1.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sponsored Ad">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/sponsored-ad-1.png" class="img-fluid" alt="PatientIQ Sponsored Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Sponsored Ad</span>
+          <!-- PatientIQ Assets -->
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/sponsored-ad-1.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sponsored Ad">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/sponsored-ad-1.png" alt="PatientIQ Sponsored Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Sponsored Ad</span>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/sponsored-ad-2.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sponsored Ad 2">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/sponsored-ad-2.png" alt="PatientIQ Sponsored Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Sponsored Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/sponsored-ad-3.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sponsored Ad 3">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/sponsored-ad-3.png" alt="PatientIQ Sponsored Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Sponsored Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/sample-sponsored-ad-1.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sample Ad Creative">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/sample-sponsored-ad-1.png" alt="PatientIQ Sample Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Sample Ad Creative</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/sample-sponsored-ad-2.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sample Ad 2">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/sample-sponsored-ad-2.png" alt="PatientIQ Sample Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Sample Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/build-vs-buy-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Build vs Buy Campaign">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/build-vs-buy-ad.png" alt="Build vs Buy Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Build vs Buy Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/linkedin-ads.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - LinkedIn Ad Series">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/linkedin-ads.png" alt="LinkedIn Ads">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">LinkedIn Ad Series</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/customer-highlight-template.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Customer Highlight Template">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/customer-highlight-template.png" alt="Customer Highlight">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Customer Highlight</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/employee-spotlight-1.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Employee Spotlight">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/employee-spotlight-1.png" alt="Employee Spotlight">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Employee Spotlight</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/press-release-dmos.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - DMOS Press Release Graphic">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/press-release-dmos.png" alt="DMOS Press Release">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Press Release Graphic</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/press-release-uc-health.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - UC Health Press Release">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/press-release-uc-health.png" alt="UC Health Press Release">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Press Release Graphic</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="content">
+            <a href="assets/images/work/patientiq/whitepaper-build-vs-buy.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Build vs Buy Whitepaper">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/whitepaper-build-vs-buy.png" alt="Build vs Buy Whitepaper">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Whitepaper Cover</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="content">
+            <a href="assets/images/work/patientiq/whitepaper-pro-compliance.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - PRO Compliance Whitepaper">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/whitepaper-pro-compliance.png" alt="PRO Compliance Whitepaper">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Whitepaper Cover</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="content">
+            <a href="assets/images/work/patientiq/proms-guide-hip.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Total Hip Replacement Guide">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/proms-guide-hip.png" alt="Hip Replacement Guide">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">PROMs Guide</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="content">
+            <a href="assets/images/work/patientiq/proms-guide-knee.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Total Knee Replacement Guide">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/proms-guide-knee.png" alt="Knee Replacement Guide">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">PROMs Guide</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="email">
+            <a href="assets/images/work/patientiq/aaos-email-graphic.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - AAOS Email Campaign">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/aaos-email-graphic.png" alt="AAOS Email">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">AAOS Email</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="email">
+            <a href="assets/images/work/patientiq/aaos-restaurant-flyer.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - AAOS Event Flyer">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/aaos-restaurant-flyer.png" alt="AAOS Restaurant Flyer">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Event Flyer</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/nebh-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - NEBH Customer Ad">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/nebh-ad.png" alt="NEBH Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Customer Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/uc-health-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - UC Health Customer Ad">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/uc-health-ad.png" alt="UC Health Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Customer Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="patientiq" data-type="ads">
+            <a href="assets/images/work/patientiq/onkos-surgical-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Onkos Surgical Customer Ad">
+              <div class="gallery-card">
+                <img src="assets/images/work/patientiq/onkos-surgical-ad.png" alt="Onkos Surgical Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-patientiq">PatientIQ</span>
+                  <span class="gallery-title">Customer Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- cliexa Assets -->
+          <div class="gallery-item reveal" data-company="cliexa" data-type="ads">
+            <a href="assets/images/work/cliexa/linkedin-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - LinkedIn Company Banner">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/linkedin-banner.png" alt="cliexa LinkedIn Banner">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">LinkedIn Banner</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="ads">
+            <a href="assets/images/work/cliexa/facebook-campaign-1.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Facebook Campaign">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/facebook-campaign-1.jpg" alt="cliexa Facebook Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Facebook Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="ads">
+            <a href="assets/images/work/cliexa/facebook-campaign-2.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Facebook Campaign 2">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/facebook-campaign-2.jpg" alt="cliexa Facebook Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Facebook Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="ads">
+            <a href="assets/images/work/cliexa/facebook-campaign-3.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Facebook Campaign 3">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/facebook-campaign-3.jpg" alt="cliexa Facebook Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Facebook Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="ads">
+            <a href="assets/images/work/cliexa/navigater-social-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - navigatER Social Banner">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/navigater-social-banner.png" alt="navigatER Social Banner">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">navigatER Banner</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="ads">
+            <a href="assets/images/work/cliexa/navigater-linkedin-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - navigatER LinkedIn Banner">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/navigater-linkedin-banner.png" alt="navigatER LinkedIn">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">navigatER LinkedIn</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="ads">
+            <a href="assets/images/work/cliexa/navigater-social-content.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - navigatER Social Content">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/navigater-social-content.jpg" alt="navigatER Social">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Social Content</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="email">
+            <a href="assets/images/work/cliexa/athenahealth-email-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - athenahealth Email Banner">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/athenahealth-email-banner.png" alt="athenahealth Email Banner">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Email Banner</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="email">
+            <a href="assets/images/work/cliexa/covid-screening-campaign.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - COVID Screening Campaign">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/covid-screening-campaign.png" alt="COVID Screening Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">COVID Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="content">
+            <a href="assets/images/work/cliexa/rpm-changing-game.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - RPM Changing the Game">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/rpm-changing-game.png" alt="RPM Changing the Game">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">RPM Content</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="content">
+            <a href="assets/images/work/cliexa/global-health-digital.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Global Health Goes Digital">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/global-health-digital.png" alt="Global Health Digital">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Blog Content</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="content">
+            <a href="assets/images/work/cliexa/athenahealth-marketplace-blog.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - athenahealth Marketplace Blog">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/athenahealth-marketplace-blog.jpg" alt="athenahealth Marketplace">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Blog Post</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="email">
+            <a href="assets/images/work/cliexa/healthcon-2019.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - HealthCon 2019">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/healthcon-2019.png" alt="HealthCon 2019">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Event Graphic</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="cliexa" data-type="email">
+            <a href="assets/images/work/cliexa/afib-focus-group.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - AF Focus Group Flyer">
+              <div class="gallery-card">
+                <img src="assets/images/work/cliexa/afib-focus-group.jpg" alt="AF Focus Group">
+                <div class="gallery-overlay">
+                  <span class="badge badge-cliexa">cliexa</span>
+                  <span class="gallery-title">Event Flyer</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Ambience Assets -->
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-ad-1.png" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Ad 1">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-ad-1.png" alt="Ambience LinkedIn Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-ad-2.png" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Ad 2">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-ad-2.png" alt="Ambience LinkedIn Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-ad-3.png" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Ad 3">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-ad-3.png" alt="Ambience LinkedIn Ad">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Ad</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-campaign-1.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-campaign-1.jpg" alt="Ambience LinkedIn Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-campaign-2.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 2">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-campaign-2.jpg" alt="Ambience LinkedIn Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-campaign-3.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 3">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-campaign-3.jpg" alt="Ambience LinkedIn Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-campaign-4.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 4">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-campaign-4.jpg" alt="Ambience LinkedIn Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-campaign-5.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 5">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-campaign-5.jpg" alt="Ambience LinkedIn Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="ads">
+            <a href="assets/images/work/ambience/linkedin-campaign-6.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 6">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/linkedin-campaign-6.jpg" alt="Ambience LinkedIn Campaign">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">LinkedIn Campaign</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="gallery-item reveal" data-company="ambience" data-type="content">
+            <a href="assets/images/work/ambience/lead-qualification-flowchart.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - Lead Qualification Flowchart">
+              <div class="gallery-card">
+                <img src="assets/images/work/ambience/lead-qualification-flowchart.jpg" alt="Lead Qualification Flowchart">
+                <div class="gallery-overlay">
+                  <span class="badge badge-ambience">Ambience</span>
+                  <span class="gallery-title">Lead Flowchart</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
         </div>
 
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/sponsored-ad-2.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sponsored Ad 2">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/sponsored-ad-2.png" class="img-fluid" alt="PatientIQ Sponsored Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Sponsored Ad</span>
-              </div>
-            </div>
-          </a>
+        <!-- CTA -->
+        <div class="card card-featured text-center mt-12 reveal">
+          <div class="p-4">
+            <h3 class="text-h3 mb-3">See the Strategy Behind the Work</h3>
+            <p class="text-secondary mb-4">For detailed case studies explaining the strategy, approach, and results, explore the case studies section.</p>
+            <a href="case-studies/index.html" class="btn btn-primary btn-lg">View Case Studies</a>
+          </div>
         </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/sponsored-ad-3.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sponsored Ad 3">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/sponsored-ad-3.png" class="img-fluid" alt="PatientIQ Sponsored Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Sponsored Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/sample-sponsored-ad-1.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sample Ad Creative">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/sample-sponsored-ad-1.png" class="img-fluid" alt="PatientIQ Sample Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Sample Ad Creative</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/sample-sponsored-ad-2.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Sample Ad 2">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/sample-sponsored-ad-2.png" class="img-fluid" alt="PatientIQ Sample Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Sample Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/build-vs-buy-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Build vs Buy Campaign">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/build-vs-buy-ad.png" class="img-fluid" alt="Build vs Buy Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Build vs Buy Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/linkedin-ads.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - LinkedIn Ad Series">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/linkedin-ads.png" class="img-fluid" alt="LinkedIn Ads">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">LinkedIn Ad Series</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/customer-highlight-template.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Customer Highlight Template">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/customer-highlight-template.png" class="img-fluid" alt="Customer Highlight">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Customer Highlight</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/employee-spotlight-1.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Employee Spotlight">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/employee-spotlight-1.png" class="img-fluid" alt="Employee Spotlight">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Employee Spotlight</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/press-release-dmos.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - DMOS Press Release Graphic">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/press-release-dmos.png" class="img-fluid" alt="DMOS Press Release">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Press Release Graphic</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/press-release-uc-health.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - UC Health Press Release">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/press-release-uc-health.png" class="img-fluid" alt="UC Health Press Release">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Press Release Graphic</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="content">
-          <a href="assets/images/work/patientiq/whitepaper-build-vs-buy.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Build vs Buy Whitepaper">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/whitepaper-build-vs-buy.png" class="img-fluid" alt="Build vs Buy Whitepaper">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Whitepaper Cover</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="content">
-          <a href="assets/images/work/patientiq/whitepaper-pro-compliance.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - PRO Compliance Whitepaper">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/whitepaper-pro-compliance.png" class="img-fluid" alt="PRO Compliance Whitepaper">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Whitepaper Cover</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="content">
-          <a href="assets/images/work/patientiq/proms-guide-hip.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Total Hip Replacement Guide">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/proms-guide-hip.png" class="img-fluid" alt="Hip Replacement Guide">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">PROMs Guide</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="content">
-          <a href="assets/images/work/patientiq/proms-guide-knee.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Total Knee Replacement Guide">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/proms-guide-knee.png" class="img-fluid" alt="Knee Replacement Guide">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">PROMs Guide</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="email">
-          <a href="assets/images/work/patientiq/aaos-email-graphic.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - AAOS Email Campaign">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/aaos-email-graphic.png" class="img-fluid" alt="AAOS Email">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">AAOS Email</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="email">
-          <a href="assets/images/work/patientiq/aaos-restaurant-flyer.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - AAOS Event Flyer">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/aaos-restaurant-flyer.png" class="img-fluid" alt="AAOS Restaurant Flyer">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Event Flyer</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/nebh-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - NEBH Customer Ad">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/nebh-ad.png" class="img-fluid" alt="NEBH Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Customer Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/uc-health-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - UC Health Customer Ad">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/uc-health-ad.png" class="img-fluid" alt="UC Health Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Customer Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="patientiq" data-type="ads">
-          <a href="assets/images/work/patientiq/onkos-surgical-ad.png" class="glightbox gallery-link" data-gallery="patientiq" data-title="PatientIQ - Onkos Surgical Customer Ad">
-            <div class="gallery-card">
-              <img src="assets/images/work/patientiq/onkos-surgical-ad.png" class="img-fluid" alt="Onkos Surgical Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-primary">PatientIQ</span>
-                <span class="gallery-title">Customer Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- cliexa Assets -->
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="ads">
-          <a href="assets/images/work/cliexa/linkedin-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - LinkedIn Company Banner">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/linkedin-banner.png" class="img-fluid" alt="cliexa LinkedIn Banner">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">LinkedIn Banner</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="ads">
-          <a href="assets/images/work/cliexa/facebook-campaign-1.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Facebook Campaign">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/facebook-campaign-1.jpg" class="img-fluid" alt="cliexa Facebook Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Facebook Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="ads">
-          <a href="assets/images/work/cliexa/facebook-campaign-2.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Facebook Campaign 2">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/facebook-campaign-2.jpg" class="img-fluid" alt="cliexa Facebook Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Facebook Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="ads">
-          <a href="assets/images/work/cliexa/facebook-campaign-3.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Facebook Campaign 3">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/facebook-campaign-3.jpg" class="img-fluid" alt="cliexa Facebook Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Facebook Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="ads">
-          <a href="assets/images/work/cliexa/navigater-social-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - navigatER Social Banner">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/navigater-social-banner.png" class="img-fluid" alt="navigatER Social Banner">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">navigatER Banner</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="ads">
-          <a href="assets/images/work/cliexa/navigater-linkedin-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - navigatER LinkedIn Banner">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/navigater-linkedin-banner.png" class="img-fluid" alt="navigatER LinkedIn">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">navigatER LinkedIn</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="ads">
-          <a href="assets/images/work/cliexa/navigater-social-content.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - navigatER Social Content">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/navigater-social-content.jpg" class="img-fluid" alt="navigatER Social">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Social Content</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="email">
-          <a href="assets/images/work/cliexa/athenahealth-email-banner.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - athenahealth Email Banner">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/athenahealth-email-banner.png" class="img-fluid" alt="athenahealth Email Banner">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Email Banner</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="email">
-          <a href="assets/images/work/cliexa/covid-screening-campaign.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - COVID Screening Campaign">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/covid-screening-campaign.png" class="img-fluid" alt="COVID Screening Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">COVID Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="content">
-          <a href="assets/images/work/cliexa/rpm-changing-game.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - RPM Changing the Game">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/rpm-changing-game.png" class="img-fluid" alt="RPM Changing the Game">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">RPM Content</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="content">
-          <a href="assets/images/work/cliexa/global-health-digital.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - Global Health Goes Digital">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/global-health-digital.png" class="img-fluid" alt="Global Health Digital">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Blog Content</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="content">
-          <a href="assets/images/work/cliexa/athenahealth-marketplace-blog.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - athenahealth Marketplace Blog">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/athenahealth-marketplace-blog.jpg" class="img-fluid" alt="athenahealth Marketplace">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Blog Post</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="email">
-          <a href="assets/images/work/cliexa/healthcon-2019.png" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - HealthCon 2019">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/healthcon-2019.png" class="img-fluid" alt="HealthCon 2019">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Event Graphic</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="cliexa" data-type="email">
-          <a href="assets/images/work/cliexa/afib-focus-group.jpg" class="glightbox gallery-link" data-gallery="cliexa" data-title="cliexa - AF Focus Group Flyer">
-            <div class="gallery-card">
-              <img src="assets/images/work/cliexa/afib-focus-group.jpg" class="img-fluid" alt="AF Focus Group">
-              <div class="gallery-overlay">
-                <span class="badge bg-success">cliexa</span>
-                <span class="gallery-title">Event Flyer</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Ambience Assets -->
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-ad-1.png" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Ad 1">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-ad-1.png" class="img-fluid" alt="Ambience LinkedIn Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-ad-2.png" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Ad 2">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-ad-2.png" class="img-fluid" alt="Ambience LinkedIn Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-ad-3.png" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Ad 3">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-ad-3.png" class="img-fluid" alt="Ambience LinkedIn Ad">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Ad</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-campaign-1.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-campaign-1.jpg" class="img-fluid" alt="Ambience LinkedIn Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-campaign-2.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 2">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-campaign-2.jpg" class="img-fluid" alt="Ambience LinkedIn Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-campaign-3.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 3">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-campaign-3.jpg" class="img-fluid" alt="Ambience LinkedIn Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-campaign-4.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 4">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-campaign-4.jpg" class="img-fluid" alt="Ambience LinkedIn Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-campaign-5.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 5">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-campaign-5.jpg" class="img-fluid" alt="Ambience LinkedIn Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="ads">
-          <a href="assets/images/work/ambience/linkedin-campaign-6.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - LinkedIn Campaign 6">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/linkedin-campaign-6.jpg" class="img-fluid" alt="Ambience LinkedIn Campaign">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">LinkedIn Campaign</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-company="ambience" data-type="content">
-          <a href="assets/images/work/ambience/lead-qualification-flowchart.jpg" class="glightbox gallery-link" data-gallery="ambience" data-title="Ambience - Lead Qualification Flowchart">
-            <div class="gallery-card">
-              <img src="assets/images/work/ambience/lead-qualification-flowchart.jpg" class="img-fluid" alt="Lead Qualification Flowchart">
-              <div class="gallery-overlay">
-                <span class="badge bg-warning text-dark">Ambience</span>
-                <span class="gallery-title">Lead Flowchart</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section section-alt">
-    <div class="container text-center">
-      <h2 class="mb-3">See the Strategy Behind the Work</h2>
-      <p class="text-muted mb-4">For detailed case studies explaining the strategy, approach, and results, explore the case studies section.</p>
-      <a href="case-studies/index.html" class="btn btn-primary btn-lg">View Case Studies</a>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h5 class="mb-3">Jeffrey Mutchnik</h5>
-          <p class="mb-0">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <div class="site-footer__logo">Jeffrey Mutchnik</div>
+          <p class="site-footer__tagline">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology. Specializing in HubSpot, Salesforce, and marketing automation.</p>
         </div>
-        <div class="col-6 col-lg-3 offset-lg-1">
-          <h6 class="mb-3">Quick Links</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="resume.html">Resume</a></li>
-            <li class="mb-2"><a href="case-studies/index.html">Case Studies</a></li>
-            <li class="mb-2"><a href="skills.html">Skills</a></li>
-            <li class="mb-2"><a href="blog/index.html">Blog</a></li>
+        <div>
+          <h6 class="site-footer__column-title">Navigation</h6>
+          <ul class="site-footer__links">
+            <li><a href="index.html" class="site-footer__link">Home</a></li>
+            <li><a href="resume.html" class="site-footer__link">Resume</a></li>
+            <li><a href="case-studies/index.html" class="site-footer__link">Case Studies</a></li>
+            <li><a href="skills.html" class="site-footer__link">Skills</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Contact</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
-            <li class="mb-2"><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
-            <li class="mb-2"><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+        <div>
+          <h6 class="site-footer__column-title">More</h6>
+          <ul class="site-footer__links">
+            <li><a href="projects.html" class="site-footer__link">Projects</a></li>
+            <li><a href="creative-work.html" class="site-footer__link">Creative Work</a></li>
+            <li><a href="blog/index.html" class="site-footer__link">Blog</a></li>
+            <li><a href="contact.html" class="site-footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="site-footer__column-title">Contact</h6>
+          <ul class="site-footer__links">
+            <li><a href="mailto:jmutchnik21@gmail.com" class="site-footer__link"><i class="bi bi-envelope me-2"></i>Email</a></li>
+            <li><a href="tel:+18477679719" class="site-footer__link"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
+            <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__link"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <p class="text-center mb-0 small">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+        <div class="site-footer__social">
+          <a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__social-link" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="mailto:jmutchnik21@gmail.com" class="site-footer__social-link" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const siteNav = document.getElementById('site-nav');
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('is-active');
+      siteNav.classList.toggle('is-open');
+    });
+
     // Initialize GLightbox
     const lightbox = GLightbox({
       touchNavigation: true,
@@ -686,19 +903,15 @@
         const type = item.dataset.type;
         const companyMatch = activeCompany === 'all' || company === activeCompany;
         const typeMatch = activeType === 'all' || type === activeType;
-        item.style.display = (companyMatch && typeMatch) ? '' : 'none';
+        item.classList.toggle('hidden', !(companyMatch && typeMatch));
       });
     }
 
     // Company filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.remove('active', 'btn-primary');
-          b.classList.add('btn-outline-primary');
-        });
-        btn.classList.remove('btn-outline-primary');
-        btn.classList.add('active', 'btn-primary');
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
         activeCompany = btn.dataset.filter;
         filterGallery();
       });
@@ -707,9 +920,7 @@
     // Type filter buttons
     document.querySelectorAll('.type-filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.type-filter-btn').forEach(b => {
-          b.classList.remove('active');
-        });
+        document.querySelectorAll('.type-filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         activeType = btn.dataset.type;
         filterGallery();
@@ -723,6 +934,18 @@
       const filterBtn = document.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
       if (filterBtn) filterBtn.click();
     }
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>

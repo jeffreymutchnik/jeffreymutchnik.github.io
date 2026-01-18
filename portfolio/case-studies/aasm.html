@@ -5,298 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AASM Case Study - How Jeffrey Mutchnik achieved 1,200% webinar growth and rebuilt 8+ web properties for the American Academy of Sleep Medicine.">
   <title>AASM Case Study - Jeffrey Mutchnik</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/portfolio.css">
+  <link rel="stylesheet" href="../assets/css/design-system.css">
 </head>
 <body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">Jeffrey Mutchnik</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <header class="site-header site-header--scrolled" id="site-header">
+    <div class="site-header__container">
+      <a class="site-logo" href="../index.html">Jeffrey Mutchnik</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-toggle">
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link active" href="index.html">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="../skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="../creative-work.html">Creative Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+      <nav class="site-nav" id="site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="../index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../resume.html">Resume</a></li>
+          <li class="site-nav__item"><a class="site-nav__link is-active" href="index.html">Case Studies</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../skills.html">Skills</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../projects.html">Projects</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../creative-work.html">Creative Work</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../blog/index.html">Blog</a></li>
         </ul>
-      </div>
+        <div class="site-nav__cta">
+          <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <!-- Case Study Header -->
-  <header class="page-header text-center">
+  <header class="page-header text-center" id="main-content">
     <div class="container">
-      <span class="badge bg-light text-primary mb-3 px-3 py-2">Enterprise | Professional Organization</span>
-      <h1 class="mb-3">American Academy of Sleep Medicine</h1>
-      <p class="lead mb-0">Enterprise Digital Transformation for 13,000+ Member Organization</p>
+      <span class="text-overline">Enterprise | Professional Organization</span>
+      <h1>American Academy of Sleep Medicine</h1>
+      <p class="lead">Enterprise Digital Transformation for 13,000+ Member Organization</p>
     </div>
   </header>
 
   <!-- Results Summary -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">1,200%</div>
-          <div class="stat-label">Webinar Registration Growth</div>
-        </div>
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">8+</div>
-          <div class="stat-label">Web Properties Rebuilt</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">$500K+</div>
-          <div class="stat-label">E-commerce Annual Sales</div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">13,000+</div>
-          <div class="stat-label">Members Served</div>
-        </div>
+  <section class="stats-section reveal">
+    <div class="stats-section__container">
+      <div class="stat-item">
+        <div class="stat-item__value">1,200%</div>
+        <div class="stat-item__label">Webinar Registration Growth</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__value">8+</div>
+        <div class="stat-item__label">Web Properties Rebuilt</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__value">$500K+</div>
+        <div class="stat-item__label">E-commerce Annual Sales</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__value">13,000+</div>
+        <div class="stat-item__label">Members Served</div>
       </div>
     </div>
   </section>
 
   <!-- Case Study Content -->
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <!-- Challenge -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-exclamation-triangle text-primary me-2"></i>The Challenge</h2>
-            <p class="text-muted">The American Academy of Sleep Medicine (AASM) is the premier professional organization for sleep medicine, serving 13,000+ physicians and healthcare professionals. As Marketing Technology Manager, I faced several challenges:</p>
-            <ul class="text-muted">
-              <li>Fragmented web presence across 8+ properties (aasm.org, sleepmeeting.org, sleepeducation.org, etc.)</li>
-              <li>Legacy CRM systems with disconnected member data</li>
-              <li>Underperforming continuing medical education (CME) webinar program</li>
-              <li>No unified e-commerce solution for educational resources and accreditation materials</li>
-              <li>Team of 3 specialists needing structured marketing operations processes</li>
-            </ul>
+      <div class="content-wrapper">
+        <!-- Challenge -->
+        <div class="content-block reveal">
+          <div class="section-header">
+            <span class="accent-line"></span>
+            <i class="bi bi-exclamation-triangle"></i>
+            <h2>The Challenge</h2>
           </div>
+          <p>The American Academy of Sleep Medicine (AASM) is the premier professional organization for sleep medicine, serving 13,000+ physicians and healthcare professionals. As Marketing Technology Manager, I faced several challenges:</p>
+          <ul>
+            <li>Fragmented web presence across 8+ properties (aasm.org, sleepmeeting.org, sleepeducation.org, etc.)</li>
+            <li>Legacy CRM systems with disconnected member data</li>
+            <li>Underperforming continuing medical education (CME) webinar program</li>
+            <li>No unified e-commerce solution for educational resources and accreditation materials</li>
+            <li>Team of 3 specialists needing structured marketing operations processes</li>
+          </ul>
+        </div>
 
-          <!-- Approach -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-gear text-primary me-2"></i>The Approach</h2>
-            <p class="text-muted mb-4">I led a comprehensive digital transformation spanning CRM, web properties, e-commerce, and marketing automation:</p>
+        <!-- Approach -->
+        <div class="content-block reveal">
+          <div class="section-header">
+            <span class="accent-line"></span>
+            <i class="bi bi-gear"></i>
+            <h2>The Approach</h2>
+          </div>
+          <p>I led a comprehensive digital transformation spanning CRM, web properties, e-commerce, and marketing automation:</p>
 
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-database me-2"></i>Enterprise HubSpot Migration</h5>
-                <ul class="text-muted mb-0">
-                  <li>Led complete CRM migration to HubSpot Marketing Hub with 100% data integrity</li>
-                  <li>Designed lifecycle stages, custom properties, and reporting dashboards for membership engagement</li>
-                  <li>Built 70+ automated workflows including lead nurturing, webinar registration, and member onboarding</li>
-                  <li>Expanded to HubSpot Service Hub with AI-powered chatbot and ticketing workflows</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-globe me-2"></i>Web Property Modernization</h5>
-                <ul class="text-muted mb-0">
-                  <li>Rebuilt 8+ public web properties with consistent branding and improved user experience</li>
-                  <li>Integrated HubSpot across all properties for unified data collection</li>
-                  <li>Improved provider education resources and lead capture mechanisms</li>
-                  <li>Cross-functional collaboration with IT, product, creative, and customer success teams</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-cart3 me-2"></i>E-commerce Platform</h5>
-                <ul class="text-muted mb-0">
-                  <li>Built Shopify e-commerce platform for clinical practice resources and accreditation materials</li>
-                  <li>Implemented payment processing and inventory management</li>
-                  <li>Integrated with HubSpot CRM for unified customer view</li>
-                  <li>Generated $500K+ in annual sales</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-camera-video me-2"></i>Webinar & Event Marketing</h5>
-                <ul class="text-muted mb-0">
-                  <li>Transformed CME webinar program with automated nurture campaigns</li>
-                  <li>Multi-brand email marketing optimization across different AASM properties</li>
-                  <li>Achieved record-breaking attendance for SLEEP annual conference (largest sleep medicine event in North America)</li>
-                </ul>
-              </div>
+          <div class="card card-lg feature-card reveal">
+            <div class="card__body">
+              <h5 class="card__title"><i class="bi bi-database"></i> Enterprise HubSpot Migration</h5>
+              <ul>
+                <li>Led complete CRM migration to HubSpot Marketing Hub with 100% data integrity</li>
+                <li>Designed lifecycle stages, custom properties, and reporting dashboards for membership engagement</li>
+                <li>Built 70+ automated workflows including lead nurturing, webinar registration, and member onboarding</li>
+                <li>Expanded to HubSpot Service Hub with AI-powered chatbot and ticketing workflows</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Results -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-graph-up-arrow text-primary me-2"></i>The Results</h2>
-            <div class="row g-3">
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">1,200%</div>
-                    <div class="metric-label">Webinar Growth YoY</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">8+</div>
-                    <div class="metric-label">Web Properties</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">$500K+</div>
-                    <div class="metric-label">E-commerce Revenue</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">70+</div>
-                    <div class="metric-label">Automated Workflows</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">100%</div>
-                    <div class="metric-label">Data Migration Integrity</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">30%</div>
-                    <div class="metric-label">Ticket Volume Reduction</div>
-                  </div>
-                </div>
-              </div>
+          <div class="card card-lg feature-card reveal">
+            <div class="card__body">
+              <h5 class="card__title"><i class="bi bi-globe"></i> Web Property Modernization</h5>
+              <ul>
+                <li>Rebuilt 8+ public web properties with consistent branding and improved user experience</li>
+                <li>Integrated HubSpot across all properties for unified data collection</li>
+                <li>Improved provider education resources and lead capture mechanisms</li>
+                <li>Cross-functional collaboration with IT, product, creative, and customer success teams</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Technologies -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-tools text-primary me-2"></i>Technologies Used</h2>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-primary">HubSpot Marketing Hub</span>
-              <span class="badge bg-primary">HubSpot Service Hub</span>
-              <span class="badge bg-primary">HubSpot AI Chatbot</span>
-              <span class="badge bg-primary">Shopify</span>
-              <span class="badge bg-light text-dark">Payment Processing (Stripe)</span>
-              <span class="badge bg-light text-dark">Google Analytics 4</span>
-              <span class="badge bg-light text-dark">Zoom Webinars</span>
-              <span class="badge bg-light text-dark">WordPress</span>
+          <div class="card card-lg feature-card reveal">
+            <div class="card__body">
+              <h5 class="card__title"><i class="bi bi-cart3"></i> E-commerce Platform</h5>
+              <ul>
+                <li>Built Shopify e-commerce platform for clinical practice resources and accreditation materials</li>
+                <li>Implemented payment processing and inventory management</li>
+                <li>Integrated with HubSpot CRM for unified customer view</li>
+                <li>Generated $500K+ in annual sales</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Key Learnings -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-lightbulb text-primary me-2"></i>Key Learnings</h2>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">Unified data drives personalization</h6>
-                    <p class="card-text text-muted small mb-0">Migrating to a single CRM enabled member journey mapping and personalized communications across all touchpoints.</p>
-                  </div>
-                </div>
+          <div class="card card-lg feature-card reveal">
+            <div class="card__body">
+              <h5 class="card__title"><i class="bi bi-camera-video"></i> Webinar & Event Marketing</h5>
+              <ul>
+                <li>Transformed CME webinar program with automated nurture campaigns</li>
+                <li>Multi-brand email marketing optimization across different AASM properties</li>
+                <li>Achieved record-breaking attendance for SLEEP annual conference (largest sleep medicine event in North America)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="content-block reveal">
+          <div class="section-header">
+            <span class="accent-line"></span>
+            <i class="bi bi-graph-up-arrow"></i>
+            <h2>The Results</h2>
+          </div>
+          <div class="results-grid">
+            <div class="card text-center reveal">
+              <div class="card__body">
+                <div class="metric-value">1,200%</div>
+                <div class="metric-label">Webinar Growth YoY</div>
               </div>
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">Automation multiplies impact</h6>
-                    <p class="card-text text-muted small mb-0">70+ workflows meant the team could focus on strategy while nurture sequences handled routine engagement.</p>
-                  </div>
-                </div>
+            </div>
+            <div class="card text-center reveal">
+              <div class="card__body">
+                <div class="metric-value">8+</div>
+                <div class="metric-label">Web Properties</div>
               </div>
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">Cross-functional alignment is essential</h6>
-                    <p class="card-text text-muted small mb-0">Success required close collaboration with IT, product, creative, and customer success—not just marketing initiatives.</p>
-                  </div>
-                </div>
+            </div>
+            <div class="card text-center reveal">
+              <div class="card__body">
+                <div class="metric-value">$500K+</div>
+                <div class="metric-label">E-commerce Revenue</div>
               </div>
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">AI enhances service capacity</h6>
-                    <p class="card-text text-muted small mb-0">The HubSpot Service Hub chatbot reduced ticket volume by 30%, letting the team focus on complex member needs.</p>
-                  </div>
-                </div>
+            </div>
+            <div class="card text-center reveal">
+              <div class="card__body">
+                <div class="metric-value">70+</div>
+                <div class="metric-label">Automated Workflows</div>
+              </div>
+            </div>
+            <div class="card text-center reveal">
+              <div class="card__body">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Data Migration Integrity</div>
+              </div>
+            </div>
+            <div class="card text-center reveal">
+              <div class="card__body">
+                <div class="metric-value">30%</div>
+                <div class="metric-label">Ticket Volume Reduction</div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Related Skills -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-link-45deg text-primary me-2"></i>Related Skills</h2>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">Marketing Automation</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">CRM Architecture</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">E-commerce</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">Team Management</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">Email Marketing</a>
+        <!-- Technologies -->
+        <div class="content-block reveal">
+          <div class="section-header">
+            <span class="accent-line"></span>
+            <i class="bi bi-tools"></i>
+            <h2>Technologies Used</h2>
+          </div>
+          <div class="badge-group">
+            <span class="badge badge--accent">HubSpot Marketing Hub</span>
+            <span class="badge badge--accent">HubSpot Service Hub</span>
+            <span class="badge badge--accent">HubSpot AI Chatbot</span>
+            <span class="badge badge--accent">Shopify</span>
+            <span class="badge">Payment Processing (Stripe)</span>
+            <span class="badge">Google Analytics 4</span>
+            <span class="badge">Zoom Webinars</span>
+            <span class="badge">WordPress</span>
+          </div>
+        </div>
+
+        <!-- Key Learnings -->
+        <div class="content-block reveal">
+          <div class="section-header">
+            <span class="accent-line"></span>
+            <i class="bi bi-lightbulb"></i>
+            <h2>Key Learnings</h2>
+          </div>
+          <div class="learnings-grid">
+            <div class="card feature-card reveal">
+              <div class="card__body">
+                <h6 class="card__title">Unified data drives personalization</h6>
+                <p class="card__text">Migrating to a single CRM enabled member journey mapping and personalized communications across all touchpoints.</p>
+              </div>
+            </div>
+            <div class="card feature-card reveal">
+              <div class="card__body">
+                <h6 class="card__title">Automation multiplies impact</h6>
+                <p class="card__text">70+ workflows meant the team could focus on strategy while nurture sequences handled routine engagement.</p>
+              </div>
+            </div>
+            <div class="card feature-card reveal">
+              <div class="card__body">
+                <h6 class="card__title">Cross-functional alignment is essential</h6>
+                <p class="card__text">Success required close collaboration with IT, product, creative, and customer success—not just marketing initiatives.</p>
+              </div>
+            </div>
+            <div class="card feature-card reveal">
+              <div class="card__body">
+                <h6 class="card__title">AI enhances service capacity</h6>
+                <p class="card__text">The HubSpot Service Hub chatbot reduced ticket volume by 30%, letting the team focus on complex member needs.</p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- CTA -->
-          <div class="text-center">
-            <a href="index.html" class="btn btn-primary btn-lg">View All Case Studies</a>
+        <!-- Related Skills -->
+        <div class="content-block reveal">
+          <div class="section-header">
+            <span class="accent-line"></span>
+            <i class="bi bi-link-45deg"></i>
+            <h2>Related Skills</h2>
           </div>
+          <div class="badge-group">
+            <a href="../skills.html" class="badge badge--accent">Marketing Automation</a>
+            <a href="../skills.html" class="badge badge--accent">CRM Architecture</a>
+            <a href="../skills.html" class="badge badge--accent">E-commerce</a>
+            <a href="../skills.html" class="badge badge--accent">Team Management</a>
+            <a href="../skills.html" class="badge badge--accent">Email Marketing</a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center reveal">
+          <a href="index.html" class="btn btn-primary btn-lg">View All Case Studies</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h5 class="mb-3">Jeffrey Mutchnik</h5>
-          <p class="mb-0">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <h5 class="site-footer__title">Jeffrey Mutchnik</h5>
+          <p class="site-footer__description">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
         </div>
-        <div class="col-6 col-lg-3 offset-lg-1">
-          <h6 class="mb-3">Quick Links</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="../resume.html">Resume</a></li>
-            <li class="mb-2"><a href="index.html">Case Studies</a></li>
-            <li class="mb-2"><a href="../skills.html">Skills</a></li>
-            <li class="mb-2"><a href="../blog/index.html">Blog</a></li>
+        <div class="site-footer__links">
+          <h6 class="site-footer__heading">Quick Links</h6>
+          <ul class="site-footer__list">
+            <li><a href="../resume.html" class="site-footer__link">Resume</a></li>
+            <li><a href="index.html" class="site-footer__link">Case Studies</a></li>
+            <li><a href="../skills.html" class="site-footer__link">Skills</a></li>
+            <li><a href="../blog/index.html" class="site-footer__link">Blog</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Contact</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
-            <li class="mb-2"><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
-            <li class="mb-2"><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+        <div class="site-footer__contact">
+          <h6 class="site-footer__heading">Contact</h6>
+          <ul class="site-footer__list">
+            <li><a href="mailto:jmutchnik21@gmail.com" class="site-footer__link"><i class="bi bi-envelope"></i> Email</a></li>
+            <li><a href="tel:+18477679719" class="site-footer__link"><i class="bi bi-telephone"></i> (847) 767-9719</a></li>
+            <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank" class="site-footer__link"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <p class="text-center mb-0 small">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Mobile Menu JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const siteNav = document.getElementById('site-nav');
+    const siteHeader = document.getElementById('site-header');
+
+    if (mobileToggle && siteNav) {
+      mobileToggle.addEventListener('click', function() {
+        this.classList.toggle('is-active');
+        siteNav.classList.toggle('is-open');
+        document.body.classList.toggle('menu-open');
+      });
+
+      // Close menu when clicking a link
+      const navLinks = siteNav.querySelectorAll('.site-nav__link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('is-active');
+          siteNav.classList.remove('is-open');
+          document.body.classList.remove('menu-open');
+        });
+      });
+    }
+
+    // Header scroll behavior
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 100) {
+        siteHeader.classList.add('site-header--scrolled');
+      } else {
+        siteHeader.classList.remove('site-header--scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add('is-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>

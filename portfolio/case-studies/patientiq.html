@@ -5,75 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="PatientIQ Case Study - How Jeffrey Mutchnik generated 44% of pipeline and contributed to $20M Series B as first marketing hire.">
   <title>PatientIQ Case Study - Jeffrey Mutchnik</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-  <link rel="stylesheet" href="../assets/css/portfolio.css">
+  <link rel="stylesheet" href="../assets/css/design-system.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">Jeffrey Mutchnik</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link active" href="index.html">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="../skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="../creative-work.html">Creative Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Case Study Header -->
-  <header class="page-header text-center">
-    <div class="container">
-      <span class="badge bg-light text-primary mb-3 px-3 py-2">B2B SaaS | Clinical Outcomes Platform</span>
-      <h1 class="mb-3">PatientIQ</h1>
-      <p class="lead mb-0">Building Marketing from Zero to $6M Pipeline</p>
+  <!-- Navigation -->
+  <header class="site-header site-header--scrolled" id="site-header">
+    <div class="site-header__container">
+      <a class="site-logo" href="../index.html">Jeffrey Mutchnik</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-toggle">
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="../index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../resume.html">Resume</a></li>
+          <li class="site-nav__item"><a class="site-nav__link is-active" href="index.html">Case Studies</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../skills.html">Skills</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../projects.html">Projects</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../creative-work.html">Creative Work</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../blog/index.html">Blog</a></li>
+        </ul>
+        <div class="site-nav__cta">
+          <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Results Summary -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">44%</div>
-          <div class="stat-label">of Company Pipeline</div>
+  <main id="main-content">
+    <!-- Case Study Header -->
+    <header class="page-header text-center reveal">
+      <div class="container">
+        <span class="text-overline">B2B SaaS | Clinical Outcomes Platform</span>
+        <h1>PatientIQ</h1>
+        <p class="lead">Building Marketing from Zero to $6M Pipeline</p>
+      </div>
+    </header>
+
+    <!-- Results Summary -->
+    <section class="stats-section reveal">
+      <div class="stats-section__container">
+        <div class="stat-item">
+          <div class="stat-item__value">44%</div>
+          <div class="stat-item__label">of Company Pipeline</div>
         </div>
-        <div class="col-6 col-md-3 mb-3 mb-md-0">
-          <div class="stat-value">$6M</div>
-          <div class="stat-label">ARR Generated</div>
+        <div class="stat-item">
+          <div class="stat-item__value">$6M</div>
+          <div class="stat-item__label">ARR Generated</div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">10x</div>
-          <div class="stat-label">ARR Growth</div>
+        <div class="stat-item">
+          <div class="stat-item__value">10x</div>
+          <div class="stat-item__label">ARR Growth</div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="stat-value">$20M</div>
-          <div class="stat-label">Series B Contribution</div>
+        <div class="stat-item">
+          <div class="stat-item__value">$20M</div>
+          <div class="stat-item__label">Series B Contribution</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Case Study Content -->
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
+    <!-- Case Study Content -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="content-wrapper">
           <!-- Challenge -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-exclamation-triangle text-primary me-2"></i>The Challenge</h2>
+          <div class="content-block">
+            <div class="section-header">
+              <span class="accent-line"></span>
+              <i class="bi bi-exclamation-triangle"></i>
+              <h2>The Challenge</h2>
+            </div>
             <p class="text-muted">PatientIQ is a clinical outcomes platform helping orthopedic surgeons, health systems, and medical device companies track patient-reported outcomes. When I joined as the <strong>first marketing hire</strong>, the company had:</p>
             <ul class="text-muted">
               <li>No marketing infrastructure or lead generation engine</li>
@@ -85,14 +96,18 @@
           </div>
 
           <!-- Approach -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-gear text-primary me-2"></i>The Approach</h2>
-            <p class="text-muted mb-4">I built a comprehensive marketing technology stack and demand generation engine focused on B2B healthcare buyers:</p>
+          <div class="content-block reveal">
+            <div class="section-header">
+              <span class="accent-line"></span>
+              <i class="bi bi-gear"></i>
+              <h2>The Approach</h2>
+            </div>
+            <p class="text-muted">I built a comprehensive marketing technology stack and demand generation engine focused on B2B healthcare buyers:</p>
 
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-database me-2"></i>CRM Migration & Architecture</h5>
-                <ul class="text-muted mb-0">
+            <div class="card card-lg feature-card">
+              <div class="card__body">
+                <h5 class="card__title"><i class="bi bi-database"></i>CRM Migration & Architecture</h5>
+                <ul class="text-muted">
                   <li>Led full migration from Salesforce to HubSpot with 100% data integrity</li>
                   <li>Designed complete CRM architecture including lead scoring, lifecycle stages, and attribution models</li>
                   <li>Built custom reporting dashboards for executive team decision-making</li>
@@ -101,10 +116,10 @@
               </div>
             </div>
 
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-bullseye me-2"></i>Demand Generation Strategy</h5>
-                <ul class="text-muted mb-0">
+            <div class="card card-lg feature-card">
+              <div class="card__body">
+                <h5 class="card__title"><i class="bi bi-bullseye"></i>Demand Generation Strategy</h5>
+                <ul class="text-muted">
                   <li>Developed integrated ABM strategy targeting AAOS conference attendees and specialty orthopedic practices</li>
                   <li>Created automated nurture sequences moving leads through funnel stages</li>
                   <li>Built co-marketing program with health system customers (Northwestern Medicine, Mass General, Cleveland Clinic)</li>
@@ -113,10 +128,10 @@
               </div>
             </div>
 
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-globe me-2"></i>Website & Content</h5>
-                <ul class="text-muted mb-0">
+            <div class="card card-lg feature-card">
+              <div class="card__body">
+                <h5 class="card__title"><i class="bi bi-globe"></i>Website & Content</h5>
+                <ul class="text-muted">
                   <li>Rebuilt website on Webflow with SEO optimization for clinical outcomes keywords</li>
                   <li>Achieved 235% increase in organic traffic</li>
                   <li>Created case studies, webinars, and testimonial videos with customer partners</li>
@@ -124,10 +139,10 @@
               </div>
             </div>
 
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-people me-2"></i>Sales Enablement</h5>
-                <ul class="text-muted mb-0">
+            <div class="card card-lg feature-card">
+              <div class="card__body">
+                <h5 class="card__title"><i class="bi bi-people"></i>Sales Enablement</h5>
+                <ul class="text-muted">
                   <li>Trained entire organization on HubSpot CRM for provider relationship management</li>
                   <li>Developed comprehensive documentation and onboarding materials</li>
                   <li>Created investor deck contributing to successful $20M Series B (Health Enterprise Partners)</li>
@@ -137,207 +152,236 @@
           </div>
 
           <!-- Results -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-graph-up-arrow text-primary me-2"></i>The Results</h2>
-            <div class="row g-3">
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">44%</div>
-                    <div class="metric-label">of Pipeline</div>
-                  </div>
+          <div class="content-block reveal">
+            <div class="section-header">
+              <span class="accent-line"></span>
+              <i class="bi bi-graph-up-arrow"></i>
+              <h2>The Results</h2>
+            </div>
+            <div class="results-grid">
+              <div class="card feature-card text-center">
+                <div class="card__body">
+                  <div class="metric-value">44%</div>
+                  <div class="metric-label">of Pipeline</div>
                 </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">$6M</div>
-                    <div class="metric-label">ARR Generated</div>
-                  </div>
+              <div class="card feature-card text-center">
+                <div class="card__body">
+                  <div class="metric-value">$6M</div>
+                  <div class="metric-label">ARR Generated</div>
                 </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">10x</div>
-                    <div class="metric-label">ARR Growth ($300K to $3M)</div>
-                  </div>
+              <div class="card feature-card text-center">
+                <div class="card__body">
+                  <div class="metric-value">10x</div>
+                  <div class="metric-label">ARR Growth ($300K to $3M)</div>
                 </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">235%</div>
-                    <div class="metric-label">Organic Traffic Increase</div>
-                  </div>
+              <div class="card feature-card text-center">
+                <div class="card__body">
+                  <div class="metric-value">235%</div>
+                  <div class="metric-label">Organic Traffic Increase</div>
                 </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">50</div>
-                    <div class="metric-label">MQLs/Month</div>
-                  </div>
+              <div class="card feature-card text-center">
+                <div class="card__body">
+                  <div class="metric-value">50</div>
+                  <div class="metric-label">MQLs/Month</div>
                 </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="card text-center h-100">
-                  <div class="card-body">
-                    <div class="metric-value">$20M</div>
-                    <div class="metric-label">Series B Raised</div>
-                  </div>
+              <div class="card feature-card text-center">
+                <div class="card__body">
+                  <div class="metric-value">$20M</div>
+                  <div class="metric-label">Series B Raised</div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Technologies -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-tools text-primary me-2"></i>Technologies Used</h2>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge bg-primary">HubSpot (Marketing, Sales, CRM)</span>
-              <span class="badge bg-primary">Salesforce (Migration)</span>
-              <span class="badge bg-primary">Webflow</span>
-              <span class="badge bg-light text-dark">ZoomInfo</span>
-              <span class="badge bg-light text-dark">6Sense</span>
-              <span class="badge bg-light text-dark">Google Analytics</span>
-              <span class="badge bg-light text-dark">LinkedIn Campaign Manager</span>
-              <span class="badge bg-light text-dark">SEMrush</span>
+          <div class="content-block reveal">
+            <div class="section-header">
+              <span class="accent-line"></span>
+              <i class="bi bi-tools"></i>
+              <h2>Technologies Used</h2>
+            </div>
+            <div class="badge-group">
+              <span class="badge badge--accent">HubSpot (Marketing, Sales, CRM)</span>
+              <span class="badge badge--accent">Salesforce (Migration)</span>
+              <span class="badge badge--accent">Webflow</span>
+              <span class="badge">ZoomInfo</span>
+              <span class="badge">6Sense</span>
+              <span class="badge">Google Analytics</span>
+              <span class="badge">LinkedIn Campaign Manager</span>
+              <span class="badge">SEMrush</span>
             </div>
           </div>
 
           <!-- Key Learnings -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-lightbulb text-primary me-2"></i>Key Learnings</h2>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">Start with infrastructure</h6>
-                    <p class="card-text text-muted small mb-0">Building a solid CRM foundation enabled everything else—lead scoring, attribution, and reporting that informed strategic decisions.</p>
-                  </div>
+          <div class="content-block reveal">
+            <div class="section-header">
+              <span class="accent-line"></span>
+              <i class="bi bi-lightbulb"></i>
+              <h2>Key Learnings</h2>
+            </div>
+            <div class="learnings-grid">
+              <div class="card feature-card">
+                <div class="card__body">
+                  <h6 class="card__title">Start with infrastructure</h6>
+                  <p class="text-muted small">Building a solid CRM foundation enabled everything else--lead scoring, attribution, and reporting that informed strategic decisions.</p>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">ABM works in healthcare</h6>
-                    <p class="card-text text-muted small mb-0">Targeted campaigns at conference attendees and specific health systems drove higher conversion rates than broad awareness campaigns.</p>
-                  </div>
+              <div class="card feature-card">
+                <div class="card__body">
+                  <h6 class="card__title">ABM works in healthcare</h6>
+                  <p class="text-muted small">Targeted campaigns at conference attendees and specific health systems drove higher conversion rates than broad awareness campaigns.</p>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">Customer partnerships multiply impact</h6>
-                    <p class="card-text text-muted small mb-0">Co-marketing with marquee health systems like Cleveland Clinic and Northwestern provided credibility that accelerated sales cycles.</p>
-                  </div>
+              <div class="card feature-card">
+                <div class="card__body">
+                  <h6 class="card__title">Customer partnerships multiply impact</h6>
+                  <p class="text-muted small">Co-marketing with marquee health systems like Cleveland Clinic and Northwestern provided credibility that accelerated sales cycles.</p>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="card h-100 border-0 bg-light">
-                  <div class="card-body">
-                    <h6 class="card-title">Documentation enables scale</h6>
-                    <p class="card-text text-muted small mb-0">Comprehensive HubSpot training and documentation let the entire organization contribute to pipeline generation.</p>
-                  </div>
+              <div class="card feature-card">
+                <div class="card__body">
+                  <h6 class="card__title">Documentation enables scale</h6>
+                  <p class="text-muted small">Comprehensive HubSpot training and documentation let the entire organization contribute to pipeline generation.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Creative Work Gallery -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-palette text-primary me-2"></i>Creative Work</h2>
-            <p class="text-muted mb-4">Design and copywriting samples from PatientIQ marketing campaigns.</p>
-            <div class="row g-3 mini-gallery">
-              <div class="col-4 col-md-3">
-                <a href="../assets/images/work/patientiq/sponsored-ad-1.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="LinkedIn Sponsored Ad">
-                  <div class="gallery-card"><img src="../assets/images/work/patientiq/sponsored-ad-1.png" class="img-fluid" alt="Sponsored Ad"></div>
-                </a>
-              </div>
-              <div class="col-4 col-md-3">
-                <a href="../assets/images/work/patientiq/whitepaper-build-vs-buy.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="Build vs Buy Whitepaper">
-                  <div class="gallery-card"><img src="../assets/images/work/patientiq/whitepaper-build-vs-buy.png" class="img-fluid" alt="Whitepaper"></div>
-                </a>
-              </div>
-              <div class="col-4 col-md-3">
-                <a href="../assets/images/work/patientiq/customer-highlight-template.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="Customer Highlight Template">
-                  <div class="gallery-card"><img src="../assets/images/work/patientiq/customer-highlight-template.png" class="img-fluid" alt="Customer Highlight"></div>
-                </a>
-              </div>
-              <div class="col-4 col-md-3">
-                <a href="../assets/images/work/patientiq/press-release-uc-health.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="UC Health Press Release">
-                  <div class="gallery-card"><img src="../assets/images/work/patientiq/press-release-uc-health.png" class="img-fluid" alt="Press Release"></div>
-                </a>
-              </div>
-              <div class="col-4 col-md-3">
-                <a href="../assets/images/work/patientiq/linkedin-ads.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="LinkedIn Ad Campaign">
-                  <div class="gallery-card"><img src="../assets/images/work/patientiq/linkedin-ads.png" class="img-fluid" alt="LinkedIn Ads"></div>
-                </a>
-              </div>
-              <div class="col-4 col-md-3">
-                <a href="../assets/images/work/patientiq/proms-guide-hip.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="PROMs Guide - Hip">
-                  <div class="gallery-card"><img src="../assets/images/work/patientiq/proms-guide-hip.png" class="img-fluid" alt="PROMs Guide"></div>
-                </a>
-              </div>
+          <div class="content-block reveal">
+            <div class="section-header">
+              <span class="accent-line"></span>
+              <i class="bi bi-palette"></i>
+              <h2>Creative Work</h2>
             </div>
-            <a href="../creative-work.html?filter=patientiq" class="btn btn-outline-primary mt-3">View All PatientIQ Work <i class="bi bi-arrow-right"></i></a>
+            <p class="text-muted">Design and copywriting samples from PatientIQ marketing campaigns.</p>
+            <div class="mini-gallery">
+              <a href="../assets/images/work/patientiq/sponsored-ad-1.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="LinkedIn Sponsored Ad">
+                <div class="gallery-card"><img src="../assets/images/work/patientiq/sponsored-ad-1.png" class="img-fluid" alt="Sponsored Ad"></div>
+              </a>
+              <a href="../assets/images/work/patientiq/whitepaper-build-vs-buy.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="Build vs Buy Whitepaper">
+                <div class="gallery-card"><img src="../assets/images/work/patientiq/whitepaper-build-vs-buy.png" class="img-fluid" alt="Whitepaper"></div>
+              </a>
+              <a href="../assets/images/work/patientiq/customer-highlight-template.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="Customer Highlight Template">
+                <div class="gallery-card"><img src="../assets/images/work/patientiq/customer-highlight-template.png" class="img-fluid" alt="Customer Highlight"></div>
+              </a>
+              <a href="../assets/images/work/patientiq/press-release-uc-health.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="UC Health Press Release">
+                <div class="gallery-card"><img src="../assets/images/work/patientiq/press-release-uc-health.png" class="img-fluid" alt="Press Release"></div>
+              </a>
+              <a href="../assets/images/work/patientiq/linkedin-ads.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="LinkedIn Ad Campaign">
+                <div class="gallery-card"><img src="../assets/images/work/patientiq/linkedin-ads.png" class="img-fluid" alt="LinkedIn Ads"></div>
+              </a>
+              <a href="../assets/images/work/patientiq/proms-guide-hip.png" class="glightbox gallery-link" data-gallery="patientiq-work" data-title="PROMs Guide - Hip">
+                <div class="gallery-card"><img src="../assets/images/work/patientiq/proms-guide-hip.png" class="img-fluid" alt="PROMs Guide"></div>
+              </a>
+            </div>
+            <a href="../creative-work.html?filter=patientiq" class="btn btn-secondary">View All PatientIQ Work <i class="bi bi-arrow-right"></i></a>
           </div>
 
           <!-- Related Skills -->
-          <div class="mb-5">
-            <h2 class="mb-4"><i class="bi bi-link-45deg text-primary me-2"></i>Related Skills</h2>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">CRM Architecture</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">ABM Campaigns</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">Marketing Automation</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">Lead Lifecycle</a>
-              <a href="../skills.html" class="badge bg-outline-primary text-decoration-none">SEO/SEM</a>
+          <div class="content-block reveal">
+            <div class="section-header">
+              <span class="accent-line"></span>
+              <i class="bi bi-link-45deg"></i>
+              <h2>Related Skills</h2>
+            </div>
+            <div class="badge-group">
+              <a href="../skills.html" class="badge badge--accent">CRM Architecture</a>
+              <a href="../skills.html" class="badge badge--accent">ABM Campaigns</a>
+              <a href="../skills.html" class="badge badge--accent">Marketing Automation</a>
+              <a href="../skills.html" class="badge badge--accent">Lead Lifecycle</a>
+              <a href="../skills.html" class="badge badge--accent">SEO/SEM</a>
             </div>
           </div>
 
           <!-- CTA -->
-          <div class="text-center">
+          <div class="text-center reveal">
             <a href="index.html" class="btn btn-primary btn-lg">View All Case Studies</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h5 class="mb-3">Jeffrey Mutchnik</h5>
-          <p class="mb-0">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <h5>Jeffrey Mutchnik</h5>
+          <p>Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
         </div>
-        <div class="col-6 col-lg-3 offset-lg-1">
-          <h6 class="mb-3">Quick Links</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="../resume.html">Resume</a></li>
-            <li class="mb-2"><a href="index.html">Case Studies</a></li>
-            <li class="mb-2"><a href="../skills.html">Skills</a></li>
-            <li class="mb-2"><a href="../blog/index.html">Blog</a></li>
+        <div class="site-footer__links">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="index.html">Case Studies</a></li>
+            <li><a href="../skills.html">Skills</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Contact</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
-            <li class="mb-2"><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
-            <li class="mb-2"><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+        <div class="site-footer__contact">
+          <h6>Contact</h6>
+          <ul>
+            <li><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope"></i>Email</a></li>
+            <li><a href="tel:+18477679719"><i class="bi bi-telephone"></i>(847) 767-9719</a></li>
+            <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin"></i>LinkedIn</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <p class="text-center mb-0 small">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>const lightbox = GLightbox({ touchNavigation: true, loop: true });</script>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const siteNav = document.getElementById('site-nav');
+    const siteHeader = document.getElementById('site-header');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('is-active');
+      siteNav.classList.toggle('is-open');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.site-nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('is-active');
+        siteNav.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  </script>
+
+  <!-- Scroll Reveal -->
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('is-revealed');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>

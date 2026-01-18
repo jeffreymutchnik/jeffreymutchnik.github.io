@@ -5,39 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Building Marketing as the First Hire at 3 Startups - Lessons from establishing marketing from scratch at early-stage companies.">
   <title>Building Marketing as the First Hire at 3 Startups - Jeffrey Mutchnik</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/portfolio.css">
+  <link rel="stylesheet" href="../assets/css/design-system.css">
 </head>
 <body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">Jeffrey Mutchnik</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <header class="site-header site-header--scrolled" id="site-header">
+    <div class="site-header__container">
+      <a class="site-logo" href="../index.html">Jeffrey Mutchnik</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" id="mobile-toggle">
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
+        <span class="mobile-menu-toggle__bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="../case-studies/index.html">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="../skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="../creative-work.html">Creative Work</a></li>
-          <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+      <nav class="site-nav" id="site-nav">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="../index.html">Home</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../resume.html">Resume</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../case-studies/index.html">Case Studies</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../skills.html">Skills</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../projects.html">Projects</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="../creative-work.html">Creative Work</a></li>
+          <li class="site-nav__item"><a class="site-nav__link is-active" href="index.html">Blog</a></li>
         </ul>
-      </div>
+        <div class="site-nav__cta">
+          <a href="../contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <!-- Article Header -->
-  <header class="page-header text-center">
+  <header class="page-header text-center" id="main-content">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <span class="badge bg-light text-primary mb-3 px-3 py-2">Career</span>
+          <span class="text-overline">Career</span>
           <h1 class="mb-3">Building Marketing as the First Hire at 3 Startups</h1>
           <p class="lead mb-4">What I wish someone had told me about establishing marketing from scratch at early-stage companies.</p>
           <div class="d-flex justify-content-center gap-3 flex-wrap">
@@ -50,7 +59,7 @@
   </header>
 
   <!-- Article Content -->
-  <article class="section">
+  <article class="section reveal">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -81,7 +90,7 @@
 
           <p class="text-muted">At PatientIQ, I did the opposite. Before running a single campaign, I:</p>
 
-          <div class="card bg-light border-0 mb-4">
+          <div class="card card-lg mb-4 reveal">
             <div class="card-body">
               <h6 class="card-title"><i class="bi bi-list-ol text-primary me-2"></i>My First 30 Days Framework</h6>
               <ol class="text-muted mb-0">
@@ -109,7 +118,7 @@
 
           <p class="text-muted">This investment paid off enormously. Our lead scoring model was based on real sales feedback, not marketing assumptions. Our content addressed actual objections. Our MQL definition actually meant something.</p>
 
-          <div class="alert alert-primary" role="alert">
+          <div class="alert alert-info" role="alert">
             <i class="bi bi-lightbulb me-2"></i>
             <strong>Pro tip:</strong> Schedule a weekly 30-minute sync with your top sales rep. Review leads, get feedback, adjust targeting. This single meeting will improve your marketing 10x more than any campaign optimization.
           </div>
@@ -117,9 +126,9 @@
           <h2 class="mt-5">Lesson 3: The 70/20/10 Resource Split</h2>
           <p class="text-muted">As the only marketer, you can't do everything. I learned to allocate my time deliberately:</p>
 
-          <div class="row g-4 mb-4">
+          <div class="row g-4 mb-4 reveal">
             <div class="col-md-4">
-              <div class="card h-100 text-center border-primary">
+              <div class="card card-lg h-100 text-center">
                 <div class="card-body">
                   <div class="metric-value">70%</div>
                   <div class="metric-label">Demand Generation</div>
@@ -128,7 +137,7 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card h-100 text-center">
+              <div class="card card-lg h-100 text-center">
                 <div class="card-body">
                   <div class="metric-value">20%</div>
                   <div class="metric-label">Brand & Content</div>
@@ -137,7 +146,7 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card h-100 text-center">
+              <div class="card card-lg h-100 text-center">
                 <div class="card-body">
                   <div class="metric-value">10%</div>
                   <div class="metric-label">Experimentation</div>
@@ -169,7 +178,7 @@
 
           <p class="text-muted">My favorite quick wins:</p>
 
-          <div class="card bg-light border-0 mb-4">
+          <div class="card card-lg mb-4 reveal">
             <div class="card-body">
               <ul class="text-muted mb-0">
                 <li><strong>Fix the website's obvious problems</strong> (broken forms, outdated content, mobile issues). Everyone notices, and it's usually quick work.</li>
@@ -197,9 +206,9 @@
           <h2 class="mt-5">Lesson 7: The Metrics That Matter</h2>
           <p class="text-muted">Early-stage startups don't need complicated marketing metrics. Focus on these:</p>
 
-          <div class="row g-3 mb-4">
+          <div class="row g-3 mb-4 reveal">
             <div class="col-md-6">
-              <div class="card h-100">
+              <div class="card card-lg h-100">
                 <div class="card-body">
                   <h6 class="card-title"><i class="bi bi-funnel text-primary me-2"></i>Pipeline Contribution</h6>
                   <p class="card-text text-muted small">What percentage of new pipeline came from marketing sources? At PatientIQ, we hit 44%—that number got attention.</p>
@@ -207,7 +216,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card h-100">
+              <div class="card card-lg h-100">
                 <div class="card-body">
                   <h6 class="card-title"><i class="bi bi-currency-dollar text-primary me-2"></i>Cost Per Opportunity</h6>
                   <p class="card-text text-muted small">How much do you spend to create a qualified opportunity? This tells you which channels to double down on.</p>
@@ -215,7 +224,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card h-100">
+              <div class="card card-lg h-100">
                 <div class="card-body">
                   <h6 class="card-title"><i class="bi bi-clock text-primary me-2"></i>Sales Cycle Length</h6>
                   <p class="card-text text-muted small">Are marketing-sourced deals closing faster or slower than other sources? Faster means your targeting is good.</p>
@@ -223,7 +232,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card h-100">
+              <div class="card card-lg h-100">
                 <div class="card-body">
                   <h6 class="card-title"><i class="bi bi-graph-up text-primary me-2"></i>MQL to SQL Conversion</h6>
                   <p class="card-text text-muted small">What percentage of marketing qualified leads become sales qualified? If it's below 30%, your MQL definition needs work.</p>
@@ -252,19 +261,19 @@
           <p class="text-muted">After three times as the first marketing hire, I can confidently say: the playbook exists, but you have to write it yourself. These lessons are my attempt to give future first hires a head start.</p>
 
           <!-- Related Case Studies -->
-          <div class="card bg-light border-0 mt-5">
+          <div class="card card-lg mt-5 reveal">
             <div class="card-body">
               <h5 class="card-title mb-3">My First Hire Experiences</h5>
               <div class="d-flex flex-wrap gap-2">
-                <a href="../case-studies/cliexa.html" class="btn btn-outline-primary btn-sm">cliexa (First Hire #1)</a>
-                <a href="../case-studies/patientiq.html" class="btn btn-outline-primary btn-sm">PatientIQ (First Hire #2)</a>
-                <a href="../case-studies/ambience.html" class="btn btn-outline-primary btn-sm">Ambience (Consultant)</a>
+                <a href="../case-studies/cliexa.html" class="badge badge-primary">cliexa (First Hire #1)</a>
+                <a href="../case-studies/patientiq.html" class="badge badge-primary">PatientIQ (First Hire #2)</a>
+                <a href="../case-studies/ambience.html" class="badge badge-primary">Ambience (Consultant)</a>
               </div>
             </div>
           </div>
 
           <!-- Author -->
-          <div class="border-top mt-5 pt-5">
+          <div class="border-top mt-5 pt-5 reveal">
             <div class="d-flex align-items-center">
               <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
                 <span class="fw-bold">JM</span>
@@ -282,14 +291,14 @@
   </article>
 
   <!-- More Posts -->
-  <section class="section section-alt">
+  <section class="section section-alt reveal">
     <div class="container">
       <h4 class="text-center mb-4">More Articles</h4>
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-5">
-          <div class="card h-100">
+          <div class="card card-lg h-100">
             <div class="card-body">
-              <span class="badge bg-light text-dark mb-2">Marketing Technology</span>
+              <span class="badge badge-secondary mb-2">Marketing Technology</span>
               <h5 class="card-title">What I Learned from 4 HubSpot Implementations</h5>
               <p class="card-text text-muted small">A framework for successful CRM deployments based on real-world experience.</p>
             </div>
@@ -303,36 +312,68 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h5 class="mb-3">Jeffrey Mutchnik</h5>
-          <p class="mb-0">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="../index.html" class="site-footer__logo">Jeffrey Mutchnik</a>
+          <p class="site-footer__tagline">Marketing Technology Manager with 8+ years of experience in B2B healthcare technology.</p>
         </div>
-        <div class="col-6 col-lg-3 offset-lg-1">
-          <h6 class="mb-3">Quick Links</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="../resume.html">Resume</a></li>
-            <li class="mb-2"><a href="../case-studies/index.html">Case Studies</a></li>
-            <li class="mb-2"><a href="../skills.html">Skills</a></li>
-            <li class="mb-2"><a href="index.html">Blog</a></li>
+        <div class="site-footer__links">
+          <h6 class="site-footer__heading">Quick Links</h6>
+          <ul class="site-footer__list">
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="../case-studies/index.html">Case Studies</a></li>
+            <li><a href="../skills.html">Skills</a></li>
+            <li><a href="index.html">Blog</a></li>
           </ul>
         </div>
-        <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Contact</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
-            <li class="mb-2"><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
-            <li class="mb-2"><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
+        <div class="site-footer__links">
+          <h6 class="site-footer__heading">Contact</h6>
+          <ul class="site-footer__list">
+            <li><a href="mailto:jmutchnik21@gmail.com"><i class="bi bi-envelope me-2"></i>Email</a></li>
+            <li><a href="tel:+18477679719"><i class="bi bi-telephone me-2"></i>(847) 767-9719</a></li>
+            <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank"><i class="bi bi-linkedin me-2"></i>LinkedIn</a></li>
           </ul>
         </div>
       </div>
-      <hr class="my-4">
-      <p class="text-center mb-0 small">&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Jeffrey Mutchnik. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Mobile Menu JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const siteNav = document.getElementById('site-nav');
+
+    if (mobileToggle && siteNav) {
+      mobileToggle.addEventListener('click', function() {
+        this.classList.toggle('is-active');
+        siteNav.classList.toggle('is-open');
+        document.body.classList.toggle('menu-open');
+      });
+    }
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = function() {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(function(el) {
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add('is-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
