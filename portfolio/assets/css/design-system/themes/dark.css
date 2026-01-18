@@ -153,7 +153,7 @@
 }
 
 .dark .project-card__tag {
-  background: rgba(181, 99, 77, 0.2);
+  background: rgba(20, 184, 166, 0.2);
   color: var(--color-accent-400);
 }
 
@@ -181,7 +181,7 @@
 
 /* Feature card */
 .dark .feature-card__icon {
-  background: rgba(181, 99, 77, 0.2);
+  background: rgba(20, 184, 166, 0.2);
 }
 
 .dark .feature-card__title {

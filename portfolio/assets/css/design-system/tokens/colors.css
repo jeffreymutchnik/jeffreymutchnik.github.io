@@ -1,96 +1,128 @@
 /* ===========================================
    DESIGN SYSTEM - COLOR TOKENS
-   "Midnight Professional" Palette
+   "Digital Horizon" Palette - Y2K Tech Aesthetic
    =========================================== */
 
 :root {
   /* ===========================================
-     PRIMARY COLORS - Deep Ink
+     PRIMARY COLORS - Electric Blue
      =========================================== */
 
-  --color-primary-900: #0D0D0F;      /* Near black with subtle warmth */
-  --color-primary-800: #1A1A1F;      /* Primary dark backgrounds */
-  --color-primary-700: #2D2D35;      /* Secondary dark surfaces */
-  --color-primary-600: #3D3D47;      /* Tertiary dark elements */
-  --color-primary-500: #52525E;      /* Dark mode text secondary */
+  --color-primary-900: #0A1628;      /* Deep space */
+  --color-primary-800: #0F2847;      /* Midnight */
+  --color-primary-700: #143D66;
+  --color-primary-600: #1A5285;
+  --color-primary-500: #2563EB;      /* Core electric blue */
+  --color-primary-400: #3B82F6;      /* Bright blue */
+  --color-primary-300: #60A5FA;
+  --color-primary-200: #93C5FD;
+  --color-primary-100: #DBEAFE;
 
   /* ===========================================
-     ACCENT COLORS - Burnished Copper
-     A warm, sophisticated accent
+     ACCENT COLORS - Cyber Teal
+     Vibrant, energetic accent
      =========================================== */
 
-  --color-accent-600: #8B4D3B;       /* Darkened for text on light bg */
-  --color-accent-500: #B5634D;       /* Primary accent - buttons, links */
-  --color-accent-400: #C97A66;       /* Hover states */
-  --color-accent-300: #D99B8A;       /* Light accent applications */
-  --color-accent-200: #E8BDB2;       /* Subtle accent backgrounds */
-  --color-accent-100: #F5E0DA;       /* Lightest accent tint */
+  --color-accent-600: #0D7377;       /* Deep teal for text */
+  --color-accent-500: #14B8A6;       /* Core teal - buttons, links */
+  --color-accent-400: #2DD4BF;       /* Hover states */
+  --color-accent-300: #5EEAD4;       /* Light teal */
+  --color-accent-200: #99F6E4;       /* Subtle backgrounds */
+  --color-accent-100: #CCFBF1;       /* Lightest tint */
 
   /* ===========================================
-     NEUTRAL PALETTE - Warm Stone
+     SECONDARY ACCENT - Digital Purple
+     Y2K signature color
      =========================================== */
 
-  --color-neutral-950: #09090B;      /* Maximum contrast dark */
-  --color-neutral-900: #18181B;      /* Dark backgrounds */
-  --color-neutral-800: #27272A;      /* Elevated dark surfaces */
-  --color-neutral-700: #3F3F46;      /* Borders on dark */
-  --color-neutral-600: #52525B;      /* Muted text dark mode */
-  --color-neutral-500: #71717A;      /* Placeholder text */
-  --color-neutral-400: #A1A1AA;      /* Secondary text */
-  --color-neutral-300: #D4D4D8;      /* Borders on light */
-  --color-neutral-200: #E4E4E7;      /* Subtle backgrounds */
-  --color-neutral-100: #F4F4F5;      /* Light backgrounds */
-  --color-neutral-50: #FAFAFA;       /* Lightest background */
+  --color-purple-700: #6D28D9;
+  --color-purple-600: #7C3AED;
+  --color-purple-500: #8B5CF6;       /* Core purple */
+  --color-purple-400: #A78BFA;       /* Hover states */
+  --color-purple-300: #C4B5FD;
+  --color-purple-200: #DDD6FE;
+  --color-purple-100: #EDE9FE;
+
+  /* ===========================================
+     NEUTRAL PALETTE - Cool Stone
+     =========================================== */
+
+  --color-neutral-950: #020617;      /* Maximum contrast dark */
+  --color-neutral-900: #0F172A;      /* Dark backgrounds */
+  --color-neutral-800: #1E293B;      /* Elevated dark surfaces */
+  --color-neutral-700: #334155;      /* Borders on dark */
+  --color-neutral-600: #475569;      /* Muted text dark mode */
+  --color-neutral-500: #64748B;      /* Placeholder text */
+  --color-neutral-400: #94A3B8;      /* Secondary text */
+  --color-neutral-300: #CBD5E1;      /* Borders on light */
+  --color-neutral-200: #E2E8F0;      /* Subtle backgrounds */
+  --color-neutral-100: #F1F5F9;      /* Light backgrounds */
+  --color-neutral-50: #F8FAFC;       /* Lightest background */
   --color-neutral-0: #FFFFFF;        /* Pure white */
 
   /* ===========================================
      SURFACE COLORS - Light Mode
      =========================================== */
 
-  --surface-primary: #FDFCFB;        /* Warm white - main background */
-  --surface-secondary: #F8F7F5;      /* Slightly warm gray */
-  --surface-tertiary: #F0EEEB;       /* Warmer gray for cards */
+  --surface-primary: #F8FAFC;        /* Cool white - main background */
+  --surface-secondary: #F1F5F9;      /* Slightly cool gray */
+  --surface-tertiary: #E2E8F0;       /* Cool gray for cards */
   --surface-elevated: #FFFFFF;       /* Pure white for elevated cards */
 
   /* ===========================================
      SURFACE COLORS - Dark Mode
      =========================================== */
 
-  --surface-dark-primary: #0D0D0F;   /* Deep background */
-  --surface-dark-secondary: #161618; /* Elevated dark surface */
-  --surface-dark-tertiary: #1E1E21;  /* Cards and modals */
-  --surface-dark-elevated: #252528;  /* Highest elevation */
+  --surface-dark-primary: #0F172A;   /* Deep blue-black background */
+  --surface-dark-secondary: #1E293B; /* Elevated dark surface */
+  --surface-dark-tertiary: #334155;  /* Cards and modals */
+  --surface-dark-elevated: #475569;  /* Highest elevation */
 
   /* ===========================================
      SEMANTIC COLORS
      =========================================== */
 
-  --color-success-500: #22A06B;
-  --color-success-100: #E3FCEF;
-  --color-warning-500: #CF9F02;
-  --color-warning-100: #FFF7D6;
-  --color-error-500: #DE350B;
-  --color-error-100: #FFEBE6;
-  --color-info-500: #0065FF;
-  --color-info-100: #E6F0FF;
+  --color-success-500: #22C55E;
+  --color-success-100: #DCFCE7;
+  --color-warning-500: #F59E0B;
+  --color-warning-100: #FEF3C7;
+  --color-error-500: #EF4444;
+  --color-error-100: #FEE2E2;
+  --color-info-500: #3B82F6;
+  --color-info-100: #DBEAFE;
 
   /* ===========================================
-     GRADIENT DEFINITIONS
+     GRADIENT DEFINITIONS - Y2K Signature
      =========================================== */
 
-  /* Hero gradient - subtle, sophisticated */
+  /* Hero gradient - electric blue depth */
   --gradient-hero: linear-gradient(
     135deg,
-    var(--surface-primary) 0%,
-    var(--color-accent-100) 50%,
-    var(--surface-primary) 100%
+    var(--color-primary-800) 0%,
+    var(--color-primary-600) 100%
   );
 
-  /* Accent gradient for CTAs and highlights */
+  /* Accent gradient - teal to blue to purple */
   --gradient-accent: linear-gradient(
     135deg,
     var(--color-accent-500) 0%,
-    var(--color-accent-400) 100%
+    var(--color-primary-500) 50%,
+    var(--color-purple-500) 100%
+  );
+
+  /* Button gradient - teal to blue */
+  --gradient-button: linear-gradient(
+    135deg,
+    var(--color-accent-500) 0%,
+    var(--color-primary-500) 100%
+  );
+
+  /* Subtle accent gradient */
+  --gradient-accent-subtle: linear-gradient(
+    135deg,
+    var(--color-accent-100) 0%,
+    var(--color-primary-100) 50%,
+    var(--color-purple-100) 100%
   );
 
   /* Dark mode gradient */
@@ -103,8 +135,15 @@
   /* Mesh gradient for hero sections */
   --gradient-mesh:
     radial-gradient(at 40% 20%, var(--color-accent-100) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, var(--color-neutral-100) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, var(--color-accent-200) 0px, transparent 50%);
+    radial-gradient(at 80% 0%, var(--color-primary-100) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, var(--color-purple-100) 0px, transparent 50%);
+
+  /* Text gradient for headings */
+  --gradient-text: linear-gradient(
+    135deg,
+    var(--color-primary-500) 0%,
+    var(--color-purple-500) 100%
+  );
 }
 
 /* ===========================================
@@ -112,10 +151,12 @@
    =========================================== */
 
 /* Text Colors */
-.text-primary { color: var(--color-primary-900) !important; }
+.text-primary { color: var(--color-primary-800) !important; }
 .text-secondary { color: var(--color-neutral-600) !important; }
+.text-tertiary { color: var(--color-neutral-500) !important; }
 .text-muted { color: var(--color-neutral-500) !important; }
 .text-accent { color: var(--color-accent-500) !important; }
+.text-purple { color: var(--color-purple-500) !important; }
 
 /* Background Colors */
 .bg-surface { background-color: var(--surface-primary) !important; }
@@ -123,7 +164,16 @@
 .bg-elevated { background-color: var(--surface-elevated) !important; }
 .bg-accent { background-color: var(--color-accent-500) !important; }
 .bg-accent-light { background-color: var(--color-accent-100) !important; }
+.bg-primary { background-color: var(--color-primary-500) !important; }
+.bg-primary-dark { background-color: var(--color-primary-800) !important; }
+.bg-purple { background-color: var(--color-purple-500) !important; }
 
 /* Border Colors */
 .border-subtle { border-color: var(--color-neutral-200) !important; }
 .border-accent { border-color: var(--color-accent-500) !important; }
+.border-primary { border-color: var(--color-primary-500) !important; }
+
+/* Gradient Backgrounds */
+.bg-gradient-accent { background: var(--gradient-accent) !important; }
+.bg-gradient-button { background: var(--gradient-button) !important; }
+.bg-gradient-hero { background: var(--gradient-hero) !important; }
