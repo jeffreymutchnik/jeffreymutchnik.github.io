@@ -50,9 +50,9 @@ export function ContactForm() {
         <div className="space-y-2">
           <label
             htmlFor="name"
-            className="text-body-sm font-medium text-[var(--color-primary-900)] dark:text-white"
+            className="text-body-sm font-medium text-[var(--color-text)] dark:text-white"
           >
-            Name <span className="text-[var(--color-error-500)]">*</span>
+            Name <span className="text-[var(--color-crimson-500)]">*</span>
           </label>
           <Input
             id="name"
@@ -65,9 +65,9 @@ export function ContactForm() {
         <div className="space-y-2">
           <label
             htmlFor="email"
-            className="text-body-sm font-medium text-[var(--color-primary-900)] dark:text-white"
+            className="text-body-sm font-medium text-[var(--color-text)] dark:text-white"
           >
-            Email <span className="text-[var(--color-error-500)]">*</span>
+            Email <span className="text-[var(--color-crimson-500)]">*</span>
           </label>
           <Input
             id="email"
@@ -82,9 +82,9 @@ export function ContactForm() {
       <div className="space-y-2">
         <label
           htmlFor="subject"
-          className="text-body-sm font-medium text-[var(--color-primary-900)] dark:text-white"
+          className="text-body-sm font-medium text-[var(--color-text)] dark:text-white"
         >
-          Subject <span className="text-[var(--color-error-500)]">*</span>
+          Subject <span className="text-[var(--color-crimson-500)]">*</span>
         </label>
         <Input
           id="subject"
@@ -98,9 +98,9 @@ export function ContactForm() {
       <div className="space-y-2">
         <label
           htmlFor="message"
-          className="text-body-sm font-medium text-[var(--color-primary-900)] dark:text-white"
+          className="text-body-sm font-medium text-[var(--color-text)] dark:text-white"
         >
-          Message <span className="text-[var(--color-error-500)]">*</span>
+          Message <span className="text-[var(--color-crimson-500)]">*</span>
         </label>
         <Textarea
           id="message"

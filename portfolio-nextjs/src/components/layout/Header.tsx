@@ -39,7 +39,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/90 dark:bg-[var(--color-neutral-900)]/90 backdrop-blur-md shadow-sm border-b border-[var(--color-neutral-200)]/50 dark:border-[var(--color-neutral-700)]/50"
+          ? "bg-[var(--color-warm-50)]/95 dark:bg-[var(--color-cool-900)]/95 backdrop-blur-md shadow-sm border-b border-[var(--color-border)]/50 dark:border-[var(--color-border-strong)]/50"
           : "bg-transparent"
       )}
     >
@@ -51,7 +51,7 @@ export function Header() {
             className={cn(
               "font-display text-xl md:text-2xl font-semibold transition-colors",
               isScrolled
-                ? "text-[var(--color-primary-900)] dark:text-white"
+                ? "text-[var(--color-text)] dark:text-white"
                 : "text-white"
             )}
           >
@@ -68,10 +68,10 @@ export function Header() {
                   "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                   isActiveLink(item.href)
                     ? isScrolled
-                      ? "text-[var(--color-accent-500)] bg-[var(--color-accent-100)] dark:bg-[var(--color-accent-500)]/10"
+                      ? "text-[var(--color-crimson-500)] bg-[var(--color-crimson-100)] dark:bg-[var(--color-crimson-500)]/10"
                       : "text-white bg-white/25 font-semibold"
                     : isScrolled
-                    ? "text-[var(--color-neutral-600)] hover:text-[var(--color-primary-900)] hover:bg-[var(--color-neutral-100)] dark:text-[var(--color-neutral-300)] dark:hover:text-white dark:hover:bg-[var(--color-neutral-800)]"
+                    ? "text-[var(--color-text-soft)] hover:text-[var(--color-text)] hover:bg-[var(--color-warm-100)] dark:text-[var(--color-text-muted)] dark:hover:text-white dark:hover:bg-[var(--color-surface)]"
                     : "text-white hover:text-white hover:bg-white/15"
                 )}
               >
@@ -86,7 +86,7 @@ export function Header() {
               asChild
               variant={isScrolled ? "default" : "secondary"}
               className={cn(
-                !isScrolled && "bg-white text-[var(--color-primary-900)] hover:bg-white/90"
+                !isScrolled && "bg-white text-[var(--color-text)] hover:bg-white/90"
               )}
             >
               <Link href="/contact">Get in Touch</Link>
@@ -101,7 +101,7 @@ export function Header() {
                 size="icon"
                 className={cn(
                   isScrolled
-                    ? "text-[var(--color-primary-900)] dark:text-white"
+                    ? "text-[var(--color-text)] dark:text-white"
                     : "text-white"
                 )}
               >
@@ -117,7 +117,7 @@ export function Header() {
                 animate="visible"
               >
                 {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between p-6 border-b border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-700)]">
+                <div className="flex items-center justify-between p-6 border-b border-[var(--color-border)] dark:border-[var(--color-border-strong)]">
                   <span className="font-display text-xl font-semibold">
                     Menu
                   </span>
@@ -134,8 +134,8 @@ export function Header() {
                           className={cn(
                             "flex items-center px-4 py-3 text-lg font-medium rounded-lg transition-colors",
                             isActiveLink(item.href)
-                              ? "text-[var(--color-accent-500)] bg-[var(--color-accent-100)] dark:bg-[var(--color-accent-500)]/10"
-                              : "text-[var(--color-neutral-700)] hover:text-[var(--color-primary-900)] hover:bg-[var(--color-neutral-100)] dark:text-[var(--color-neutral-300)] dark:hover:text-white dark:hover:bg-[var(--color-neutral-800)]"
+                              ? "text-[var(--color-crimson-500)] bg-[var(--color-crimson-100)] dark:bg-[var(--color-crimson-500)]/10"
+                              : "text-[var(--color-text-soft)] hover:text-[var(--color-text)] hover:bg-[var(--color-warm-100)] dark:text-[var(--color-text-muted)] dark:hover:text-white dark:hover:bg-[var(--color-surface)]"
                           )}
                         >
                           {item.label}
@@ -146,7 +146,7 @@ export function Header() {
                 </nav>
 
                 {/* Mobile Menu Footer */}
-                <div className="p-6 border-t border-[var(--color-neutral-200)] dark:border-[var(--color-neutral-700)]">
+                <div className="p-6 border-t border-[var(--color-border)] dark:border-[var(--color-border-strong)]">
                   <Button asChild className="w-full" size="lg">
                     <Link
                       href="/contact"

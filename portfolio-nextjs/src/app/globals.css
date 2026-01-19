@@ -5,67 +5,180 @@
    =========================================== */
 
 @theme {
-  /* Primary - Electric Blue */
-  --color-primary-900: #0A1628;
-  --color-primary-800: #0F2847;
-  --color-primary-700: #143D66;
-  --color-primary-600: #1A5285;
-  --color-primary-500: #2563EB;
-  --color-primary-400: #3B82F6;
-  --color-primary-300: #60A5FA;
-  --color-primary-200: #93C5FD;
-  --color-primary-100: #DBEAFE;
+  /* ===========================================
+     WARM PALETTE - Advanced Color System
+     =========================================== */
 
-  /* Accent - Cyber Teal */
-  --color-accent-600: #0D7377;
-  --color-accent-500: #14B8A6;
-  --color-accent-400: #2DD4BF;
-  --color-accent-300: #5EEAD4;
-  --color-accent-200: #99F6E4;
-  --color-accent-100: #CCFBF1;
+  /* Crimson scale (Primary CTA - "do" moments) */
+  --color-crimson-50: #FDF2F4;
+  --color-crimson-100: #FCE4E8;
+  --color-crimson-200: #FAC8D3;
+  --color-crimson-300: #F5A3B3;
+  --color-crimson-400: #EC7086;
+  --color-crimson-500: #AE193B;
+  --color-crimson-600: #991936;
+  --color-crimson-700: #851930;
+  --color-crimson-800: #70192B;
+  --color-crimson-900: #5C1A26;
 
-  /* Purple */
-  --color-purple-700: #6D28D9;
-  --color-purple-600: #7C3AED;
-  --color-purple-500: #8B5CF6;
-  --color-purple-400: #A78BFA;
-  --color-purple-300: #C4B5FD;
-  --color-purple-200: #DDD6FE;
-  --color-purple-100: #EDE9FE;
+  /* Teal scale (Links/Info - "learn" moments) */
+  --color-teal-50: #F0F5F5;
+  --color-teal-100: #D3E4E5;
+  --color-teal-200: #8C9A84;
+  --color-teal-300: #5C7467;
+  --color-teal-400: #2D4D4A;
+  --color-teal-500: #093034;
+  --color-teal-600: #0D2D30;
+  --color-teal-700: #11292C;
+  --color-teal-800: #162627;
+  --color-teal-900: #1A2323;
 
-  /* Neutral - Cool Stone */
-  --color-neutral-950: #020617;
-  --color-neutral-900: #0F172A;
-  --color-neutral-800: #1E293B;
-  --color-neutral-700: #334155;
-  --color-neutral-600: #475569;
-  --color-neutral-500: #64748B;
-  --color-neutral-400: #94A3B8;
-  --color-neutral-300: #CBD5E1;
-  --color-neutral-200: #E2E8F0;
-  --color-neutral-100: #F1F5F9;
-  --color-neutral-50: #F8FAFC;
+  /* Plum scale (Secondary accent - "brand voice") */
+  --color-plum-50: #F8F5F7;
+  --color-plum-100: #EDE6EA;
+  --color-plum-200: #D4C5CE;
+  --color-plum-300: #AD978B;
+  --color-plum-400: #6B4657;
+  --color-plum-500: #522844;
+  --color-plum-600: #4B263D;
+  --color-plum-700: #442437;
+  --color-plum-800: #3E2230;
+  --color-plum-900: #37202A;
+
+  /* Warm neutrals (Cream → Peach → Espresso) */
+  --color-warm-50: #F7F1C5;
+  --color-warm-100: #F6EABF;
+  --color-warm-200: #F6E2B9;
+  --color-warm-300: #F5DAB3;
+  --color-warm-400: #F4D3AC;
+  --color-warm-500: #F2BF9C;
+  --color-warm-600: #D3A688;
+  --color-warm-700: #B48E74;
+  --color-warm-800: #967561;
+  --color-warm-900: #251A18;
+
+  /* Cool neutrals (Slate → Indigo) */
+  --color-cool-50: #F4F5F6;
+  --color-cool-100: #E4E6E8;
+  --color-cool-200: #C5C9CD;
+  --color-cool-300: #858776;
+  --color-cool-400: #5D625B;
+  --color-cool-500: #1B252D;
+  --color-cool-600: #1B1D31;
+  --color-cool-700: #1B1634;
+  --color-cool-800: #1B0E38;
+  --color-cool-900: #1B063C;
+
+  /* ===========================================
+     SEMANTIC MAPPINGS (Light Mode Default)
+     =========================================== */
+
+  /* Backgrounds */
+  --color-bg: #F7F1C5;
+  --color-bg-subtle: #F6EABF;
+  --color-surface: #F6E2B9;
+  --color-surface-2: #F5DAB3;
+  --color-surface-accent: #F2BF9C;
+
+  /* Text */
+  --color-text: #251A18;
+  --color-text-muted: #1B252D;
+  --color-text-soft: #5D625B;
+
+  /* Borders */
+  --color-border: #E1DDB6;
+  --color-border-strong: #CFCCAA;
+
+  /* Primary (Crimson - CTAs) */
+  --color-primary: #AE193B;
+  --color-primary-hover: #991936;
+  --color-primary-pressed: #851930;
+
+  /* Secondary (Plum) */
+  --color-secondary: #522844;
+  --color-secondary-hover: #4B263D;
+
+  /* Links (Teal) */
+  --color-link: #093034;
+  --color-link-hover: #0D2D30;
+
+  /* Focus & Selection */
+  --color-focus: #F4D3AC;
+  --color-selection: #DED3B2;
+
+  /* Semantic colors */
+  --color-success: #22C55E;
+  --color-success-light: #DCFCE7;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+  --color-error: #AE193B;
+  --color-error-light: #FCE4E8;
+
+  /* ===========================================
+     LEGACY MAPPINGS (for component compatibility)
+     =========================================== */
+
+  /* Primary scale (mapped to cool/plum for dark elements) */
+  --color-primary-900: #1B063C;
+  --color-primary-800: #1B0E38;
+  --color-primary-700: #1B1634;
+  --color-primary-600: #1B1D31;
+  --color-primary-500: #AE193B;
+  --color-primary-400: #EC7086;
+  --color-primary-300: #F5A3B3;
+  --color-primary-200: #FAC8D3;
+  --color-primary-100: #FCE4E8;
+
+  /* Accent scale (mapped to crimson for CTAs) */
+  --color-accent-600: #991936;
+  --color-accent-500: #AE193B;
+  --color-accent-400: #EC7086;
+  --color-accent-300: #F5A3B3;
+  --color-accent-200: #FAC8D3;
+  --color-accent-100: #FCE4E8;
+
+  /* Purple scale (mapped to plum) */
+  --color-purple-700: #442437;
+  --color-purple-600: #4B263D;
+  --color-purple-500: #522844;
+  --color-purple-400: #6B4657;
+  --color-purple-300: #AD978B;
+  --color-purple-200: #D4C5CE;
+  --color-purple-100: #EDE6EA;
+
+  /* Neutral scale (mapped to warm/cool) */
+  --color-neutral-950: #1B063C;
+  --color-neutral-900: #251A18;
+  --color-neutral-800: #1B252D;
+  --color-neutral-700: #5D625B;
+  --color-neutral-600: #858776;
+  --color-neutral-500: #C5C9CD;
+  --color-neutral-400: #E4E6E8;
+  --color-neutral-300: #F5DAB3;
+  --color-neutral-200: #F6E2B9;
+  --color-neutral-100: #F6EABF;
+  --color-neutral-50: #F7F1C5;
   --color-neutral-0: #FFFFFF;
 
-  /* Surface colors */
-  --color-surface-primary: #F8FAFC;
-  --color-surface-secondary: #F1F5F9;
-  --color-surface-tertiary: #E2E8F0;
+  /* Surface colors (mapped to warm) */
+  --color-surface-primary: #F7F1C5;
+  --color-surface-secondary: #F6EABF;
+  --color-surface-tertiary: #F6E2B9;
   --color-surface-elevated: #FFFFFF;
-  --color-surface-dark-primary: #0F172A;
-  --color-surface-dark-secondary: #1E293B;
-  --color-surface-dark-tertiary: #334155;
-  --color-surface-dark-elevated: #475569;
+  --color-surface-dark-primary: #1B063C;
+  --color-surface-dark-secondary: #1B0E38;
+  --color-surface-dark-tertiary: #1B1634;
+  --color-surface-dark-elevated: #1B1D31;
 
-  /* Semantic */
+  /* Semantic (legacy) */
   --color-success-500: #22C55E;
   --color-success-100: #DCFCE7;
   --color-warning-500: #F59E0B;
   --color-warning-100: #FEF3C7;
-  --color-error-500: #EF4444;
-  --color-error-100: #FEE2E2;
-  --color-info-500: #3B82F6;
-  --color-info-100: #DBEAFE;
+  --color-error-500: #AE193B;
+  --color-error-100: #FCE4E8;
+  --color-info-500: #093034;
+  --color-info-100: #D3E4E5;
 
   /* Fonts */
   --font-display: "Playfair Display", Georgia, serif;
@@ -73,10 +186,10 @@
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* Shadows */
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-  --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.3);
-  --shadow-glow-lg: 0 0 60px rgba(20, 184, 166, 0.4);
+  /* Shadows (updated for warm palette) */
+  --shadow-glass: 0 8px 32px 0 rgba(27, 6, 60, 0.15);
+  --shadow-glow: 0 0 40px rgba(174, 25, 59, 0.3);
+  --shadow-glow-lg: 0 0 60px rgba(174, 25, 59, 0.4);
 
   /* Animations */
   --animate-fade-in: fadeIn 0.6s ease-out forwards;
@@ -137,29 +250,29 @@ p {
 }
 
 a {
-  color: var(--color-accent-600); /* WCAG AA compliant: 5.21:1 contrast on white */
+  color: var(--color-link); /* Deep teal - WCAG AA compliant */
   text-decoration: none;
   transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--color-accent-500);
+  color: var(--color-link-hover);
 }
 
 /* Focus styles */
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-accent-500), 0 0 0 4px var(--color-surface-primary);
+  box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 4px var(--color-focus);
 }
 
 /* Selection */
 ::selection {
-  background-color: var(--color-accent-200);
-  color: var(--color-primary-900);
+  background-color: var(--color-selection);
+  color: var(--color-text);
 }
 
 .dark ::selection {
-  background-color: var(--color-accent-600);
+  background-color: var(--color-crimson-600);
   color: white;
 }
 
@@ -201,7 +314,7 @@ a:hover {
 
 /* Text gradient */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-primary-500), var(--color-purple-500));
+  background: linear-gradient(135deg, var(--color-crimson-500), var(--color-plum-500));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -278,22 +391,22 @@ a:hover {
 
 /* Gradient backgrounds */
 .bg-gradient-hero {
-  background: linear-gradient(135deg, #0F2847 0%, #1A5285 100%);
+  background: linear-gradient(135deg, #1B063C 0%, #522844 60%, #AE193B 100%);
 }
 
 .bg-gradient-accent {
-  background: linear-gradient(135deg, #14B8A6 0%, #2563EB 50%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #AE193B 0%, #522844 50%, #1B063C 100%);
 }
 
 .bg-gradient-button {
-  background: linear-gradient(135deg, #14B8A6 0%, #2563EB 100%);
+  background: linear-gradient(135deg, #AE193B 0%, #522844 100%);
 }
 
 /* Accent line */
 .accent-line {
   width: 3rem;
   height: 0.25rem;
-  background: linear-gradient(135deg, #14B8A6 0%, #2563EB 100%);
+  background: linear-gradient(135deg, #AE193B 0%, #522844 100%);
   border-radius: 9999px;
 }
 
@@ -307,7 +420,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-accent-500);
+  color: var(--color-crimson-500);
 }
 
 /* Lead text */
@@ -348,7 +461,7 @@ a:hover {
   font-size: clamp(2.75rem, 6vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--color-accent-500);
+  color: var(--color-crimson-500);
 }
 
 /* Card base */
@@ -395,7 +508,7 @@ a:hover {
   width: auto;
   height: auto;
   padding: 0.5rem 1rem;
-  background-color: var(--color-accent-500);
+  background-color: var(--color-crimson-500);
   color: white;
   border-radius: 0.5rem;
   z-index: 9999;
@@ -419,6 +532,31 @@ a:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ===========================================
+   DARK MODE OVERRIDES
+   =========================================== */
+
+.dark {
+  --color-bg: #1B063C;
+  --color-bg-subtle: #1B0E38;
+  --color-surface: #1B1634;
+  --color-surface-2: #1B1D31;
+  --color-surface-accent: #251A18;
+
+  --color-text: #F7F1C5;
+  --color-text-muted: #F5DAB3;
+  --color-text-soft: #F4D3AC;
+
+  --color-border: #2D4D4A;
+  --color-border-strong: #5C7467;
+
+  --color-link: #8C9A84;
+  --color-link-hover: #BCC1A1;
+
+  --color-focus: #F2BF9C;
+  --color-selection: #C8656B;
 }
 
 /* Windows High Contrast Mode support */

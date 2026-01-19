@@ -18,7 +18,7 @@ export function Timeline({ items }: TimelineProps) {
   return (
     <StaggerContainer className="relative">
       {/* Vertical line */}
-      <div className="absolute left-4 top-0 bottom-0 w-px bg-[var(--color-neutral-200)] dark:bg-[var(--color-neutral-700)]" />
+      <div className="absolute left-4 top-0 bottom-0 w-px bg-[var(--color-border)] dark:bg-[var(--color-border-strong)]" />
 
       <div className="space-y-8">
         {items.map((item, index) => (
@@ -28,8 +28,8 @@ export function Timeline({ items }: TimelineProps) {
               <div
                 className={`absolute left-0 w-8 h-8 rounded-full border-4 flex items-center justify-center ${
                   item.isActive
-                    ? "border-[var(--color-accent-500)] bg-[var(--color-accent-500)]"
-                    : "border-[var(--color-neutral-300)] bg-white dark:border-[var(--color-neutral-600)] dark:bg-[var(--color-neutral-800)]"
+                    ? "border-[var(--color-crimson-500)] bg-[var(--color-crimson-500)]"
+                    : "border-[var(--color-border)] bg-white dark:border-[var(--color-border-strong)] dark:bg-[var(--color-surface)]"
                 }`}
               >
                 {item.isActive && (
@@ -39,17 +39,17 @@ export function Timeline({ items }: TimelineProps) {
 
               {/* Content */}
               <div>
-                <span className="text-body-sm text-[var(--color-accent-500)] font-medium">
+                <span className="text-body-sm text-[var(--color-plum-500)] font-medium">
                   {item.date}
                 </span>
                 <h4 className="text-h4 mt-1 mb-0">{item.title}</h4>
-                <span className="text-body-sm text-[var(--color-neutral-500)]">
+                <span className="text-body-sm text-[var(--color-text-soft)]">
                   {item.company}
                 </span>
-                <ul className="mt-3 space-y-2 text-[var(--color-neutral-600)] dark:text-[var(--color-neutral-400)]">
+                <ul className="mt-3 space-y-2 text-[var(--color-text-soft)] dark:text-[var(--color-text-muted)]">
                   {item.description.map((point, pointIndex) => (
                     <li key={pointIndex} className="flex gap-2">
-                      <span className="text-[var(--color-accent-500)] mt-1.5">•</span>
+                      <span className="text-[var(--color-crimson-500)] mt-1.5">•</span>
                       <span>{point}</span>
                     </li>
                   ))}

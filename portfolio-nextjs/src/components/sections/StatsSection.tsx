@@ -23,7 +23,7 @@ const defaultStats: Stat[] = [
 
 export function StatsSection({ stats = defaultStats, className }: StatsSectionProps) {
   return (
-    <section className={`section-py bg-[var(--color-surface-secondary)] ${className || ""}`}>
+    <section className={`section-py bg-[var(--color-bg-subtle)] ${className || ""}`}>
       <div className="container mx-auto px-6">
         <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
@@ -32,7 +32,7 @@ export function StatsSection({ stats = defaultStats, className }: StatsSectionPr
                 <div className="text-metric mb-2">
                   <CountUpFromString value={stat.value} />
                 </div>
-                <div className="text-body-sm text-[var(--color-neutral-600)] font-medium">
+                <div className="text-body-sm text-[var(--color-text-soft)] font-medium">
                   {stat.label}
                 </div>
               </Card>

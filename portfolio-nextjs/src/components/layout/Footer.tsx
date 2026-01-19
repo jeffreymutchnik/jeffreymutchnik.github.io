@@ -6,7 +6,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--color-primary-900)] text-white">
+    <footer className="bg-[var(--color-cool-900)] text-white">
       <div className="container mx-auto px-6 py-16">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -14,11 +14,11 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="font-display text-2xl font-semibold text-white hover:text-[var(--color-accent-400)] transition-colors"
+              className="font-display text-2xl font-semibold text-white hover:text-[var(--color-crimson-400)] transition-colors"
             >
               Jeffrey Mutchnik
             </Link>
-            <p className="mt-4 text-[var(--color-neutral-400)] text-sm leading-relaxed">
+            <p className="mt-4 text-[var(--color-warm-400)] text-sm leading-relaxed">
               Marketing Technology Manager with 8+ years of experience in B2B
               healthcare technology. Specializing in HubSpot, Salesforce, and
               marketing automation.
@@ -27,7 +27,7 @@ export function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-neutral-400)] mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-warm-500)] mb-4">
               Navigation
             </h3>
             <ul className="space-y-3">
@@ -35,7 +35,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--color-neutral-300)] hover:text-[var(--color-accent-400)] transition-colors"
+                    className="text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -46,7 +46,7 @@ export function Footer() {
 
           {/* More Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-neutral-400)] mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-warm-500)] mb-4">
               More
             </h3>
             <ul className="space-y-3">
@@ -54,7 +54,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--color-neutral-300)] hover:text-[var(--color-accent-400)] transition-colors"
+                    className="text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -65,14 +65,14 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-neutral-400)] mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-warm-500)] mb-4">
               Contact
             </h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`mailto:${footerNavItems.contact.email}`}
-                  className="flex items-center gap-2 text-[var(--color-neutral-300)] hover:text-[var(--color-accent-400)] transition-colors"
+                  className="flex items-center gap-2 text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   <span>Email</span>
@@ -81,7 +81,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${footerNavItems.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="flex items-center gap-2 text-[var(--color-neutral-300)] hover:text-[var(--color-accent-400)] transition-colors"
+                  className="flex items-center gap-2 text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
                 >
                   <Phone className="h-4 w-4" />
                   <span>{footerNavItems.contact.phone}</span>
@@ -92,13 +92,13 @@ export function Footer() {
                   href={footerNavItems.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[var(--color-neutral-300)] hover:text-[var(--color-accent-400)] transition-colors"
+                  className="flex items-center gap-2 text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
                 >
                   <Linkedin className="h-4 w-4" />
                   <span>LinkedIn</span>
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-[var(--color-neutral-400)]">
+              <li className="flex items-center gap-2 text-[var(--color-warm-500)]">
                 <MapPin className="h-4 w-4" />
                 <span>{footerNavItems.contact.location}</span>
               </li>
@@ -107,8 +107,8 @@ export function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 pt-8 border-t border-[var(--color-neutral-800)] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[var(--color-neutral-500)] text-sm">
+        <div className="mt-12 pt-8 border-t border-[var(--color-plum-700)] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[var(--color-warm-600)] text-sm">
             &copy; {currentYear} Jeffrey Mutchnik. All rights reserved.
           </p>
 
@@ -118,14 +118,14 @@ export function Footer() {
               href={footerNavItems.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-neutral-800)] text-[var(--color-neutral-400)] hover:bg-[var(--color-accent-500)] hover:text-white transition-all"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-plum-700)] text-[var(--color-warm-400)] hover:bg-[var(--color-crimson-500)] hover:text-white transition-all"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href={`mailto:${footerNavItems.contact.email}`}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-neutral-800)] text-[var(--color-neutral-400)] hover:bg-[var(--color-accent-500)] hover:text-white transition-all"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-plum-700)] text-[var(--color-warm-400)] hover:bg-[var(--color-crimson-500)] hover:text-white transition-all"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />

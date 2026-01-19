@@ -44,7 +44,7 @@ export function Hero({
       <div className="absolute inset-0 bg-grid-hero opacity-30" />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-primary-900)]/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-cool-900)]/50" />
 
       <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -56,7 +56,7 @@ export function Hero({
             transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0 }}
           >
             <span className="accent-line" />
-            <span className="text-overline text-[var(--color-accent-400)]">
+            <span className="text-overline text-[var(--color-warm-400)]">
               {overline}
             </span>
           </motion.div>
@@ -73,7 +73,7 @@ export function Hero({
 
           {/* Subtitle */}
           <motion.p
-            className="text-body-xl text-[var(--color-neutral-300)] max-w-2xl mx-auto mb-10"
+            className="text-body-xl text-[var(--color-warm-200)] max-w-2xl mx-auto mb-10"
             variants={shouldReduceMotion ? undefined : heroSubtitle}
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : "hidden"}
             animate={shouldReduceMotion ? { opacity: 1, y: 0 } : "visible"}
@@ -95,7 +95,7 @@ export function Hero({
               asChild
               variant="outline"
               size="lg"
-              className="min-w-[160px] border-white/30 text-white hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-primary-800)]"
+              className="min-w-[160px] border-white/30 text-white hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-cool-800)]"
             >
               <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
             </Button>
@@ -113,7 +113,7 @@ export function Hero({
                 <Badge
                   key={index}
                   variant="accent"
-                  className="bg-[var(--color-accent-500)]/30 text-white border-0 py-1.5 px-3"
+                  className="bg-[var(--color-warm-500)]/40 text-white border-0 py-1.5 px-3"
                 >
                   {badge.icon === "trophy" && (
                     <Trophy className="h-3.5 w-3.5 mr-1.5" />
@@ -130,7 +130,7 @@ export function Hero({
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-surface-primary)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-bg)] to-transparent" />
     </section>
   );
 }

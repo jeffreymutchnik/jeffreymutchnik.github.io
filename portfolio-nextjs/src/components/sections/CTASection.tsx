@@ -33,14 +33,14 @@ export function CTASection({
       className={`section-py-lg ${
         isDark
           ? "bg-gradient-hero text-white"
-          : "bg-[var(--color-surface-secondary)]"
+          : "bg-[var(--color-bg-subtle)]"
       }`}
     >
       <div className="container mx-auto px-6">
         <ScrollReveal className="max-w-3xl mx-auto text-center">
           <h2
             className={`text-h2 mb-4 ${
-              isDark ? "text-white" : "text-[var(--color-primary-900)]"
+              isDark ? "text-white" : "text-[var(--color-text)]"
             }`}
           >
             {title}
@@ -48,8 +48,8 @@ export function CTASection({
           <p
             className={`text-body-lg mb-8 ${
               isDark
-                ? "text-[var(--color-neutral-300)]"
-                : "text-[var(--color-neutral-600)]"
+                ? "text-[var(--color-warm-200)]"
+                : "text-[var(--color-text-soft)]"
             }`}
           >
             {description}

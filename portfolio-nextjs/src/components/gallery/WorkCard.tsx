@@ -20,17 +20,17 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-[var(--color-accent-500)] focus-within:ring-offset-2">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-[var(--color-crimson-500)] focus-within:ring-offset-2">
       <button
         type="button"
         onClick={onClick}
         className="w-full text-left focus:outline-none"
         aria-label={`View ${item.title}${item.description ? `: ${item.description}` : ""}`}
       >
-        <div className="relative aspect-[4/3] bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-800)] overflow-hidden">
+        <div className="relative aspect-[4/3] bg-[var(--color-warm-100)] dark:bg-[var(--color-surface)] overflow-hidden">
         {isPDF ? (
           // PDF Thumbnail placeholder
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[var(--color-primary-900)] to-[var(--color-primary-800)] text-white p-6">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[var(--color-cool-900)] to-[var(--color-plum-500)] text-white p-6">
             <FileText className="h-16 w-16 mb-4 opacity-80" />
             <span className="text-sm font-medium text-center line-clamp-2 opacity-90">
               {item.title}
@@ -41,7 +41,7 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
           <>
             {isLoading && (
               <div className={cn(
-                "absolute inset-0 bg-[var(--color-neutral-200)] dark:bg-[var(--color-neutral-700)]",
+                "absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)]",
                 !shouldReduceMotion && "animate-pulse"
               )} />
             )}
@@ -71,7 +71,7 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
             <div className="flex items-center gap-2">
               <Badge
                 variant="accent"
-                className="bg-[var(--color-accent-500)]/90 text-white"
+                className="bg-[var(--color-plum-500)]/90 text-white"
               >
                 {item.company}
               </Badge>
@@ -88,14 +88,14 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
         {/* View indicator */}
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="bg-white/90 dark:bg-black/90 rounded-full p-2">
-            <Eye className="h-4 w-4 text-[var(--color-primary-900)] dark:text-white" />
+            <Eye className="h-4 w-4 text-[var(--color-text)] dark:text-white" />
           </div>
         </div>
 
         {/* Featured badge */}
         {item.featured && (
           <div className="absolute top-3 left-3">
-            <Badge variant="accent" className="bg-[var(--color-accent-500)]">
+            <Badge variant="accent" className="bg-[var(--color-crimson-500)]">
               Featured
             </Badge>
           </div>

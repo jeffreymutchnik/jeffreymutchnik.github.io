@@ -23,19 +23,19 @@ function FilterButton({
       aria-pressed={isSelected}
       className={cn(
         "inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all",
-        "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-500)] focus-visible:ring-offset-2",
+        "focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-crimson-500)] focus-visible:ring-offset-2",
         variant === "default" &&
           isSelected &&
-          "bg-[var(--color-primary-900)] text-white",
+          "bg-[var(--color-cool-500)] text-white",
         variant === "default" &&
           !isSelected &&
-          "bg-[var(--color-neutral-100)] text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-200)]",
+          "bg-[var(--color-warm-100)] text-[var(--color-text-soft)] hover:bg-[var(--color-warm-200)]",
         variant === "accent" &&
           isSelected &&
-          "bg-[var(--color-accent-500)] text-white",
+          "bg-[var(--color-crimson-500)] text-white",
         variant === "accent" &&
           !isSelected &&
-          "border border-[var(--color-neutral-300)] bg-transparent text-[var(--color-neutral-700)] hover:bg-[var(--color-neutral-100)]"
+          "border border-[var(--color-border)] bg-transparent text-[var(--color-text-soft)] hover:bg-[var(--color-warm-100)]"
       )}
     >
       {children}
@@ -64,7 +64,7 @@ export function CategoryFilter({
     <div className="space-y-6">
       {/* Category Filter */}
       <div>
-        <h4 className="text-body-sm font-semibold text-[var(--color-neutral-500)] uppercase tracking-wider mb-3">
+        <h4 className="text-body-sm font-semibold text-[var(--color-text-soft)] uppercase tracking-wider mb-3">
           Filter by Type
         </h4>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by type">
@@ -88,7 +88,7 @@ export function CategoryFilter({
 
       {/* Company Filter */}
       <div>
-        <h4 className="text-body-sm font-semibold text-[var(--color-neutral-500)] uppercase tracking-wider mb-3">
+        <h4 className="text-body-sm font-semibold text-[var(--color-text-soft)] uppercase tracking-wider mb-3">
           Filter by Company
         </h4>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by company">

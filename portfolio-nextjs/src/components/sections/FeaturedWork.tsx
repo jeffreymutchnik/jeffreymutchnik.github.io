@@ -68,12 +68,12 @@ export function FeaturedWork({
           {projects.map((project, index) => (
             <StaggerItem key={index}>
               <Link href={project.href} className="block h-full group">
-                <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-[var(--color-neutral-300)] dark:hover:border-[var(--color-neutral-600)] hover:-translate-y-1">
+                <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-[var(--color-border-strong)] dark:hover:border-[var(--color-border-strong)] hover:-translate-y-1">
                   <CardHeader>
-                    <span className="text-body-sm text-[var(--color-accent-500)] font-medium mb-1">
+                    <span className="text-body-sm text-[var(--color-plum-500)] font-medium mb-1">
                       {project.company}
                     </span>
-                    <CardTitle className="text-h4 group-hover:text-[var(--color-accent-500)] transition-colors">
+                    <CardTitle className="text-h4 group-hover:text-[var(--color-crimson-500)] transition-colors">
                       {project.title}
                     </CardTitle>
                   </CardHeader>
