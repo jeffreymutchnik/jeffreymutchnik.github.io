@@ -326,11 +326,6 @@ a:hover {
   font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: -0.015em;
-  color: var(--color-primary-900);
-}
-
-.dark .text-display {
-  color: var(--color-neutral-0);
 }
 
 /* Code text */
