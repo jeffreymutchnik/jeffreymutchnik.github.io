@@ -18,7 +18,7 @@ export function Footer() {
             >
               Jeffrey Mutchnik
             </Link>
-            <p className="mt-4 text-[var(--color-warm-400)] text-sm leading-relaxed">
+            <p className="mt-4 text-white/80 text-sm leading-relaxed">
               Marketing Technology Manager with 8+ years of experience in B2B
               healthcare technology. Specializing in HubSpot, Salesforce, and
               marketing automation.
@@ -27,7 +27,7 @@ export function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-warm-500)] mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
               Navigation
             </h3>
             <ul className="space-y-3">
@@ -35,7 +35,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
+                    className="text-white/80 hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -46,7 +46,7 @@ export function Footer() {
 
           {/* More Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-warm-500)] mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
               More
             </h3>
             <ul className="space-y-3">
@@ -54,7 +54,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
+                    className="text-white/80 hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -65,14 +65,14 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-warm-500)] mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
               Contact
             </h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`mailto:${footerNavItems.contact.email}`}
-                  className="flex items-center gap-2 text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
+                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   <span>Email</span>
@@ -81,7 +81,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${footerNavItems.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="flex items-center gap-2 text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
+                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
                 >
                   <Phone className="h-4 w-4" />
                   <span>{footerNavItems.contact.phone}</span>
@@ -92,13 +92,13 @@ export function Footer() {
                   href={footerNavItems.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[var(--color-warm-300)] hover:text-[var(--color-crimson-400)] transition-colors"
+                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
                 >
                   <Linkedin className="h-4 w-4" />
                   <span>LinkedIn</span>
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-[var(--color-warm-500)]">
+              <li className="flex items-center gap-2 text-white/60">
                 <MapPin className="h-4 w-4" />
                 <span>{footerNavItems.contact.location}</span>
               </li>
@@ -107,8 +107,8 @@ export function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 pt-8 border-t border-[var(--color-plum-700)] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[var(--color-warm-600)] text-sm">
+        <div className="mt-12 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white/60 text-sm">
             &copy; {currentYear} Jeffrey Mutchnik. All rights reserved.
           </p>
 
@@ -118,14 +118,14 @@ export function Footer() {
               href={footerNavItems.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-plum-700)] text-[var(--color-warm-400)] hover:bg-[var(--color-crimson-500)] hover:text-white transition-all"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-[var(--color-crimson-500)] hover:text-white transition-all"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href={`mailto:${footerNavItems.contact.email}`}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--color-plum-700)] text-[var(--color-warm-400)] hover:bg-[var(--color-crimson-500)] hover:text-white transition-all"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-[var(--color-crimson-500)] hover:text-white transition-all"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
