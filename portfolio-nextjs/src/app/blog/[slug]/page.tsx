@@ -43,7 +43,7 @@ function renderContent(content: string) {
       elements.push(
         <ListTag
           key={elements.length}
-          className={`${listType === "ul" ? "list-disc" : "list-decimal"} pl-6 mb-6 space-y-2 text-body-md text-[var(--color-neutral-700)]`}
+          className={`${listType === "ul" ? "list-disc" : "list-decimal"} pl-6 mb-6 space-y-2 text-body-md text-[var(--color-text-soft)]`}
         >
           {currentList.map((item, i) => (
             <li key={i}>{item}</li>
@@ -120,7 +120,7 @@ function renderContent(content: string) {
     // Horizontal rule
     if (trimmedLine === "---") {
       flushList();
-      elements.push(<hr key={index} className="my-12 border-[var(--color-neutral-200)]" />);
+      elements.push(<hr key={index} className="my-12 border-[var(--color-border)]" />);
       return;
     }
 
@@ -152,7 +152,7 @@ function renderContent(content: string) {
         <Link
           key={`link-${match.index}`}
           href={match[2]}
-          className="text-[var(--color-accent-500)] hover:underline"
+          className="text-[var(--color-teal-500)] hover:underline"
         >
           {match[1]}
         </Link>
@@ -173,7 +173,7 @@ function renderContent(content: string) {
     // Italic text (single line)
     if (trimmedLine.startsWith("*") && trimmedLine.endsWith("*") && !trimmedLine.startsWith("**")) {
       elements.push(
-        <p key={index} className="text-body-md text-[var(--color-neutral-600)] italic mb-6">
+        <p key={index} className="text-body-md text-[var(--color-text-soft)] italic mb-6">
           {trimmedLine.slice(1, -1)}
         </p>
       );
@@ -181,7 +181,7 @@ function renderContent(content: string) {
     }
 
     elements.push(
-      <p key={index} className="text-body-lg text-[var(--color-neutral-700)] mb-6 leading-relaxed">
+      <p key={index} className="text-body-lg text-[var(--color-text-soft)] mb-6 leading-relaxed">
         {parts.length > 0 ? parts : <span dangerouslySetInnerHTML={{ __html: processedLine }} />}
       </p>
     );
@@ -220,13 +220,13 @@ export default async function BlogPostPage({
       <Header />
       <main id="main-content" className="pt-20">
         {/* Hero Section */}
-        <section className="section-py border-b border-[var(--color-neutral-200)]">
+        <section className="section-py border-b border-[var(--color-border)]">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto">
               <ScrollReveal>
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-[var(--color-accent-500)] hover:text-[var(--color-accent-600)] transition-colors mb-8"
+                  className="inline-flex items-center gap-2 text-[var(--color-teal-500)] hover:text-[var(--color-teal-600)] transition-colors mb-8"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Back to Blog
@@ -244,11 +244,11 @@ export default async function BlogPostPage({
 
                 <h1 className="text-display-sm md:text-display-md mb-6">{post.title}</h1>
 
-                <p className="text-lead text-[var(--color-neutral-600)] mb-6">
+                <p className="text-lead text-[var(--color-text-soft)] mb-6">
                   {post.description}
                 </p>
 
-                <div className="flex items-center gap-6 text-body-sm text-[var(--color-neutral-500)]">
+                <div className="flex items-center gap-6 text-body-sm text-[var(--color-text-soft)]">
                   <span className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     {formattedDate}
@@ -273,15 +273,15 @@ export default async function BlogPostPage({
         </section>
 
         {/* Navigation */}
-        <section className="py-12 border-t border-[var(--color-neutral-200)]">
+        <section className="py-12 border-t border-[var(--color-border)]">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto flex justify-between items-center">
               {prevPost ? (
                 <Link href={`/blog/${prevPost.slug}`} className="group max-w-[45%]">
-                  <span className="text-body-sm text-[var(--color-neutral-500)] block mb-1">
+                  <span className="text-body-sm text-[var(--color-text-soft)] block mb-1">
                     Previous Article
                   </span>
-                  <span className="flex items-center gap-2 text-h5 group-hover:text-[var(--color-accent-500)] transition-colors line-clamp-1">
+                  <span className="flex items-center gap-2 text-h5 group-hover:text-[var(--color-crimson-500)] transition-colors line-clamp-1">
                     <ArrowLeft className="h-4 w-4 flex-shrink-0" />
                     {prevPost.title}
                   </span>
@@ -292,10 +292,10 @@ export default async function BlogPostPage({
 
               {nextPost ? (
                 <Link href={`/blog/${nextPost.slug}`} className="group text-right max-w-[45%]">
-                  <span className="text-body-sm text-[var(--color-neutral-500)] block mb-1">
+                  <span className="text-body-sm text-[var(--color-text-soft)] block mb-1">
                     Next Article
                   </span>
-                  <span className="flex items-center justify-end gap-2 text-h5 group-hover:text-[var(--color-accent-500)] transition-colors line-clamp-1">
+                  <span className="flex items-center justify-end gap-2 text-h5 group-hover:text-[var(--color-crimson-500)] transition-colors line-clamp-1">
                     {nextPost.title}
                     <ArrowLeft className="h-4 w-4 flex-shrink-0 rotate-180" />
                   </span>
@@ -308,11 +308,11 @@ export default async function BlogPostPage({
         </section>
 
         {/* CTA Section */}
-        <section className="section-py bg-[var(--color-surface-secondary)]">
+        <section className="section-py bg-[var(--color-bg-subtle)]">
           <div className="container mx-auto px-6 text-center">
             <ScrollReveal>
               <h2 className="text-h2 mb-4">Want to discuss this topic?</h2>
-              <p className="text-body-lg text-[var(--color-neutral-600)] mb-8 max-w-2xl mx-auto">
+              <p className="text-body-lg text-[var(--color-text-soft)] mb-8 max-w-2xl mx-auto">
                 I'm always happy to chat about marketing technology, B2B healthcare, or startup growth strategies.
               </p>
               <Button asChild size="lg" variant="default">

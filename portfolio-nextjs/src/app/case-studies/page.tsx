@@ -67,8 +67,8 @@ export default function CaseStudiesPage() {
                 <StaggerItem key={index}>
                   <Link href={`/case-studies/${study.slug}`} className="block group">
                     <Card
-                      className={`transition-all duration-300 hover:shadow-xl hover:border-[var(--color-neutral-300)] dark:hover:border-[var(--color-neutral-600)] hover:-translate-y-1 ${
-                        study.featured ? "border-[var(--color-accent-500)]/30" : ""
+                      className={`transition-all duration-300 hover:shadow-xl hover:border-[var(--color-border-strong)] dark:hover:border-[var(--color-border-strong)] hover:-translate-y-1 ${
+                        study.featured ? "border-[var(--color-crimson-500)]/30" : ""
                       }`}
                     >
                       <CardHeader>
@@ -77,7 +77,7 @@ export default function CaseStudiesPage() {
                             Featured
                           </Badge>
                         )}
-                        <CardTitle className="text-h3 group-hover:text-[var(--color-accent-500)] transition-colors">
+                        <CardTitle className="text-h3 group-hover:text-[var(--color-crimson-500)] transition-colors">
                           {study.title}
                         </CardTitle>
                       </CardHeader>
@@ -89,7 +89,7 @@ export default function CaseStudiesPage() {
                           {study.stats.map((stat, statIndex) => (
                             <span
                               key={statIndex}
-                              className="text-body-sm font-semibold text-[var(--color-accent-500)]"
+                              className="text-body-sm font-semibold text-[var(--color-crimson-500)]"
                             >
                               {stat}
                             </span>
@@ -104,7 +104,7 @@ export default function CaseStudiesPage() {
                             </Badge>
                           ))}
                         </div>
-                        <span className="text-[var(--color-accent-500)] flex items-center gap-1 text-body-sm font-medium group-hover:gap-2 transition-all">
+                        <span className="text-[var(--color-crimson-500)] flex items-center gap-1 text-body-sm font-medium group-hover:gap-2 transition-all">
                           Read Case Study
                           <ArrowRight className="h-4 w-4" />
                         </span>

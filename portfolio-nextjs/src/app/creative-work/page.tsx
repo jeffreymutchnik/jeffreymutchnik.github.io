@@ -91,30 +91,30 @@ export default function CreativeWorkPage() {
         />
 
         {/* Stats */}
-        <section className="bg-[var(--color-surface-secondary)] section-py">
+        <section className="bg-[var(--color-bg-subtle)] section-py">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
               <div>
                 <span className="text-metric block">{workItems.length}</span>
-                <span className="text-body-sm text-[var(--color-neutral-600)]">
+                <span className="text-body-sm text-[var(--color-text-soft)]">
                   Total Projects
                 </span>
               </div>
               <div>
                 <span className="text-metric block">{pdfCount}</span>
-                <span className="text-body-sm text-[var(--color-neutral-600)]">
+                <span className="text-body-sm text-[var(--color-text-soft)]">
                   Documents
                 </span>
               </div>
               <div>
                 <span className="text-metric block">{imageCount}</span>
-                <span className="text-body-sm text-[var(--color-neutral-600)]">
+                <span className="text-body-sm text-[var(--color-text-soft)]">
                   Graphics
                 </span>
               </div>
               <div>
                 <span className="text-metric block">{companies.length}</span>
-                <span className="text-body-sm text-[var(--color-neutral-600)]">
+                <span className="text-body-sm text-[var(--color-text-soft)]">
                   Companies
                 </span>
               </div>
@@ -126,7 +126,7 @@ export default function CreativeWorkPage() {
         <section className="section-py">
           <div className="container mx-auto px-6">
             <ScrollReveal className="text-center mb-12">
-              <span className="text-overline block mb-3 text-[var(--color-accent-500)]">
+              <span className="text-overline block mb-3 text-[var(--color-crimson-500)]">
                 Highlights
               </span>
               <h2 className="text-h2">Featured Work</h2>
@@ -143,7 +143,7 @@ export default function CreativeWorkPage() {
         </section>
 
         {/* Filters */}
-        <section className="py-8 border-y border-[var(--color-neutral-200)] bg-[var(--color-surface-secondary)]">
+        <section className="py-8 border-y border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <CategoryFilter
@@ -164,7 +164,7 @@ export default function CreativeWorkPage() {
             <div className="max-w-6xl mx-auto">
               {/* Results count */}
               <ScrollReveal className="mb-8">
-                <p className="text-body-md text-[var(--color-neutral-600)]">
+                <p className="text-body-md text-[var(--color-text-soft)]">
                   Showing {filteredItems.length} of {workItems.length} projects
                   {selectedCategory !== "All" && ` in ${selectedCategory}`}
                   {selectedCompany !== "All" && ` from ${selectedCompany}`}
@@ -178,9 +178,9 @@ export default function CreativeWorkPage() {
                   {Object.entries(groupedItems).map(([category, items]) => (
                     <div key={category}>
                       <ScrollReveal>
-                        <h3 className="text-h3 mb-6 pb-3 border-b border-[var(--color-neutral-200)]">
+                        <h3 className="text-h3 mb-6 pb-3 border-b border-[var(--color-border)]">
                           {category}
-                          <span className="text-body-md text-[var(--color-neutral-500)] ml-3">
+                          <span className="text-body-md text-[var(--color-text-soft)] ml-3">
                             ({items.length})
                           </span>
                         </h3>
@@ -208,7 +208,7 @@ export default function CreativeWorkPage() {
 
               {filteredItems.length === 0 && (
                 <div className="text-center py-16">
-                  <p className="text-body-lg text-[var(--color-neutral-500)]">
+                  <p className="text-body-lg text-[var(--color-text-soft)]">
                     No projects match your current filters.
                   </p>
                   <button
@@ -216,7 +216,7 @@ export default function CreativeWorkPage() {
                       setSelectedCategory("All");
                       setSelectedCompany("All");
                     }}
-                    className="mt-4 text-[var(--color-accent-500)] hover:underline"
+                    className="mt-4 text-[var(--color-crimson-500)] hover:underline"
                   >
                     Clear filters
                   </button>
@@ -227,18 +227,18 @@ export default function CreativeWorkPage() {
         </section>
 
         {/* CTA */}
-        <section className="section-py bg-[var(--color-primary-900)] text-white">
+        <section className="section-py bg-[var(--color-cool-900)] text-white">
           <div className="container mx-auto px-6 text-center">
             <ScrollReveal>
               <h2 className="text-h2 text-white mb-4">Want to see more?</h2>
-              <p className="text-body-lg text-[var(--color-neutral-300)] mb-8 max-w-2xl mx-auto">
+              <p className="text-body-lg text-white/80 mb-8 max-w-2xl mx-auto">
                 This is a curated selection of my work. I&apos;d be happy to walk
                 through specific projects or discuss how I approach creative
                 challenges.
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[var(--color-accent-500)] text-white px-8 py-3 rounded-lg font-medium hover:bg-[var(--color-accent-600)] transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-[var(--color-crimson-500)] text-white px-8 py-3 rounded-lg font-medium hover:bg-[var(--color-crimson-600)] transition-colors"
               >
                 Get in Touch
               </a>

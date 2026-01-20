@@ -77,11 +77,11 @@ export default function SkillsPage() {
                             <span className="text-body-sm font-medium">
                               {skill.name}
                             </span>
-                            <span className="text-body-xs text-[var(--color-neutral-500)]">
+                            <span className="text-body-xs text-[var(--color-text-soft)]">
                               {skill.level}%
                             </span>
                           </div>
-                          <div className="h-2 bg-[var(--color-neutral-200)] dark:bg-[var(--color-neutral-700)] rounded-full overflow-hidden">
+                          <div className="h-2 bg-[var(--color-border)] dark:bg-[var(--color-border-strong)] rounded-full overflow-hidden">
                             <div
                               className="h-full bg-gradient-button rounded-full transition-all duration-1000"
                               style={{ width: `${skill.level}%` }}

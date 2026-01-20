@@ -57,12 +57,12 @@ export default function BlogPage() {
               {blogPosts.filter(p => p.featured).map((post) => (
                 <ScrollReveal key={post.slug}>
                   <Link href={`/blog/${post.slug}`} className="block group">
-                    <Card className="transition-all duration-300 hover:shadow-xl hover:border-[var(--color-neutral-300)] border-[var(--color-accent-500)]/30">
+                    <Card className="transition-all duration-300 hover:shadow-xl hover:border-[var(--color-border-strong)] border-[var(--color-crimson-500)]/30">
                       <CardHeader>
                         <Badge variant="accent" className="w-fit mb-2">
                           Featured
                         </Badge>
-                        <CardTitle className="text-h3 group-hover:text-[var(--color-accent-500)] transition-colors">
+                        <CardTitle className="text-h3 group-hover:text-[var(--color-crimson-500)] transition-colors">
                           {post.title}
                         </CardTitle>
                       </CardHeader>
@@ -79,7 +79,7 @@ export default function BlogPage() {
                             </Badge>
                           ))}
                         </div>
-                        <span className="text-[var(--color-accent-500)] flex items-center gap-1 text-body-sm font-medium group-hover:gap-2 transition-all">
+                        <span className="text-[var(--color-crimson-500)] flex items-center gap-1 text-body-sm font-medium group-hover:gap-2 transition-all">
                           Read Article
                           <ArrowRight className="h-4 w-4" />
                         </span>
@@ -94,9 +94,9 @@ export default function BlogPage() {
                 {blogPosts.filter(p => !p.featured).map((post) => (
                   <StaggerItem key={post.slug}>
                     <Link href={`/blog/${post.slug}`} className="block h-full group">
-                      <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-[var(--color-neutral-300)]">
+                      <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-[var(--color-border-strong)]">
                         <CardHeader>
-                          <CardTitle className="text-h4 group-hover:text-[var(--color-accent-500)] transition-colors">
+                          <CardTitle className="text-h4 group-hover:text-[var(--color-crimson-500)] transition-colors">
                             {post.title}
                           </CardTitle>
                         </CardHeader>
@@ -121,10 +121,10 @@ export default function BlogPage() {
 
                 {/* Coming Soon */}
                 <StaggerItem>
-                  <Card className="h-full bg-[var(--color-neutral-100)] dark:bg-[var(--color-neutral-800)] border-0 flex flex-col items-center justify-center text-center p-8">
+                  <Card className="h-full bg-[var(--color-bg-subtle)] dark:bg-[var(--color-surface-2)] border-0 flex flex-col items-center justify-center text-center p-8">
                     <span className="text-4xl mb-4">✏️</span>
-                    <h3 className="text-h4 text-[var(--color-neutral-500)] mb-2">More Coming Soon</h3>
-                    <p className="text-body-sm text-[var(--color-neutral-500)]">
+                    <h3 className="text-h4 text-[var(--color-text-soft)] mb-2">More Coming Soon</h3>
+                    <p className="text-body-sm text-[var(--color-text-soft)]">
                       I'm working on content covering ABM strategies, healthcare marketing best practices, and CRM migration checklists.
                     </p>
                   </Card>
@@ -135,7 +135,7 @@ export default function BlogPage() {
         </section>
 
         {/* Topics */}
-        <section className="section-py bg-[var(--color-surface-secondary)]">
+        <section className="section-py bg-[var(--color-bg-subtle)]">
           <div className="container mx-auto px-6">
             <ScrollReveal className="text-center mb-12">
               <span className="text-overline block mb-3">Areas of Expertise</span>
@@ -148,7 +148,7 @@ export default function BlogPage() {
                     <CardContent className="pt-6">
                       <span className="text-4xl mb-4 block">{topic.icon}</span>
                       <h3 className="text-h5 mb-2">{topic.title}</h3>
-                      <p className="text-body-sm text-[var(--color-neutral-600)]">
+                      <p className="text-body-sm text-[var(--color-text-soft)]">
                         {topic.description}
                       </p>
                     </CardContent>

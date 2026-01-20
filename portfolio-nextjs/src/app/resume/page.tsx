@@ -84,7 +84,7 @@ export default function ResumePage() {
                   </div>
                   <div className="mb-6">
                     <h3 className="text-h5 mb-1">{resumeData.education.school}</h3>
-                    <p className="text-[var(--color-neutral-600)] dark:text-[var(--color-neutral-400)] mb-0">
+                    <p className="text-[var(--color-text-soft)] dark:text-[var(--color-text-muted)] mb-0">
                       {resumeData.education.degree} | {resumeData.education.details}
                     </p>
                   </div>
