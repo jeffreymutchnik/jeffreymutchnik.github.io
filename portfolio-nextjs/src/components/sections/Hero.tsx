@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Trophy, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { heroTitle, heroSubtitle, heroButtons } from "@/lib/animations";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 interface HeroProps {
   overline?: string;
@@ -25,6 +24,38 @@ interface HeroProps {
   }>;
 }
 
+// Text reveal animation - each letter animates in
+function AnimatedText({ text, className }: { text: string; className?: string }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <span className={className}>{text}</span>;
+  }
+
+  const letters = text.split("");
+
+  return (
+    <span className={className}>
+      {letters.map((letter, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.4,
+            delay: 0.3 + index * 0.03,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="inline-block"
+          style={{ display: letter === " " ? "inline" : "inline-block" }}
+        >
+          {letter === " " ? "\u00A0" : letter}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
 export function Hero({
   overline = "Marketing Technology Leader",
   title = "Jeffrey Mutchnik",
@@ -37,13 +68,41 @@ export function Hero({
   ],
 }: HeroProps) {
   const shouldReduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+
+  // Parallax effect - grid moves slower than scroll
+  const gridY = useTransform(scrollY, [0, 500], [0, 150]);
+  const contentY = useTransform(scrollY, [0, 500], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-grid-hero opacity-30" />
+      {/* Floating decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-[var(--color-crimson-500)] opacity-[0.08] blur-3xl animate-float"
+        />
+        <div
+          className="absolute top-1/3 -right-32 w-80 h-80 rounded-full bg-[var(--color-plum-500)] opacity-[0.06] blur-3xl animate-float-delayed"
+        />
+        <div
+          className="absolute -bottom-40 left-1/4 w-[500px] h-[500px] rounded-full bg-[var(--color-peach)] opacity-[0.05] blur-3xl animate-float-slow"
+        />
+      </div>
 
-      <div className="container mx-auto px-6 py-32 relative z-10">
+      {/* Grid overlay with parallax */}
+      <motion.div
+        className="absolute inset-0 bg-grid-hero opacity-30"
+        style={{ y: shouldReduceMotion ? 0 : gridY }}
+      />
+
+      <motion.div
+        className="container mx-auto px-6 py-32 relative z-10"
+        style={{
+          y: shouldReduceMotion ? 0 : contentY,
+          opacity: shouldReduceMotion ? 1 : opacity
+        }}
+      >
         <div className="max-w-4xl mx-auto text-center">
           {/* Overline */}
           <motion.div
@@ -52,28 +111,23 @@ export function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: 0 }}
           >
-            <span className="accent-line" />
+            <span className="accent-line-animated" />
             <span className="text-overline text-[var(--color-warm-400)]">
               {overline}
             </span>
           </motion.div>
 
-          {/* Title */}
-          <motion.h1
-            className="text-display font-display text-display-2xl text-white mb-6"
-            variants={shouldReduceMotion ? undefined : heroTitle}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : "hidden"}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : "visible"}
-          >
-            {title}
-          </motion.h1>
+          {/* Title with letter reveal */}
+          <h1 className="text-display font-display text-display-2xl text-white mb-6">
+            <AnimatedText text={title} />
+          </h1>
 
           {/* Subtitle */}
           <motion.p
             className="text-body-xl text-[var(--color-warm-200)] max-w-2xl mx-auto mb-10"
-            variants={shouldReduceMotion ? undefined : heroSubtitle}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : "hidden"}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : "visible"}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.8 }}
           >
             {subtitle}
           </motion.p>
@@ -81,22 +135,26 @@ export function Hero({
           {/* CTAs */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-            variants={shouldReduceMotion ? undefined : heroButtons}
-            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : "hidden"}
-            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : "visible"}
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 1 }}
           >
-            <Link
-              href={primaryCta.href}
-              className="inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium bg-[#AE193B] !text-white hover:bg-[#991936] shadow-md hover:shadow-lg transition-all duration-200"
-            >
-              {primaryCta.label}
-            </Link>
-            <Link
-              href={secondaryCta.href}
-              className="inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium border border-white/30 bg-transparent !text-white hover:bg-white/10 transition-all duration-200"
-            >
-              {secondaryCta.label}
-            </Link>
+            <MagneticButton strength={40}>
+              <Link
+                href={primaryCta.href}
+                className="btn-shimmer inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium bg-[#AE193B] !text-white hover:bg-[#991936] shadow-md hover:shadow-lg transition-all duration-200"
+              >
+                {primaryCta.label}
+              </Link>
+            </MagneticButton>
+            <MagneticButton strength={40}>
+              <Link
+                href={secondaryCta.href}
+                className="inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium border border-white/30 bg-transparent !text-white hover:bg-white/10 transition-all duration-200"
+              >
+                {secondaryCta.label}
+              </Link>
+            </MagneticButton>
           </motion.div>
 
           {/* Badges */}
@@ -105,7 +163,7 @@ export function Hero({
               className="flex flex-wrap items-center justify-center gap-3"
               initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.6 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 1.2 }}
             >
               {badges.map((badge, index) => (
                 <Badge
@@ -125,8 +183,7 @@ export function Hero({
             </motion.div>
           )}
         </div>
-      </div>
-
+      </motion.div>
     </section>
   );
 }

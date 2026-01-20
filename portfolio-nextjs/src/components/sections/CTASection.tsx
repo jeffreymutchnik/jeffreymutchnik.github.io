@@ -30,13 +30,21 @@ export function CTASection({
 
   return (
     <section
-      className={`section-py-lg ${
+      className={`section-py-lg relative overflow-hidden ${
         isDark
-          ? "bg-gradient-hero text-white"
+          ? "bg-gradient-animated text-white"
           : "bg-[var(--color-bg-subtle)]"
       }`}
     >
-      <div className="container mx-auto px-6">
+      {/* Floating decorative elements for dark variant */}
+      {isDark && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-10 -left-20 w-64 h-64 rounded-full bg-white/5 blur-3xl animate-float" />
+          <div className="absolute -bottom-20 -right-10 w-80 h-80 rounded-full bg-[var(--color-peach)] opacity-10 blur-3xl animate-float-delayed" />
+        </div>
+      )}
+
+      <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal className="max-w-3xl mx-auto text-center">
           <h2
             className={`text-h2 mb-4 ${
@@ -55,28 +63,23 @@ export function CTASection({
             {description}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className={isDark ? "" : ""}
+            <Link
+              href={primaryCta.href}
+              className="btn-shimmer inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium bg-white !text-[var(--color-cool-900)] hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              <Link href={primaryCta.href}>
-                {primaryCta.label}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className={
+              {primaryCta.label}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            <Link
+              href={secondaryCta.href}
+              className={`inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium transition-all duration-200 ${
                 isDark
-                  ? "border-white/30 text-white hover:bg-white/10 hover:text-white"
-                  : ""
-              }
+                  ? "border border-white/30 bg-transparent !text-white hover:bg-white/10"
+                  : "border border-[var(--color-slate)] bg-transparent text-[var(--color-slate)] hover:bg-[var(--color-slate)] hover:text-white"
+              }`}
             >
-              <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-            </Button>
+              {secondaryCta.label}
+            </Link>
           </div>
         </ScrollReveal>
       </div>

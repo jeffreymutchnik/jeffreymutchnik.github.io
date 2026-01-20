@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { mainNavItems } from "@/data/navigation";
@@ -19,6 +19,14 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  // Scroll progress
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,6 +158,12 @@ export function Header() {
           </Sheet>
         </div>
       </div>
+
+      {/* Scroll progress indicator */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[var(--color-crimson-500)] origin-left"
+        style={{ scaleX }}
+      />
     </header>
   );
 }
