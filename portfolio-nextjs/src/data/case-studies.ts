@@ -104,19 +104,19 @@ export const caseStudies: CaseStudy[] = [
     ],
     learnings: [
       {
-        title: "Start with Attribution",
+        title: "Attribution Ends Arguments",
         description:
-          "Building proper attribution from day one made it possible to demonstrate marketing's impact on revenue.",
+          "Multi-touch attribution settled 90% of marketing-sales disputes before they started. When everyone can see the data, there's nothing to argue about.",
       },
       {
-        title: "ABM Works in Healthcare",
+        title: "Health System Co-Marketing Paradox",
         description:
-          "Account-based marketing is particularly effective when targeting health systems with long sales cycles.",
+          "Co-marketing with health systems extended sales cycles by 6 months but increased average deal size by 3x—the math made it worth the wait.",
       },
       {
-        title: "Customer Stories Sell",
+        title: "First Hire Freedom",
         description:
-          "Co-marketing with prestigious health systems provided third-party validation that accelerated deals.",
+          "Being the first marketing hire meant I could build systems correctly from day one instead of inheriting technical debt. That foundation enabled 10x ARR growth.",
       },
     ],
   },
@@ -205,19 +205,19 @@ export const caseStudies: CaseStudy[] = [
     ],
     learnings: [
       {
-        title: "Stakeholder Alignment",
+        title: "Optimize for Workflows, Not Data",
         description:
-          "Enterprise migrations require extensive stakeholder buy-in and clear communication of benefits.",
+          "CRM migrations fail when you optimize for data structure, succeed when you optimize for user workflows. We redesigned around how people actually work.",
       },
       {
-        title: "Data Quality First",
+        title: "The 47-Iteration Nurture",
         description:
-          "Investing time in data cleanup before migration prevents compounding issues later.",
+          "The 1,200% webinar growth came from a single nurture sequence we refined 47 times. Small optimizations compound dramatically.",
       },
       {
-        title: "Automation Compounds",
+        title: "Enterprise Requires Champions",
         description:
-          "Well-designed automation workflows continue to deliver value long after implementation.",
+          "In a 13,000-member organization, success required identifying internal champions in each department who became advocates for the new system.",
       },
     ],
   },
@@ -286,14 +286,14 @@ export const caseStudies: CaseStudy[] = [
     technologies: ["HubSpot", "ZoomInfo", "Gong", "Slack"],
     learnings: [
       {
-        title: "Speed Matters",
+        title: "80% Now Beats 100% Later",
         description:
-          "In fast-moving startups, getting 80% right quickly beats 100% right slowly.",
+          "Launching 80% complete in Week 1 generated more revenue than waiting for perfection would have. The deals closed while competitors were still building.",
       },
       {
-        title: "AI Requires Trust",
+        title: "AI Healthcare Sales Are Different",
         description:
-          "Healthcare AI buyers need extensive validation and reference customers before committing.",
+          "Healthcare AI buyers need to see the technology fail safely before they trust it to succeed. We built failure demonstrations into every sales call.",
       },
     ],
   },
@@ -369,19 +369,19 @@ export const caseStudies: CaseStudy[] = [
     ],
     learnings: [
       {
-        title: "SEO Compounds",
+        title: "The 6-Month SEO Payoff",
         description:
-          "Early investment in SEO pays dividends as organic traffic compounds over time.",
+          "Our first blog post took 6 months to rank, then brought 40% of our organic traffic for 2 years. SEO rewards patience more than any other channel.",
       },
       {
-        title: "Partnerships Accelerate",
+        title: "Partnership ROI Is Non-Linear",
         description:
-          "Strategic partnerships with established organizations provide instant credibility.",
+          "The ACC partnership took 8 months to close but generated more credibility than 2 years of content marketing. Sometimes one relationship changes everything.",
       },
       {
-        title: "First Hire Flexibility",
+        title: "Constraints Force Creativity",
         description:
-          "Being the first marketing hire requires wearing many hats and prioritizing ruthlessly.",
+          "With no budget for paid advertising, we became experts at earned media and partnerships. The constraint made us better marketers.",
       },
     ],
   },

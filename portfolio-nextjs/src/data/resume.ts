@@ -43,7 +43,7 @@ export const resumeData = {
       title: "Creative Director & Marketing Manager",
       company: "cliexa",
       description: [
-        "Increased organic traffic by 826% and lead capture by 4,350% through SEO optimization",
+        "Increased organic traffic by 826% and lead capture by 435% through SEO optimization",
         "Secured American College of Cardiology partnership; ACC Innovation Challenge finalist",
         "Denver Startup of the Year finalist 2019",
         "First marketing hire; established marketing technology infrastructure from early stage",

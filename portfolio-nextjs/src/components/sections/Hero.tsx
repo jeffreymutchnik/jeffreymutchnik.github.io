@@ -59,7 +59,7 @@ function AnimatedText({ text, className }: { text: string; className?: string })
 export function Hero({
   overline = "Marketing Technology Leader",
   title = "Jeffrey Mutchnik",
-  subtitle = "8+ years driving revenue growth for B2B healthcare technology companies. First marketing hire at 3 startups. HubSpot and Salesforce expert.",
+  subtitle = "Marketing technology leader who's built revenue engines from the ground up at 3 healthcare startups. Generated $20M+ in pipeline. HubSpot certified, Salesforce fluent.",
   primaryCta = { label: "View Resume", href: "/resume" },
   secondaryCta = { label: "Get in Touch", href: "/contact" },
   badges = [
