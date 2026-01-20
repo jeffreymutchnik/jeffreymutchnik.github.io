@@ -21,6 +21,10 @@ const badgeVariants = cva(
           "border-transparent bg-[var(--color-crimson-500)] text-white",
         purple:
           "border-transparent bg-[var(--color-plum-500)] text-white",
+        peach:
+          "border-transparent bg-[var(--color-peach)] text-[var(--color-espresso)]",
+        teal:
+          "border-transparent bg-[var(--color-teal-500)] text-white",
       },
     },
     defaultVariants: {

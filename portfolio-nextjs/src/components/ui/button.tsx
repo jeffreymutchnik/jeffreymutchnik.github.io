@@ -15,11 +15,11 @@ const buttonVariants = cva(
         destructive:
           "bg-[var(--color-error-500)] text-white hover:bg-[var(--color-error-500)]/90",
         outline:
-          "border border-[var(--color-border)] bg-white text-[var(--color-text-muted)] hover:bg-[var(--color-warm-100)] hover:text-[var(--color-text)] dark:border-[var(--color-border-strong)] dark:bg-transparent dark:text-[var(--color-text)] dark:hover:bg-[var(--color-surface)]",
+          "border border-[var(--color-slate)] bg-transparent text-[var(--color-slate)] hover:bg-[var(--color-slate)] hover:text-white dark:border-white/30 dark:text-white dark:hover:bg-white/10",
         secondary:
           "bg-[var(--color-plum-500)] text-white hover:bg-[var(--color-plum-600)]",
         ghost: "text-[var(--color-text-muted)] hover:bg-[var(--color-warm-100)] hover:text-[var(--color-text)] dark:text-[var(--color-text-soft)] dark:hover:bg-[var(--color-surface)] dark:hover:text-white",
-        link: "text-[var(--color-link)] underline-offset-4 hover:underline",
+        link: "text-[var(--color-teal-500)] underline-offset-4 hover:underline hover:text-[var(--color-teal-400)]",
       },
       size: {
         default: "h-10 px-5 py-2",

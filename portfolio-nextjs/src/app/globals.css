@@ -73,16 +73,23 @@
      SEMANTIC MAPPINGS (Light Mode Default)
      =========================================== */
 
+  /* Foundation Colors */
+  --color-cream: #F7F1C5;
+  --color-peach: #F2BF9C;
+  --color-espresso: #251A18;
+  --color-slate: #1B252D;
+  --color-indigo: #1B063C;
+
   /* Backgrounds */
   --color-bg: #FDFCF9;
-  --color-bg-subtle: #FAF8F3;
+  --color-bg-subtle: #F7F1C5;
   --color-surface: #F5F1E8;
   --color-surface-2: #EDE7D9;
-  --color-surface-accent: #E0D5C1;
+  --color-surface-accent: #F2BF9C;
 
   /* Text */
-  --color-text: #1A1A1A;
-  --color-text-muted: #404040;
+  --color-text: #251A18;
+  --color-text-muted: #1B252D;
   --color-text-soft: #525252;
 
   /* Borders */
@@ -253,11 +260,13 @@ a {
 
 /* Default link color for prose/content areas only */
 .prose a, article a {
-  color: var(--color-link);
+  color: var(--color-teal-500);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .prose a:hover, article a:hover {
-  color: var(--color-link-hover);
+  color: var(--color-teal-400);
 }
 
 /* Focus styles */

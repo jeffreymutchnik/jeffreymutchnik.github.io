@@ -72,7 +72,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${footerNavItems.contact.email}`}
-                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-white/80 hover:text-[var(--color-peach)] transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   <span>Email</span>
@@ -81,7 +81,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${footerNavItems.contact.phone.replace(/[^0-9+]/g, "")}`}
-                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-white/80 hover:text-[var(--color-peach)] transition-colors"
                 >
                   <Phone className="h-4 w-4" />
                   <span>{footerNavItems.contact.phone}</span>
@@ -92,7 +92,7 @@ export function Footer() {
                   href={footerNavItems.contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-white/80 hover:text-[var(--color-peach)] transition-colors"
                 >
                   <Linkedin className="h-4 w-4" />
                   <span>LinkedIn</span>
