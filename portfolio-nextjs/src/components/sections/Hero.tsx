@@ -91,14 +91,12 @@ export function Hero({
             >
               {primaryCta.label}
             </Link>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="min-w-[160px] border-white/30 text-white hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-cool-800)]"
+            <Link
+              href={secondaryCta.href}
+              className="inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium border border-white/30 bg-transparent !text-white hover:bg-white/10 transition-all duration-200"
             >
-              <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-            </Button>
+              {secondaryCta.label}
+            </Link>
           </motion.div>
 
           {/* Badges */}
