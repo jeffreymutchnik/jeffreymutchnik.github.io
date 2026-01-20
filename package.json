@@ -1,0 +1,19 @@
+{
+  "name": "jeffrey-mutchnik-resume",
+  "version": "1.0.0",
+  "description": "Professional resume system for Jeffrey Mutchnik with multiple variants",
+  "scripts": {
+    "pdf": "node scripts/generate-pdf.js",
+    "build": "node scripts/generate-pdf.js"
+  },
+  "keywords": [
+    "resume",
+    "cv",
+    "pdf-generator"
+  ],
+  "author": "Jeffrey Mutchnik",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}

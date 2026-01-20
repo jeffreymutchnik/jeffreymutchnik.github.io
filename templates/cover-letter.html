@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jeffrey Mutchnik - Cover Letter">
+  <title>Jeffrey Mutchnik - Cover Letter</title>
+  <link rel="stylesheet" href="../styles/variables.css">
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--color-text-primary);
+      background-color: #f3f4f6;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    /* Cover Letter Container */
+    .cover-letter {
+      max-width: 8.5in;
+      min-height: 11in;
+      margin: 20px auto;
+      background: var(--color-background);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      padding: 0.6in 0.75in;
+    }
+
+    /* Header - Matches Resume */
+    .letter-header {
+      text-align: center;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--color-accent);
+      margin-bottom: 24px;
+    }
+
+    .letter-header h1 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .letter-header .title {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 9px;
+      color: var(--color-text-secondary);
+      list-style: none;
+    }
+
+    .contact-info a {
+      color: var(--color-text-secondary);
+    }
+
+    /* Date & Address Block */
+    .date-block {
+      margin-bottom: 20px;
+      font-size: 10px;
+      color: var(--color-text-secondary);
+    }
+
+    .recipient-block {
+      margin-bottom: 20px;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .recipient-block .company-name {
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    /* Salutation */
+    .salutation {
+      margin-bottom: 16px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    /* Letter Body */
+    .letter-body {
+      margin-bottom: 24px;
+    }
+
+    .letter-body p {
+      margin-bottom: 14px;
+      font-size: 10px;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+
+    .letter-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .letter-body strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    /* Highlight box for key achievements */
+    .key-highlights {
+      background: var(--color-sidebar-bg);
+      border-left: 3px solid var(--color-accent);
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+
+    .key-highlights ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .key-highlights li {
+      font-size: 9.5px;
+      color: var(--color-text-secondary);
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .key-highlights li::before {
+      content: "\2022";
+      color: var(--color-accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .key-highlights li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Closing */
+    .closing {
+      margin-bottom: 8px;
+      font-size: 10px;
+    }
+
+    .signature {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    /* Placeholder styling */
+    .placeholder {
+      background-color: #fef3c7;
+      color: #92400e;
+      padding: 2px 4px;
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+    }
+
+    /* Print styles */
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      @page {
+        size: letter;
+        margin: 0;
+      }
+
+      body {
+        background: white;
+      }
+
+      .cover-letter {
+        margin: 0;
+        box-shadow: none;
+        min-height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="cover-letter">
+    <!-- Header - Same as Resume -->
+    <header class="letter-header">
+      <h1>Jeffrey Mutchnik</h1>
+      <p class="title">Marketing Technology Manager</p>
+      <ul class="contact-info">
+        <li><a href="mailto:jmutchnik21@gmail.com">jmutchnik21@gmail.com</a></li>
+        <li><a href="tel:+18477679719">(847) 767-9719</a></li>
+        <li>Chicago, IL</li>
+        <li><a href="https://linkedin.com/in/jeffrey-mutchnik" target="_blank">linkedin.com/in/jeffrey-mutchnik</a></li>
+      </ul>
+    </header>
+
+    <!-- Date -->
+    <div class="date-block">
+      <span class="placeholder">[DATE]</span>
+    </div>
+
+    <!-- Recipient -->
+    <div class="recipient-block">
+      <span class="placeholder">[HIRING MANAGER NAME]</span><br>
+      <span class="placeholder">[TITLE]</span><br>
+      <span class="company-name"><span class="placeholder">[COMPANY NAME]</span></span><br>
+      <span class="placeholder">[ADDRESS]</span>
+    </div>
+
+    <!-- Salutation -->
+    <p class="salutation">Dear <span class="placeholder">[HIRING MANAGER NAME]</span>,</p>
+
+    <!-- Letter Body -->
+    <div class="letter-body">
+      <!-- Opening Paragraph: Why This Company -->
+      <p>
+        I am writing to express my interest in the <span class="placeholder">[POSITION]</span> role at <span class="placeholder">[COMPANY]</span>. <span class="placeholder">[1-2 sentences about why you're excited about this specific company - their mission, product, recent news, etc.]</span>
+      </p>
+
+      <!-- Middle Paragraph: Why Me -->
+      <p>
+        With <strong>8+ years of marketing technology experience</strong> in B2B healthcare technology, I bring a track record of building scalable marketing infrastructure from scratch. As <strong>first marketing hire at three successful startups</strong>, I've generated over $20M in qualified pipeline, contributed to a $20M Series B fundraise, and driven measurable outcomes including:
+      </p>
+
+      <!-- Key Highlights Box -->
+      <div class="key-highlights">
+        <ul>
+          <li><strong>44% of company pipeline</strong> ($6M ARR) at PatientIQ through integrated ABM strategy</li>
+          <li><strong>1,200% YoY increase</strong> in webinar registrations at AASM through marketing automation</li>
+          <li><strong>$2.5M ARR in 30 days</strong> at Ambience Healthcare through targeted go-to-market execution</li>
+          <li><strong>HubSpot expertise</strong> across Marketing, Sales, and Service Hubs with multiple enterprise migrations</li>
+        </ul>
+      </div>
+
+      <!-- Paragraph connecting experience to role -->
+      <p>
+        <span class="placeholder">[2-3 sentences connecting your specific experience to what the role requires. Reference specific job requirements and explain how your background addresses them.]</span>
+      </p>
+
+      <!-- Closing Paragraph: Call to Action -->
+      <p>
+        I would welcome the opportunity to discuss how my experience building marketing technology infrastructure and driving measurable pipeline growth could contribute to <span class="placeholder">[COMPANY]</span>'s continued success. Thank you for considering my application.
+      </p>
+    </div>
+
+    <!-- Closing -->
+    <p class="closing">Sincerely,</p>
+    <p class="signature">Jeffrey Mutchnik</p>
+  </main>
+</body>
+</html>

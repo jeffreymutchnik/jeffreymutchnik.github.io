@@ -246,12 +246,17 @@ p {
 }
 
 a {
-  color: var(--color-link); /* Deep teal - WCAG AA compliant */
   text-decoration: none;
   transition: color 0.2s;
+  /* Color controlled by components - no global override */
 }
 
-a:hover {
+/* Default link color for prose/content areas only */
+.prose a, article a {
+  color: var(--color-link);
+}
+
+.prose a:hover, article a:hover {
   color: var(--color-link-hover);
 }
 
@@ -308,12 +313,9 @@ a:hover {
 .text-body-sm { font-size: 0.875rem; line-height: 1.5; }
 .text-body-xs { font-size: 0.75rem; line-height: 1.5; }
 
-/* Text gradient */
+/* Text accent */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-crimson-500), var(--color-plum-500));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-crimson-500);
 }
 
 /* Glassmorphism */
@@ -385,24 +387,24 @@ a:hover {
   background-size: 40px 40px;
 }
 
-/* Gradient backgrounds */
+/* Solid backgrounds */
 .bg-gradient-hero {
-  background: linear-gradient(135deg, #1B063C 0%, #522844 60%, #AE193B 100%);
+  background: #1B063C;
 }
 
 .bg-gradient-accent {
-  background: linear-gradient(135deg, #AE193B 0%, #522844 50%, #1B063C 100%);
+  background: var(--color-crimson-500);
 }
 
 .bg-gradient-button {
-  background: linear-gradient(135deg, #AE193B 0%, #522844 100%);
+  background: var(--color-crimson-500);
 }
 
 /* Accent line */
 .accent-line {
   width: 3rem;
   height: 0.25rem;
-  background: linear-gradient(135deg, #AE193B 0%, #522844 100%);
+  background: var(--color-crimson-500);
   border-radius: 9999px;
 }
 
@@ -578,8 +580,6 @@ a:hover {
   }
 
   .text-gradient {
-    background: none;
-    -webkit-text-fill-color: CanvasText;
     color: CanvasText;
   }
 

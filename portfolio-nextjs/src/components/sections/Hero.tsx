@@ -43,9 +43,6 @@ export function Hero({
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-grid-hero opacity-30" />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-cool-900)]/50" />
-
       <div className="container mx-auto px-6 py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Overline */}
@@ -129,8 +126,6 @@ export function Hero({
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-bg)] to-transparent" />
     </section>
   );
 }

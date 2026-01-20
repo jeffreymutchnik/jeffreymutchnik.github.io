@@ -83,7 +83,7 @@ export default function SkillsPage() {
                           </div>
                           <div className="h-2 bg-[var(--color-border)] dark:bg-[var(--color-border-strong)] rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-gradient-button rounded-full transition-all duration-1000"
+                              className="h-full bg-[var(--color-crimson-500)] rounded-full transition-all duration-1000"
                               style={{ width: `${skill.level}%` }}
                             />
                           </div>

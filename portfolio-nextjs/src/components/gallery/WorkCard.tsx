@@ -30,7 +30,7 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
         <div className="relative aspect-[4/3] bg-[var(--color-warm-100)] dark:bg-[var(--color-surface)] overflow-hidden">
         {isPDF ? (
           // PDF Thumbnail placeholder
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[var(--color-cool-900)] to-[var(--color-plum-500)] text-white p-6">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-cool-900)] text-white p-6">
             <FileText className="h-16 w-16 mb-4 opacity-80" />
             <span className="text-sm font-medium text-center line-clamp-2 opacity-90">
               {item.title}
@@ -60,7 +60,7 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
         )}
 
         {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
             <h3 className="text-white text-h5 mb-2 line-clamp-2">{item.title}</h3>
             {item.description && (

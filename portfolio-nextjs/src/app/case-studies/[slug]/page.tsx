@@ -70,7 +70,7 @@ export default async function CaseStudyPage({
       <Header />
       <main id="main-content" className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[var(--color-cool-900)] via-[var(--color-cool-800)] to-[var(--color-cool-900)] text-white py-20 md:py-28">
+        <section className="bg-[var(--color-cool-900)] text-white py-20 md:py-28">
           <div className="container mx-auto px-6">
             <ScrollReveal>
               <Link
