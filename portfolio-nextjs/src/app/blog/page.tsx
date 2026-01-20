@@ -7,30 +7,13 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
+import { blogPosts } from "@/data/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "Jeffrey Mutchnik's thoughts on marketing technology, B2B healthcare, and professional growth.",
 };
-
-const blogPosts = [
-  {
-    slug: "hubspot-lessons",
-    title: "What I Learned from 4 HubSpot Implementations",
-    description:
-      "After leading HubSpot implementations at PatientIQ, AASM, Ambience Healthcare, and cliexa, I've developed a framework for successful CRM deployments.",
-    tags: ["HubSpot", "CRM", "Marketing Technology"],
-    featured: true,
-  },
-  {
-    slug: "first-marketing-hire",
-    title: "Building Marketing as the First Hire at 3 Startups",
-    description:
-      "Being the first marketing hire is equal parts terrifying and exhilarating. Here's what I wish someone had told me about building marketing from scratch.",
-    tags: ["Startups", "Leadership"],
-  },
-];
 
 const topics = [
   { icon: "🔧", title: "Marketing Technology", description: "CRM architecture, marketing automation, and building effective martech stacks" },
@@ -105,7 +88,7 @@ export default function BlogPage() {
                             {post.description}
                           </CardDescription>
                         </CardContent>
-                        <CardFooter>
+                        <CardFooter className="flex items-center justify-between">
                           <div className="flex flex-wrap gap-2">
                             {post.tags.map((tag) => (
                               <Badge key={tag} variant="secondary">
@@ -113,22 +96,14 @@ export default function BlogPage() {
                               </Badge>
                             ))}
                           </div>
+                          <span className="text-body-xs text-[var(--color-text-muted)]">
+                            {post.readingTime}
+                          </span>
                         </CardFooter>
                       </Card>
                     </Link>
                   </StaggerItem>
                 ))}
-
-                {/* Coming Soon */}
-                <StaggerItem>
-                  <Card className="h-full bg-[var(--color-bg-subtle)] dark:bg-[var(--color-surface-2)] border-0 flex flex-col items-center justify-center text-center p-8">
-                    <span className="text-4xl mb-4">✏️</span>
-                    <h3 className="text-h4 text-[var(--color-text-soft)] mb-2">More Coming Soon</h3>
-                    <p className="text-body-sm text-[var(--color-text-soft)]">
-                      I'm working on content covering ABM strategies, healthcare marketing best practices, and CRM migration checklists.
-                    </p>
-                  </Card>
-                </StaggerItem>
               </StaggerContainer>
             </div>
           </div>
