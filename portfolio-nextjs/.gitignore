@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Portfolio work files - not tracked in git (hosted externally)
+public/work/
+public/images/work/
