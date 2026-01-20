@@ -304,10 +304,10 @@ export const caseStudies: CaseStudy[] = [
     subtitle: "SEO & Lead Generation Transformation",
     category: "Healthcare SaaS | Patient Engagement",
     description:
-      "Increased organic traffic by 826% and lead capture by 4,350% through comprehensive marketing technology overhaul.",
+      "Increased organic traffic by 826% and lead capture by 435% through comprehensive marketing technology overhaul.",
     stats: [
       { value: "826%", label: "Organic Traffic" },
-      { value: "4,350%", label: "Lead Capture" },
+      { value: "435%", label: "Lead Capture" },
       { value: "ACC", label: "Innovation Finalist" },
       { value: "First", label: "Marketing Hire" },
     ],
@@ -356,7 +356,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     results: [
       { value: "826%", label: "Traffic Increase" },
-      { value: "4,350%", label: "Lead Capture" },
+      { value: "435%", label: "Lead Capture" },
       { value: "ACC", label: "Partnership Secured" },
       { value: "2019", label: "Startup of Year Finalist" },
     ],

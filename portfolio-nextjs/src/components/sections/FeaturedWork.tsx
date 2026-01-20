@@ -68,7 +68,7 @@ export function FeaturedWork({
           {projects.map((project, index) => (
             <StaggerItem key={index}>
               <Link href={project.href} className="block h-full group">
-                <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-[var(--color-peach)] dark:hover:border-[var(--color-peach)] hover:-translate-y-1">
+                <Card className="h-full transition-all duration-300 hover:shadow-xl hover:border-[var(--color-crimson-500)] dark:hover:border-[var(--color-crimson-500)] hover:-translate-y-1">
                   <CardHeader>
                     <span className="text-body-sm text-[var(--color-plum-500)] font-medium mb-1">
                       {project.company}

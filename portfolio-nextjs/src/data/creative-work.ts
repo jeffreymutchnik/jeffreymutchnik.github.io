@@ -20,6 +20,7 @@ export interface WorkItem {
   file: string;
   description?: string;
   featured?: boolean;
+  date?: string; // e.g., "Dec 2023"
 }
 
 export const workItems: WorkItem[] = [
@@ -33,6 +34,7 @@ export const workItems: WorkItem[] = [
     file: "/work/patientiq/case-studies/Case Study - New England Baptist Hospital.pdf",
     description: "How NEBH improved patient outcomes tracking with PatientIQ",
     featured: true,
+    date: "Mar 2021",
   },
   {
     id: "piq-cs-uc-health",
@@ -81,6 +83,7 @@ export const workItems: WorkItem[] = [
     file: "/work/patientiq/whitepapers/eBook - Build vs Buy - Launching an Integrated Patient-Reported Outcomes Program.pdf",
     description: "Comprehensive guide to building vs buying PRO infrastructure",
     featured: true,
+    date: "Sep 2020",
   },
   {
     id: "piq-wp-evaluating",
@@ -261,6 +264,7 @@ export const workItems: WorkItem[] = [
     file: "/work/ambience/Ambience Brand Guidelines.pdf",
     description: "Comprehensive brand identity and usage guidelines",
     featured: true,
+    date: "Feb 2023",
   },
   {
     id: "amb-keynote",
@@ -271,6 +275,7 @@ export const workItems: WorkItem[] = [
     file: "/work/ambience/presentations/Ambience_ Keynote Presentation - Jeffrey Mutchnik.pdf",
     description: "Strategic marketing presentation for leadership",
     featured: true,
+    date: "Mar 2023",
   },
   {
     id: "amb-ad-linkedin1",
