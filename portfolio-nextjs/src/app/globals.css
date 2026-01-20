@@ -81,10 +81,10 @@
   --color-indigo: #1B063C;
 
   /* Backgrounds */
-  --color-bg: #FDFCF9;
-  --color-bg-subtle: #F7F1C5;
-  --color-surface: #F5F1E8;
-  --color-surface-2: #EDE7D9;
+  --color-bg: #FAFAFA;
+  --color-bg-subtle: #F5F5F5;
+  --color-surface: #EFEFEF;
+  --color-surface-2: #E8E8E8;
   --color-surface-accent: #F2BF9C;
 
   /* Text */
