@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { fadeInUp } from "@/lib/animations";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface PageHeaderProps {
   overline?: string;
@@ -16,23 +15,80 @@ export function PageHeader({
   description,
   children,
 }: PageHeaderProps) {
+  const shouldReduceMotion = useReducedMotion();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.1,
+        delayChildren: shouldReduceMotion ? 0 : 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.5,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  };
+
   return (
-    <section className="bg-[var(--color-bg-subtle)] py-12 md:py-16">
-      <div className="container mx-auto px-6">
+    <section className="relative bg-[var(--color-bg-subtle)] py-12 md:py-16 overflow-hidden">
+      {/* Subtle grid background */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(var(--color-cool-400) 1px, transparent 1px),
+            linear-gradient(90deg, var(--color-cool-400) 1px, transparent 1px)
+          `,
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           className="max-w-3xl mx-auto text-center"
-          variants={fadeInUp}
+          variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {overline && (
-            <span className="text-overline block mb-3">{overline}</span>
+            <motion.div variants={itemVariants} className="mb-3">
+              <div className="flex items-center justify-center gap-3">
+                <motion.span
+                  className="h-px w-8 bg-[var(--color-crimson-500)]"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.3 }}
+                />
+                <span className="text-overline">{overline}</span>
+                <motion.span
+                  className="h-px w-8 bg-[var(--color-crimson-500)]"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.3 }}
+                />
+              </div>
+            </motion.div>
           )}
-          <h1 className="text-h1 mb-4">{title}</h1>
+          <motion.h1 variants={itemVariants} className="text-h1 mb-4">
+            {title}
+          </motion.h1>
           {description && (
-            <p className="text-lead mb-6">{description}</p>
+            <motion.p variants={itemVariants} className="text-lead mb-6">
+              {description}
+            </motion.p>
           )}
-          {children}
+          {children && <motion.div variants={itemVariants}>{children}</motion.div>}
         </motion.div>
       </div>
     </section>

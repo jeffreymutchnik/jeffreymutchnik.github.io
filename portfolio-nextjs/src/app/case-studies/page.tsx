@@ -1,17 +1,13 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Header, Footer } from "@/components/layout";
 import { PageHeader } from "@/components/sections";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
-
-export const metadata: Metadata = {
-  title: "Case Studies",
-  description:
-    "Detailed case studies of Jeffrey Mutchnik's marketing technology work in B2B healthcare.",
-};
 
 const caseStudies = [
   {
@@ -49,6 +45,103 @@ const caseStudies = [
   },
 ];
 
+// Case study card component with enhanced interactions
+function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: number }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <Link href={`/case-studies/${study.slug}`} className="block group">
+      <motion.div
+        whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.01 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      >
+        <Card
+          className={`transition-all duration-300 hover:shadow-xl overflow-hidden ${
+            study.featured
+              ? "border-[var(--color-crimson-500)]/30 hover:border-[var(--color-crimson-500)]/60"
+              : "hover:border-[var(--color-cool-400)]"
+          }`}
+        >
+          <CardHeader>
+            {study.featured && (
+              <motion.div
+                className="relative w-fit mb-2"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {/* Subtle glow behind featured badge */}
+                {!shouldReduceMotion && (
+                  <motion.div
+                    className="absolute inset-0 bg-[var(--color-crimson-500)] rounded-full blur-md"
+                    animate={{ opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                )}
+                <Badge variant="accent" className="relative flex items-center gap-1">
+                  <Sparkles className="h-3 w-3" />
+                  Featured
+                </Badge>
+              </motion.div>
+            )}
+            <CardTitle className="text-h3 group-hover:text-[var(--color-crimson-500)] transition-colors">
+              {study.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-body-lg leading-relaxed mb-4">
+              {study.description}
+            </CardDescription>
+            <div className="flex flex-wrap gap-4 mb-4">
+              {study.stats.map((stat, statIndex) => (
+                <motion.span
+                  key={statIndex}
+                  className="text-body-sm font-semibold text-[var(--color-crimson-500)] bg-[var(--color-crimson-500)]/5 px-3 py-1 rounded-full"
+                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: statIndex * 0.1 }}
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.05, backgroundColor: "rgba(174, 25, 59, 0.1)" }}
+                >
+                  {stat}
+                </motion.span>
+              ))}
+            </div>
+          </CardContent>
+          <CardFooter className="flex items-center justify-between">
+            <div className="flex flex-wrap gap-2">
+              {study.tags.map((tag, tagIndex) => (
+                <motion.div
+                  key={tagIndex}
+                  initial={shouldReduceMotion ? {} : { opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: tagIndex * 0.05 }}
+                >
+                  <Badge variant="secondary">{tag}</Badge>
+                </motion.div>
+              ))}
+            </div>
+            <motion.span
+              className="text-[var(--color-crimson-500)] flex items-center gap-1 text-body-sm font-medium"
+              whileHover={shouldReduceMotion ? {} : { x: 4 }}
+            >
+              Read Case Study
+              <motion.span
+                className="inline-block"
+                whileHover={shouldReduceMotion ? {} : { x: 4, scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              >
+                <ArrowRight className="h-4 w-4" />
+              </motion.span>
+            </motion.span>
+          </CardFooter>
+        </Card>
+      </motion.div>
+    </Link>
+  );
+}
+
 export default function CaseStudiesPage() {
   return (
     <>
@@ -65,52 +158,7 @@ export default function CaseStudiesPage() {
             <StaggerContainer className="space-y-8 max-w-4xl mx-auto">
               {caseStudies.map((study, index) => (
                 <StaggerItem key={index}>
-                  <Link href={`/case-studies/${study.slug}`} className="block group">
-                    <Card
-                      className={`transition-all duration-300 hover:shadow-xl hover:border-[var(--color-border-strong)] dark:hover:border-[var(--color-border-strong)] hover:-translate-y-1 ${
-                        study.featured ? "border-[var(--color-crimson-500)]/30" : ""
-                      }`}
-                    >
-                      <CardHeader>
-                        {study.featured && (
-                          <Badge variant="accent" className="w-fit mb-2">
-                            Featured
-                          </Badge>
-                        )}
-                        <CardTitle className="text-h3 group-hover:text-[var(--color-crimson-500)] transition-colors">
-                          {study.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <CardDescription className="text-body-lg leading-relaxed mb-4">
-                          {study.description}
-                        </CardDescription>
-                        <div className="flex flex-wrap gap-4 mb-4">
-                          {study.stats.map((stat, statIndex) => (
-                            <span
-                              key={statIndex}
-                              className="text-body-sm font-semibold text-[var(--color-crimson-500)]"
-                            >
-                              {stat}
-                            </span>
-                          ))}
-                        </div>
-                      </CardContent>
-                      <CardFooter className="flex items-center justify-between">
-                        <div className="flex flex-wrap gap-2">
-                          {study.tags.map((tag, tagIndex) => (
-                            <Badge key={tagIndex} variant="secondary">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                        <span className="text-[var(--color-crimson-500)] flex items-center gap-1 text-body-sm font-medium group-hover:gap-2 transition-all">
-                          Read Case Study
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </CardFooter>
-                    </Card>
-                  </Link>
+                  <CaseStudyCard study={study} index={index} />
                 </StaggerItem>
               ))}
             </StaggerContainer>
