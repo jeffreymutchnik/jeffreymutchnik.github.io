@@ -34,17 +34,17 @@ export function Header() {
     return pathname.startsWith(href);
   };
 
-  // Only show white text on homepage (dark hero background)
   const isHomepage = pathname === "/";
-  const showWhiteText = isHomepage && !isScrolled;
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled || !isHomepage
-          ? "bg-[var(--color-warm-50)]/95 dark:bg-[var(--color-cool-900)]/95 backdrop-blur-md shadow-sm border-b border-[var(--color-border)]/50 dark:border-[var(--color-border-strong)]/50"
-          : "bg-transparent"
+        isScrolled
+          ? "bg-[var(--color-cool-900)]/95 backdrop-blur-md shadow-sm border-b border-white/10"
+          : isHomepage
+          ? "bg-transparent"
+          : "bg-[var(--color-cool-900)]"
       )}
     >
       <div className="container mx-auto px-6">
@@ -52,12 +52,7 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className={cn(
-              "font-display text-xl md:text-2xl font-semibold transition-colors",
-              showWhiteText
-                ? "text-white"
-                : "text-[var(--color-text)] dark:text-white"
-            )}
+            className="font-display text-xl md:text-2xl font-semibold text-white transition-colors"
           >
             Jeffrey Mutchnik
           </Link>
@@ -71,12 +66,8 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                   isActiveLink(item.href)
-                    ? showWhiteText
-                      ? "text-white bg-white/25 font-semibold"
-                      : "text-[var(--color-crimson-500)] bg-[var(--color-crimson-100)] dark:bg-[var(--color-crimson-500)]/10"
-                    : showWhiteText
-                    ? "text-white hover:text-white hover:bg-white/15"
-                    : "text-[var(--color-text-soft)] hover:text-[var(--color-text)] hover:bg-[var(--color-warm-100)] dark:text-[var(--color-text-muted)] dark:hover:text-white dark:hover:bg-[var(--color-surface)]"
+                    ? "text-white bg-white/25 font-semibold"
+                    : "text-white/80 hover:text-white hover:bg-white/15"
                 )}
               >
                 {item.label}
@@ -88,10 +79,8 @@ export function Header() {
           <div className="hidden lg:block">
             <Button
               asChild
-              variant={showWhiteText ? "secondary" : "default"}
-              className={cn(
-                showWhiteText && "bg-white text-[var(--color-text)] hover:bg-white/90"
-              )}
+              variant="secondary"
+              className="bg-white text-[var(--color-cool-900)] hover:bg-white/90"
             >
               <Link href="/contact">Get in Touch</Link>
             </Button>
@@ -103,11 +92,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className={cn(
-                  showWhiteText
-                    ? "text-white"
-                    : "text-[var(--color-text)] dark:text-white"
-                )}
+                className="text-white"
               >
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
