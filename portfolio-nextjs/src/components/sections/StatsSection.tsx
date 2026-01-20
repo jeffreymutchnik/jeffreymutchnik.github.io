@@ -64,7 +64,7 @@ export function StatsSection({ stats = defaultStats, className }: StatsSectionPr
                   </div>
 
                   {/* Accent line */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 rounded-full bg-[var(--color-peach)] group-hover:w-20 transition-all duration-300" />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 rounded-full bg-[var(--color-crimson-500)] group-hover:w-20 transition-all duration-300" />
                 </motion.div>
               </StaggerItem>
             );

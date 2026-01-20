@@ -39,8 +39,8 @@ export function CTASection({
       {/* Floating decorative elements for dark variant */}
       {isDark && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 -left-20 w-64 h-64 rounded-full bg-white/5 blur-3xl animate-float" />
-          <div className="absolute -bottom-20 -right-10 w-80 h-80 rounded-full bg-[var(--color-peach)] opacity-10 blur-3xl animate-float-delayed" />
+          <div className="absolute top-10 -left-20 w-64 h-64 rounded-full bg-[var(--color-crimson-500)] opacity-[0.08] blur-3xl animate-float" />
+          <div className="absolute -bottom-20 -right-10 w-80 h-80 rounded-full bg-[var(--color-crimson-600)] opacity-[0.06] blur-3xl animate-float-delayed" />
         </div>
       )}
 

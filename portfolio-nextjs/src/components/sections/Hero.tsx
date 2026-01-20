@@ -80,13 +80,13 @@ export function Hero({
       {/* Floating decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-[var(--color-crimson-500)] opacity-[0.08] blur-3xl animate-float"
+          className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-[var(--color-crimson-500)] opacity-[0.12] blur-3xl animate-float"
         />
         <div
-          className="absolute top-1/3 -right-32 w-80 h-80 rounded-full bg-[var(--color-plum-500)] opacity-[0.06] blur-3xl animate-float-delayed"
+          className="absolute top-1/3 -right-32 w-80 h-80 rounded-full bg-[var(--color-crimson-600)] opacity-[0.08] blur-3xl animate-float-delayed"
         />
         <div
-          className="absolute -bottom-40 left-1/4 w-[500px] h-[500px] rounded-full bg-[var(--color-peach)] opacity-[0.05] blur-3xl animate-float-slow"
+          className="absolute -bottom-40 left-1/4 w-[500px] h-[500px] rounded-full bg-[var(--color-crimson-400)] opacity-[0.06] blur-3xl animate-float-slow"
         />
       </div>
 
