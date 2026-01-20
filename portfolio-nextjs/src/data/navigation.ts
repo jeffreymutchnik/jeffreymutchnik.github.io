@@ -5,10 +5,10 @@ export interface NavItem {
 
 export const mainNavItems: NavItem[] = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Resume", href: "/resume" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Skills", href: "/skills" },
-  { label: "Projects", href: "/projects" },
   { label: "Creative Work", href: "/creative-work" },
   { label: "Blog", href: "/blog" },
 ];
@@ -16,12 +16,12 @@ export const mainNavItems: NavItem[] = [
 export const footerNavItems = {
   navigation: [
     { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
     { label: "Resume", href: "/resume" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Skills", href: "/skills" },
   ],
   more: [
-    { label: "Projects", href: "/projects" },
+    { label: "Skills", href: "/skills" },
     { label: "Creative Work", href: "/creative-work" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
