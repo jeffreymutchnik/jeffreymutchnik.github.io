@@ -17,7 +17,7 @@ export function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <section className="bg-[var(--color-bg-subtle)] section-py">
+    <section className="bg-[var(--color-bg-subtle)] py-12 md:py-16">
       <div className="container mx-auto px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
