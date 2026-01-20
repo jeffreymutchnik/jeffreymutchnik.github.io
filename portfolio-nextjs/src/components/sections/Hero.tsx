@@ -85,9 +85,12 @@ export function Hero({
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : "hidden"}
             animate={shouldReduceMotion ? { opacity: 1, y: 0 } : "visible"}
           >
-            <Button asChild size="lg" className="min-w-[160px]">
-              <Link href={primaryCta.href} className="!text-white">{primaryCta.label}</Link>
-            </Button>
+            <Link
+              href={primaryCta.href}
+              className="inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium bg-[#AE193B] !text-white hover:bg-[#991936] shadow-md hover:shadow-lg transition-all duration-200"
+            >
+              {primaryCta.label}
+            </Link>
             <Button
               asChild
               variant="outline"
