@@ -31,7 +31,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Case Studies",
     type: "pdf",
-    file: "/work/patientiq/case-studies/Case Study - New England Baptist Hospital.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/case-studies/Case%20Study%20-%20New%20England%20Baptist%20Hospital.pdf",
     description: "How NEBH improved patient outcomes tracking with PatientIQ",
     featured: true,
     date: "Mar 2021",
@@ -42,7 +42,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Case Studies",
     type: "pdf",
-    file: "/work/patientiq/case-studies/Case Study - University of Colorado Health.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/case-studies/Case%20Study%20-%20University%20of%20Colorado%20Health.pdf",
     description: "UC Health's implementation of patient-reported outcomes",
   },
   {
@@ -51,7 +51,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Case Studies",
     type: "pdf",
-    file: "/work/patientiq/case-studies/Case Study - Midwest Orthopaedics at Rush.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/case-studies/Case%20Study%20-%20Midwest%20Orthopaedics%20at%20Rush.pdf",
     description: "Rush's journey to comprehensive outcomes tracking",
   },
   {
@@ -60,7 +60,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Case Studies",
     type: "pdf",
-    file: "/work/patientiq/case-studies/Case Study - DMOS Orthopaedic Centers.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/case-studies/Case%20Study%20-%20DMOS%20Orthopaedic%20Centers.pdf",
     description: "DMOS outcomes and reputation management success",
   },
   {
@@ -69,7 +69,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Case Studies",
     type: "pdf",
-    file: "/work/patientiq/case-studies/Case Study - Onkos Surgical.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/case-studies/Case%20Study%20-%20Onkos%20Surgical.pdf",
     description: "Medical device company leveraging real-world evidence",
   },
 
@@ -80,7 +80,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Whitepapers & eBooks",
     type: "pdf",
-    file: "/work/patientiq/whitepapers/eBook - Build vs Buy - Launching an Integrated Patient-Reported Outcomes Program.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/whitepapers/eBook%20-%20Build%20vs%20Buy%20-%20Launching%20an%20Integrated%20Patient-Reported%20Outcomes%20Program.pdf",
     description: "Comprehensive guide to building vs buying PRO infrastructure",
     featured: true,
     date: "Sep 2020",
@@ -91,7 +91,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Whitepapers & eBooks",
     type: "pdf",
-    file: "/work/patientiq/whitepapers/eBook - Evaluating Patient-Reported Outcome Platforms.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/whitepapers/eBook%20-%20Evaluating%20Patient-Reported%20Outcome%20Platforms.pdf",
     description: "How to evaluate and select PRO technology partners",
   },
   {
@@ -100,7 +100,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Whitepapers & eBooks",
     type: "pdf",
-    file: "/work/patientiq/whitepapers/eBook - Top 10 Tactics to Improve Patient Compliance.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/whitepapers/eBook%20-%20Top%2010%20Tactics%20to%20Improve%20Patient%20Compliance.pdf",
     description: "Strategies to improve patient engagement and compliance",
   },
   {
@@ -109,7 +109,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Whitepapers & eBooks",
     type: "pdf",
-    file: "/work/patientiq/whitepapers/eBook - Uncovering the Blindspot in Value-Based Care Strategies.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/whitepapers/eBook%20-%20Uncovering%20the%20Blindspot%20in%20Value-Based%20Care%20Strategies.pdf",
     description: "Identifying gaps in value-based care approaches",
   },
 
@@ -120,7 +120,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/sell-sheets/PatientIQ Overview.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/sell-sheets/PatientIQ%20Overview.pdf",
     description: "Comprehensive platform overview and capabilities",
   },
   {
@@ -129,7 +129,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/sell-sheets/Online Reputation & Satisfaction.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/sell-sheets/Online%20Reputation%20%26%20Satisfaction.pdf",
     description: "Patient satisfaction and online reputation management",
   },
   {
@@ -138,7 +138,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/sell-sheets/Patient Engagement.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/sell-sheets/Patient%20Engagement.pdf",
     description: "Driving patient engagement through technology",
   },
   {
@@ -147,7 +147,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/sell-sheets/PatientIQ Epic App - 1-Page Handout.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/sell-sheets/PatientIQ%20Epic%20App%20-%201-Page%20Handout.pdf",
     description: "Epic integration and app capabilities",
   },
   {
@@ -156,7 +156,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/sell-sheets/PatientIQ RWE Solutions.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/sell-sheets/PatientIQ%20RWE%20Solutions.pdf",
     description: "Generating real-world evidence from patient data",
   },
 
@@ -167,7 +167,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/tearsheets/Addiction Pathway Tearsheet.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/tearsheets/Addiction%20Pathway%20Tearsheet.pdf",
     description: "Clinical pathway guide for addiction treatment",
   },
   {
@@ -176,7 +176,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/tearsheets/Bone Health Pathway Tearsheet.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/tearsheets/Bone%20Health%20Pathway%20Tearsheet.pdf",
     description: "Clinical pathway guide for bone health",
   },
   {
@@ -185,7 +185,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/patientiq/tearsheets/Breast Cancer Pathway Tearsheet.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/patientiq/tearsheets/Breast%20Cancer%20Pathway%20Tearsheet.pdf",
     description: "Clinical pathway guide for breast cancer care",
   },
 
@@ -196,7 +196,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Digital Advertising",
     type: "image",
-    file: "/images/work/patientiq/linkedin-ads.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/patientiq/linkedin-ads.png",
     description: "LinkedIn advertising campaign creative",
   },
   {
@@ -205,7 +205,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Digital Advertising",
     type: "image",
-    file: "/images/work/patientiq/nebh-ad.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/patientiq/nebh-ad.png",
     description: "New England Baptist Hospital promotional ad",
   },
   {
@@ -214,7 +214,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Digital Advertising",
     type: "image",
-    file: "/images/work/patientiq/uc-health-ad.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/patientiq/uc-health-ad.png",
     description: "University of Colorado Health promotional ad",
   },
   {
@@ -223,7 +223,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Social Media",
     type: "image",
-    file: "/images/work/patientiq/employee-spotlight-1.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/patientiq/employee-spotlight-1.png",
     description: "Employee spotlight social media content",
   },
   {
@@ -232,7 +232,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Social Media",
     type: "image",
-    file: "/images/work/patientiq/customer-highlight-template.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/patientiq/customer-highlight-template.png",
     description: "Customer success story social template",
   },
   {
@@ -241,7 +241,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Email Campaigns",
     type: "image",
-    file: "/images/work/patientiq/aaos-email-graphic.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/patientiq/aaos-email-graphic.png",
     description: "AAOS conference promotional email graphic",
   },
   {
@@ -250,7 +250,7 @@ export const workItems: WorkItem[] = [
     company: "PatientIQ",
     category: "Event Materials",
     type: "image",
-    file: "/images/work/patientiq/aaos-restaurant-flyer.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/patientiq/aaos-restaurant-flyer.png",
     description: "Conference dinner event promotional flyer",
   },
 
@@ -261,7 +261,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Brand & Design",
     type: "pdf",
-    file: "/work/ambience/Ambience Brand Guidelines.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/ambience/Ambience%20Brand%20Guidelines.pdf",
     description: "Comprehensive brand identity and usage guidelines",
     featured: true,
     date: "Feb 2023",
@@ -272,7 +272,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Presentations",
     type: "pdf",
-    file: "/work/ambience/presentations/Ambience_ Keynote Presentation - Jeffrey Mutchnik.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/ambience/presentations/Ambience_%20Keynote%20Presentation%20-%20Jeffrey%20Mutchnik.pdf",
     description: "Strategic marketing presentation for leadership",
     featured: true,
     date: "Mar 2023",
@@ -283,7 +283,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Digital Advertising",
     type: "image",
-    file: "/work/ambience/graphics/linkedin-ad-1.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/ambience/graphics/linkedin-ad-1.png",
     description: "LinkedIn campaign promoting AI documentation",
   },
   {
@@ -292,7 +292,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Digital Advertising",
     type: "image",
-    file: "/work/ambience/graphics/linkedin-ad-2.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/ambience/graphics/linkedin-ad-2.png",
     description: "LinkedIn campaign for clinical workflow",
   },
   {
@@ -301,7 +301,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Digital Advertising",
     type: "image",
-    file: "/work/ambience/graphics/linkedin-ad-3.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/ambience/graphics/linkedin-ad-3.png",
     description: "LinkedIn campaign for provider satisfaction",
   },
   {
@@ -310,7 +310,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Digital Advertising",
     type: "image",
-    file: "/work/ambience/graphics/ambience-campaign-1.jpg",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/ambience/graphics/ambience-campaign-1.jpg",
     description: "LinkedIn advertising campaign variation",
   },
   {
@@ -319,7 +319,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Digital Advertising",
     type: "image",
-    file: "/work/ambience/graphics/ambience-campaign-2.jpg",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/ambience/graphics/ambience-campaign-2.jpg",
     description: "LinkedIn advertising campaign variation",
   },
   {
@@ -328,7 +328,7 @@ export const workItems: WorkItem[] = [
     company: "Ambience",
     category: "Sales Collateral",
     type: "image",
-    file: "/images/work/ambience/lead-qualification-flowchart.jpg",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/images/work/ambience/lead-qualification-flowchart.jpg",
     description: "Sales process and lead qualification visual",
   },
 
@@ -339,7 +339,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/cliexa/collateral/cliexa Overview.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/collateral/cliexa%20Overview.pdf",
     description: "Comprehensive platform capabilities overview",
   },
   {
@@ -348,7 +348,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Whitepapers & eBooks",
     type: "pdf",
-    file: "/work/cliexa/collateral/cliexaEASE-whitepaper.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/collateral/cliexaEASE-whitepaper.pdf",
     description: "Technical whitepaper on ease of use",
   },
   {
@@ -357,7 +357,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/cliexa/collateral/Enable Remote Care _ Virtual Health.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/collateral/Enable%20Remote%20Care%20_%20Virtual%20Health.pdf",
     description: "Guide to enabling remote patient care",
   },
   {
@@ -366,7 +366,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/cliexa/collateral/Full Stack Virtual Health.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/collateral/Full%20Stack%20Virtual%20Health.pdf",
     description: "Complete virtual health solution overview",
   },
   {
@@ -375,7 +375,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Sales Collateral",
     type: "pdf",
-    file: "/work/cliexa/collateral/navigatER Product Handout.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/collateral/navigatER%20Product%20Handout.pdf",
     description: "Emergency department navigation product",
   },
   {
@@ -384,7 +384,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Case Studies",
     type: "pdf",
-    file: "/work/cliexa/collateral/cliexa-OPTIONS Pilot Study with UC Health.pdf",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/collateral/cliexa-OPTIONS%20Pilot%20Study%20with%20UC%20Health.pdf",
     description: "Pilot study results with UC Health",
   },
   {
@@ -393,7 +393,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Event Materials",
     type: "image",
-    file: "/work/cliexa/graphics/healthcon2019.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/healthcon2019.png",
     description: "Trade show booth design for HealthCon",
   },
   {
@@ -402,7 +402,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Social Media",
     type: "image",
-    file: "/work/cliexa/graphics/cliexa-covid-example-post-01.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/cliexa-covid-example-post-01.png",
     description: "COVID-19 screening social campaign",
   },
   {
@@ -411,7 +411,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Digital Advertising",
     type: "image",
-    file: "/work/cliexa/graphics/cliexa-facebook-campaign.jpg",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/cliexa-facebook-campaign.jpg",
     description: "Facebook advertising campaign",
   },
   {
@@ -420,7 +420,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Email Campaigns",
     type: "image",
-    file: "/work/cliexa/graphics/athenahealth_v2_email_banner.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/athenahealth_v2_email_banner.png",
     description: "athenahealth marketplace promotion email",
   },
   {
@@ -429,7 +429,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Email Campaigns",
     type: "image",
-    file: "/work/cliexa/graphics/cliexa-azure-email-banner.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/cliexa-azure-email-banner.png",
     description: "Microsoft Azure marketplace launch email",
   },
   {
@@ -438,7 +438,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Social Media",
     type: "image",
-    file: "/work/cliexa/graphics/cliexa-rpm-changing-game.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/cliexa-rpm-changing-game.png",
     description: "Remote patient monitoring thought leadership",
   },
   {
@@ -447,7 +447,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Social Media",
     type: "image",
-    file: "/work/cliexa/graphics/navigatER_social_media_banner_image_2019-03.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/navigatER_social_media_banner_image_2019-03.png",
     description: "navigatER product social media banner",
   },
   {
@@ -456,7 +456,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Event Materials",
     type: "image",
-    file: "/work/cliexa/graphics/afib-focus-group.jpg",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/afib-focus-group.jpg",
     description: "Atrial fibrillation patient focus group",
   },
   {
@@ -465,7 +465,7 @@ export const workItems: WorkItem[] = [
     company: "cliexa",
     category: "Social Media",
     type: "image",
-    file: "/work/cliexa/graphics/global_health_goes_digital-02.png",
+    file: "https://gi2pkoro6ok0vbw0.public.blob.vercel-storage.com/work/cliexa/graphics/global_health_goes_digital-02.png",
     description: "Global health digitization thought leadership",
   },
 ];
