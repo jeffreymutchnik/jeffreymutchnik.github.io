@@ -103,21 +103,12 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
             </div>
           </div>
 
-          {/* Featured badge with glow */}
+          {/* Featured badge */}
           {item.featured && (
             <div className="absolute top-3 left-3">
-              <div className="relative">
-                {!shouldReduceMotion && (
-                  <motion.div
-                    className="absolute inset-0 bg-[var(--color-crimson-500)] rounded-full blur-md"
-                    animate={{ opacity: [0.4, 0.6, 0.4] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                )}
-                <Badge variant="accent" className="relative bg-[var(--color-crimson-500)]">
-                  Featured
-                </Badge>
-              </div>
+              <Badge variant="accent" className="bg-[var(--color-crimson-500)]">
+                Featured
+              </Badge>
             </div>
           )}
 

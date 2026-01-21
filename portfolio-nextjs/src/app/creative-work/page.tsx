@@ -404,44 +404,32 @@ export default function CreativeWorkPage() {
           overline="Visual Portfolio"
           title="Creative Work"
           description="A curated selection of marketing collateral, brand design, and campaign creative from my career in B2B healthcare marketing."
-        />
-
-        {/* Stats */}
-        <section className="bg-[var(--color-bg-subtle)] section-py">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
-              <div>
-                <span className="text-metric block">{workItems.length}</span>
-                <span className="text-body-sm text-[var(--color-text-soft)]">
-                  Total Projects
-                </span>
-              </div>
-              <div>
-                <span className="text-metric block">{pdfCount}</span>
-                <span className="text-body-sm text-[var(--color-text-soft)]">
-                  Documents
-                </span>
-              </div>
-              <div>
-                <span className="text-metric block">{imageCount}</span>
-                <span className="text-body-sm text-[var(--color-text-soft)]">
-                  Graphics
-                </span>
-              </div>
-              <div>
-                <span className="text-metric block">{companies.length}</span>
-                <span className="text-body-sm text-[var(--color-text-soft)]">
-                  Companies
-                </span>
-              </div>
+        >
+          {/* Inline Stats */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10 mt-6">
+            <div className="text-center">
+              <span className="text-2xl md:text-3xl font-bold text-[var(--color-crimson-500)]">{workItems.length}</span>
+              <span className="text-body-sm text-[var(--color-text-soft)] block">Projects</span>
+            </div>
+            <div className="text-center">
+              <span className="text-2xl md:text-3xl font-bold text-[var(--color-crimson-500)]">{pdfCount}</span>
+              <span className="text-body-sm text-[var(--color-text-soft)] block">Documents</span>
+            </div>
+            <div className="text-center">
+              <span className="text-2xl md:text-3xl font-bold text-[var(--color-crimson-500)]">{imageCount}</span>
+              <span className="text-body-sm text-[var(--color-text-soft)] block">Graphics</span>
+            </div>
+            <div className="text-center">
+              <span className="text-2xl md:text-3xl font-bold text-[var(--color-crimson-500)]">{companies.length}</span>
+              <span className="text-body-sm text-[var(--color-text-soft)] block">Companies</span>
             </div>
           </div>
-        </section>
+        </PageHeader>
 
         {/* Hero Featured Section */}
-        <section className="section-py">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-6">
-            <ScrollReveal className="text-center mb-12">
+            <ScrollReveal className="text-center mb-10">
               <span className="text-overline block mb-3 text-[var(--color-crimson-500)]">
                 Highlights
               </span>

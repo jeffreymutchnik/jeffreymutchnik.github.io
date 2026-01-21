@@ -39,25 +39,10 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
         >
           <CardHeader>
             {study.featured && (
-              <motion.div
-                className="relative w-fit mb-2"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {/* Subtle glow behind featured badge */}
-                {!shouldReduceMotion && (
-                  <motion.div
-                    className="absolute inset-0 bg-[var(--color-crimson-500)] rounded-full blur-md"
-                    animate={{ opacity: [0.3, 0.5, 0.3] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                )}
-                <Badge variant="accent" className="relative flex items-center gap-1">
-                  <Sparkles className="h-3 w-3" />
-                  Featured
-                </Badge>
-              </motion.div>
+              <Badge variant="accent" className="mb-2 flex items-center gap-1 w-fit">
+                <Sparkles className="h-3 w-3" />
+                Featured
+              </Badge>
             )}
             <CardTitle className="text-h3 group-hover:text-[var(--color-crimson-500)] transition-colors">
               {study.title}
