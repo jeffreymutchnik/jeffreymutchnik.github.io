@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Mail, Linkedin, Github, MapPin, Briefcase, GraduationCap } from "lucide-react";
@@ -134,7 +133,7 @@ export default function AboutPage() {
                   <ScrollReveal>
                     <div className="prose prose-lg max-w-none">
                       <p className="text-body-xl text-[var(--color-text)] leading-relaxed">
-                        I'm a marketing technology manager who sits at the intersection of strategy, systems, and execution—where good ideas either become measurable outcomes or die quietly in a spreadsheet.
+                        I&apos;m a marketing technology manager who sits at the intersection of strategy, systems, and execution—where good ideas either become measurable outcomes or die quietly in a spreadsheet.
                       </p>
                     </div>
                   </ScrollReveal>
@@ -142,7 +141,7 @@ export default function AboutPage() {
                   <ScrollReveal>
                     <div className="prose max-w-none">
                       <p className="text-body-lg text-[var(--color-text-soft)] leading-relaxed">
-                        My work is focused on building the infrastructure that makes marketing actually work: clean data, reliable integrations, scalable processes, thoughtful automation, and reporting you can trust. I've supported organizations across healthcare and mission-driven spaces, partnering with teams to simplify how work gets requested, produced, launched, and evaluated—without adding unnecessary complexity or "one more tool" to the stack.
+                        My work is focused on building the infrastructure that makes marketing actually work: clean data, reliable integrations, scalable processes, thoughtful automation, and reporting you can trust. I&apos;ve supported organizations across healthcare and mission-driven spaces, partnering with teams to simplify how work gets requested, produced, launched, and evaluated—without adding unnecessary complexity or &quot;one more tool&quot; to the stack.
                       </p>
                     </div>
                   </ScrollReveal>
@@ -150,7 +149,7 @@ export default function AboutPage() {
                   <ScrollReveal>
                     <div className="prose max-w-none">
                       <p className="text-body-lg text-[var(--color-text-soft)] leading-relaxed">
-                        I'm at my best when I'm translating between technical and non-technical stakeholders: turning vague goals into clear plans, and turning messy reality into systems that are easier to run (and easier to improve). I care about craft, usability, accessibility, and the boring-but-critical details that keep everything from breaking five minutes before launch.
+                        I&apos;m at my best when I&apos;m translating between technical and non-technical stakeholders: turning vague goals into clear plans, and turning messy reality into systems that are easier to run (and easier to improve). I care about craft, usability, accessibility, and the boring-but-critical details that keep everything from breaking five minutes before launch.
                       </p>
                     </div>
                   </ScrollReveal>
@@ -158,7 +157,7 @@ export default function AboutPage() {
                   <ScrollReveal>
                     <div className="prose max-w-none">
                       <p className="text-body-lg text-[var(--color-text-soft)] leading-relaxed">
-                        Outside of work, I'm a design and technology enthusiast with a deep appreciation for clean interfaces, smart automation, and anything that makes life a little more efficient.
+                        Outside of work, I&apos;m a design and technology enthusiast with a deep appreciation for clean interfaces, smart automation, and anything that makes life a little more efficient.
                       </p>
                     </div>
                   </ScrollReveal>
@@ -241,9 +240,9 @@ export default function AboutPage() {
         <section className="section-py bg-[var(--color-cool-900)] text-white">
           <div className="container mx-auto px-6 text-center">
             <ScrollReveal>
-              <h2 className="text-h2 text-white mb-4">Let's Connect</h2>
+              <h2 className="text-h2 text-white mb-4">Let&apos;s Connect</h2>
               <p className="text-body-lg text-white/80 mb-8 max-w-2xl mx-auto">
-                If you're looking for someone who can combine structure with creativity—and deliver work that's both practical and polished—I'd love to hear from you.
+                If you&apos;re looking for someone who can combine structure with creativity—and deliver work that&apos;s both practical and polished—I&apos;d love to hear from you.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button asChild size="lg" className="bg-[var(--color-crimson-500)] hover:bg-[var(--color-crimson-600)]">

@@ -7,6 +7,12 @@ import { Send, Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+interface AnimatedInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'id' | 'name'> {
+  label: string;
+  id: string;
+  name: string;
+}
+
 // Animated floating label input
 function AnimatedInput({
   label,
@@ -15,14 +21,8 @@ function AnimatedInput({
   type = "text",
   required = false,
   autoComplete,
-}: {
-  label: string;
-  id: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-  autoComplete?: string;
-}) {
+  ...props
+}: AnimatedInputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -38,6 +38,7 @@ function AnimatedInput({
         type={type}
         required={required}
         autoComplete={autoComplete}
+        {...props}
         onFocus={() => setIsFocused(true)}
         onBlur={(e) => {
           setIsFocused(false);
@@ -157,7 +158,7 @@ export function ContactForm() {
     const formData = new FormData(e.currentTarget);
 
     try {
-      const response = await fetch("https://formspree.io/f/placeholder", {
+      const response = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID || 'placeholder'}`, {
         method: "POST",
         body: formData,
         headers: {

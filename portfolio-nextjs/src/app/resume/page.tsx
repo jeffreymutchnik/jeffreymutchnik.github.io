@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Download, Award } from "lucide-react";
 import { Header, Footer } from "@/components/layout";
-import { PageHeader } from "@/components/sections";
+import { PageHeader, CTASection } from "@/components/sections";
 import { Timeline } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -101,6 +101,12 @@ export default function ResumePage() {
             </ScrollReveal>
           </div>
         </section>
+
+        <CTASection
+          title="Let's Discuss"
+          description="Interested in learning more about my experience? I'd love to chat about how I can help your team."
+          variant="light"
+        />
       </main>
       <Footer />
     </>

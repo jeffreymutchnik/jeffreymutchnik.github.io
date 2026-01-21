@@ -498,5 +498,5 @@ export function getCategories(): WorkCategory[] {
 }
 
 export function getCompanies(): Company[] {
-  return ["PatientIQ", "Ambience", "cliexa"];
+  return ["PatientIQ", "Ambience", "cliexa", "AASM"];
 }

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Header, Footer } from "@/components/layout";
 import { PageHeader, CTASection } from "@/components/sections";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";

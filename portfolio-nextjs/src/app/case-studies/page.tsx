@@ -8,42 +8,17 @@ import { PageHeader } from "@/components/sections";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
+import { caseStudies as caseStudiesData } from "@/data/case-studies";
 
-const caseStudies = [
-  {
-    slug: "patientiq",
-    title: "PatientIQ: Building Marketing from Zero to $20M Series B",
-    description:
-      "How I built the entire marketing technology infrastructure as the first marketing hire, contributing to 10x ARR growth and a successful Series B.",
-    stats: ["$20M Series B", "10x ARR Growth", "44% Pipeline"],
-    tags: ["HubSpot", "ABM", "First Hire"],
-    featured: true,
-  },
-  {
-    slug: "aasm",
-    title: "AASM: Enterprise CRM Migration & Digital Transformation",
-    description:
-      "Led enterprise-wide HubSpot migration for a 13,000+ member organization, increasing webinar registrations by 1,200% YoY.",
-    stats: ["1,200% Webinar Growth", "13,000+ Members", "8 Properties"],
-    tags: ["CRM Migration", "HubSpot", "Non-Profit"],
-  },
-  {
-    slug: "ambience",
-    title: "Ambience Healthcare: GTM Strategy & HubSpot Implementation",
-    description:
-      "Generated $2.5M ARR within 30 days through strategic go-to-market planning and rapid HubSpot implementation.",
-    stats: ["$2.5M ARR", "30 Day Launch", "Enterprise Sales"],
-    tags: ["GTM Strategy", "AI Healthcare", "Consulting"],
-  },
-  {
-    slug: "cliexa",
-    title: "cliexa: SEO & Lead Generation Transformation",
-    description:
-      "Increased organic traffic by 826% and lead capture by 4,350% through comprehensive marketing technology overhaul.",
-    stats: ["826% Traffic", "4,350% Leads", "ACC Finalist"],
-    tags: ["SEO", "Lead Gen", "Healthcare"],
-  },
-];
+// Transform case study data for display
+const caseStudies = caseStudiesData.map((study, index) => ({
+  slug: study.slug,
+  title: `${study.title}: ${study.subtitle}`,
+  description: study.description,
+  stats: study.stats.slice(0, 3).map(s => `${s.value} ${s.label}`),
+  tags: study.technologies.slice(0, 3),
+  featured: index === 0,
+}));
 
 // Case study card component with enhanced interactions
 function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: number }) {

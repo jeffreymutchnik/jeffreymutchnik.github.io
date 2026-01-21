@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
-import { footerNavItems, socialLinks } from "@/data/navigation";
+import { footerNavItems } from "@/data/navigation";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

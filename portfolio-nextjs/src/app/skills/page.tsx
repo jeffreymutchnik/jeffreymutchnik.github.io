@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Header, Footer } from "@/components/layout";
-import { PageHeader } from "@/components/sections";
+import { PageHeader, CTASection } from "@/components/sections";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
@@ -194,6 +194,8 @@ export default function SkillsPage() {
             </ScrollReveal>
           </div>
         </section>
+
+        <CTASection variant="light" />
       </main>
       <Footer />
     </>

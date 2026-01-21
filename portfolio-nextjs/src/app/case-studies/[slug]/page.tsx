@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
-import { CountUp } from "@/components/motion/CountUp";
 import { getCaseStudy, getAllCaseStudySlugs, caseStudies } from "@/data/case-studies";
 
 // Icon mapping for approach sections
@@ -323,7 +322,7 @@ export default async function CaseStudyPage({
                 Want to discuss this project?
               </h2>
               <p className="text-body-lg text-white/80 mb-8 max-w-2xl mx-auto">
-                I'd love to walk you through the details and discuss how similar strategies could work for your organization.
+                I&apos;d love to walk you through the details and discuss how similar strategies could work for your organization.
               </p>
               <Button asChild size="lg" variant="accent">
                 <Link href="/contact">Get in Touch</Link>

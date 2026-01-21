@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView, Variants, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { fadeInUp, fadeInDown, slideInLeft, slideInRight, fadeIn } from "@/lib/animations";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -15,27 +16,13 @@ interface ScrollRevealProps {
   direction?: "up" | "down" | "left" | "right" | "none";
 }
 
+// Use centralized animation variants from animations.ts
 const defaultVariants = {
-  up: {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  },
-  down: {
-    hidden: { opacity: 0, y: -30 },
-    visible: { opacity: 1, y: 0 },
-  },
-  left: {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0 },
-  },
-  right: {
-    hidden: { opacity: 0, x: 30 },
-    visible: { opacity: 1, x: 0 },
-  },
-  none: {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  },
+  up: fadeInUp,
+  down: fadeInDown,
+  left: slideInLeft,
+  right: slideInRight,
+  none: fadeIn,
 };
 
 export function ScrollReveal({

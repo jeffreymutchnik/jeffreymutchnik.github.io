@@ -3,14 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { mainNavItems } from "@/data/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
-  mobileMenuPanel,
   mobileMenuItems,
   mobileMenuItem,
 } from "@/lib/animations";
@@ -71,6 +70,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={isActiveLink(item.href) ? "page" : undefined}
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                   isActiveLink(item.href)
@@ -128,6 +128,7 @@ export function Header() {
                         <Link
                           href={item.href}
                           onClick={() => setIsMobileMenuOpen(false)}
+                          aria-current={isActiveLink(item.href) ? "page" : undefined}
                           className={cn(
                             "flex items-center px-4 py-3 text-lg font-medium rounded-lg transition-colors",
                             isActiveLink(item.href)

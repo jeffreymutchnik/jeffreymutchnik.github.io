@@ -313,7 +313,7 @@ export default async function BlogPostPage({
             <ScrollReveal>
               <h2 className="text-h2 mb-4">Want to discuss this topic?</h2>
               <p className="text-body-lg text-[var(--color-text-soft)] mb-8 max-w-2xl mx-auto">
-                I'm always happy to chat about marketing technology, B2B healthcare, or startup growth strategies.
+                I&apos;m always happy to chat about marketing technology, B2B healthcare, or startup growth strategies.
               </p>
               <Button asChild size="lg" variant="default">
                 <Link href="/contact">Get in Touch</Link>

@@ -275,6 +275,20 @@ a {
   box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 4px var(--color-focus);
 }
 
+/* Standardized focus ring utility class */
+.focus-ring {
+  transition: box-shadow 0.15s ease-out;
+}
+
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-crimson-500), 0 0 0 4px rgba(174, 25, 59, 0.2);
+}
+
+.dark .focus-ring:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-crimson-400), 0 0 0 4px rgba(236, 112, 134, 0.2);
+}
+
 /* Selection */
 ::selection {
   background-color: var(--color-selection);

@@ -13,17 +13,6 @@ interface StaggerContainerProps {
   threshold?: number;
 }
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
-    },
-  },
-};
-
 export function StaggerContainer({
   children,
   className,
@@ -81,13 +70,15 @@ export const staggerItemVariants: Variants = {
   },
 };
 
+interface StaggerItemProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
 export function StaggerItem({
   children,
   className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+}: StaggerItemProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const variants: Variants = shouldReduceMotion
