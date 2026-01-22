@@ -44,7 +44,40 @@ function HeroWorkCard({ item, onClick }: { item: WorkItem; onClick: () => void }
           aria-label={`View ${item.title}`}
         >
           <div className="relative aspect-[16/10] bg-[var(--color-warm-100)] dark:bg-[var(--color-surface)] overflow-hidden">
-            {isPDF ? (
+            {isPDF && item.thumbnail ? (
+              <>
+                {isLoading && (
+                  <div className="absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] overflow-hidden">
+                    {!shouldReduceMotion && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                        animate={{ x: ["-100%", "100%"] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                      />
+                    )}
+                  </div>
+                )}
+                <Image
+                  src={item.thumbnail}
+                  alt={item.title}
+                  fill
+                  className={cn(
+                    "object-cover transition-all duration-500 group-hover:scale-105",
+                    isLoading ? "opacity-0" : "opacity-100"
+                  )}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  onLoad={() => setIsLoading(false)}
+                  priority
+                />
+                {/* PDF indicator badge */}
+                <div className="absolute bottom-4 right-4">
+                  <div className="bg-black/70 rounded-full px-2 py-1 flex items-center gap-1">
+                    <FileText className="h-3.5 w-3.5 text-white" />
+                    <span className="text-xs text-white font-medium">PDF</span>
+                  </div>
+                </div>
+              </>
+            ) : isPDF ? (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-cool-900)] text-white p-8">
                 <FileText className="h-20 w-20 mb-6 opacity-80" />
                 <span className="text-lg font-medium text-center line-clamp-2 opacity-90">
@@ -146,7 +179,39 @@ function WorkCardWithMeta({ item, onClick }: { item: WorkItem; onClick: () => vo
           aria-label={`View ${item.title}`}
         >
           <div className="relative aspect-[4/3] bg-[var(--color-warm-100)] dark:bg-[var(--color-surface)] overflow-hidden">
-            {isPDF ? (
+            {isPDF && item.thumbnail ? (
+              <>
+                {isLoading && (
+                  <div className="absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] overflow-hidden">
+                    {!shouldReduceMotion && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                        animate={{ x: ["-100%", "100%"] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                      />
+                    )}
+                  </div>
+                )}
+                <Image
+                  src={item.thumbnail}
+                  alt={item.title}
+                  fill
+                  className={cn(
+                    "object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-90",
+                    isLoading ? "opacity-0" : "opacity-100"
+                  )}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  onLoad={() => setIsLoading(false)}
+                />
+                {/* PDF indicator badge */}
+                <div className="absolute bottom-3 right-3">
+                  <div className="bg-black/70 rounded-full px-2 py-1 flex items-center gap-1">
+                    <FileText className="h-3 w-3 text-white" />
+                    <span className="text-xs text-white font-medium">PDF</span>
+                  </div>
+                </div>
+              </>
+            ) : isPDF ? (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-cool-900)] text-white p-6">
                 <FileText className="h-12 w-12 mb-3 opacity-80" />
                 <span className="text-sm font-medium text-center line-clamp-2 opacity-90">
@@ -465,7 +530,22 @@ export default function CreativeWorkPage() {
                           >
                             {/* Thumbnail */}
                             <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-[var(--color-warm-100)] dark:bg-[var(--color-surface)]">
-                              {item.type === "pdf" ? (
+                              {item.type === "pdf" && item.thumbnail ? (
+                                <>
+                                  <Image
+                                    src={item.thumbnail}
+                                    alt={item.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="80px"
+                                  />
+                                  <div className="absolute bottom-1 right-1">
+                                    <div className="bg-black/70 rounded-full p-1">
+                                      <FileText className="h-2.5 w-2.5 text-white" />
+                                    </div>
+                                  </div>
+                                </>
+                              ) : item.type === "pdf" ? (
                                 <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-cool-900)]">
                                   <FileText className="h-8 w-8 text-white/80" />
                                 </div>
