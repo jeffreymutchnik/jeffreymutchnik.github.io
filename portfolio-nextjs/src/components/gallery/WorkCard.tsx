@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { FileText, Eye } from "lucide-react";
+import { FileText, Eye, ImageOff } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,7 @@ interface WorkCardProps {
 export function WorkCard({ item, onClick }: WorkCardProps) {
   const isPDF = item.type === "pdf";
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -40,6 +41,14 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
                 {item.title}
               </span>
             </div>
+          ) : hasError ? (
+            // Error fallback state
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] text-[var(--color-text-soft)] p-6">
+              <ImageOff className="h-12 w-12 mb-3 opacity-60" />
+              <span className="text-sm font-medium text-center line-clamp-2 opacity-75">
+                {item.title}
+              </span>
+            </div>
           ) : (
             // Image with shimmer loading state
             <>
@@ -58,12 +67,17 @@ export function WorkCard({ item, onClick }: WorkCardProps) {
                 src={item.file}
                 alt={item.title}
                 fill
+                loading="lazy"
                 className={cn(
                   "object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-90",
                   isLoading ? "opacity-0" : "opacity-100"
                 )}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onLoad={() => setIsLoading(false)}
+                onError={() => {
+                  setIsLoading(false);
+                  setHasError(true);
+                }}
               />
             </>
           )}

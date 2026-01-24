@@ -1,4 +1,4 @@
-export type Company = "PatientIQ" | "Ambience" | "cliexa" | "AASM";
+export type Company = "PatientIQ" | "Ambience" | "cliexa";
 
 export type WorkCategory =
   | "Case Studies"
@@ -524,5 +524,5 @@ export function getCategories(): WorkCategory[] {
 }
 
 export function getCompanies(): Company[] {
-  return ["PatientIQ", "Ambience", "cliexa", "AASM"];
+  return ["PatientIQ", "Ambience", "cliexa"];
 }

@@ -2,11 +2,18 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import DOMPurify from "dompurify";
+import { JSDOM } from "jsdom";
 import { Header, Footer } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { getBlogPost, getAllBlogSlugs, blogPosts } from "@/data/blog";
+
+// Create a DOMPurify instance for server-side sanitization
+const jsdomWindow = new JSDOM("").window;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const purify = DOMPurify(jsdomWindow as any);
 
 export async function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
@@ -28,6 +35,14 @@ export async function generateMetadata({
     title: `${post.title} | Blog`,
     description: post.description,
   };
+}
+
+// Sanitize HTML content to prevent XSS attacks
+function sanitizeHtml(html: string): string {
+  return purify.sanitize(html, {
+    ALLOWED_TAGS: ["strong", "em", "b", "i"],
+    ALLOWED_ATTR: [],
+  });
 }
 
 // Simple markdown-like rendering for content
@@ -128,7 +143,7 @@ function renderContent(content: string) {
     flushList();
     let processedLine = trimmedLine;
 
-    // Process bold text
+    // Process bold text (markdown **bold** -> <strong>bold</strong>)
     processedLine = processedLine.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
 
     // Process links [text](url)
@@ -138,34 +153,47 @@ function renderContent(content: string) {
     let match;
 
     while ((match = linkRegex.exec(processedLine)) !== null) {
-      // Add text before the link
+      // Add text before the link (sanitized)
       if (match.index > lastIndex) {
+        const textBefore = processedLine.slice(lastIndex, match.index);
+        const sanitized = sanitizeHtml(textBefore);
         parts.push(
           <span
             key={`text-${lastIndex}`}
-            dangerouslySetInnerHTML={{ __html: processedLine.slice(lastIndex, match.index) }}
+            dangerouslySetInnerHTML={{ __html: sanitized }}
           />
         );
       }
-      // Add the link
-      parts.push(
-        <Link
-          key={`link-${match.index}`}
-          href={match[2]}
-          className="text-[var(--color-teal-500)] hover:underline"
-        >
-          {match[1]}
-        </Link>
-      );
+      // Add the link (URL is validated, text is sanitized)
+      const linkText = purify.sanitize(match[1], { ALLOWED_TAGS: [] });
+      const linkUrl = match[2];
+      // Only allow safe URL protocols
+      const isSafeUrl = linkUrl.startsWith("/") || linkUrl.startsWith("http://") || linkUrl.startsWith("https://");
+      if (isSafeUrl) {
+        parts.push(
+          <Link
+            key={`link-${match.index}`}
+            href={linkUrl}
+            className="text-[var(--color-teal-500)] hover:underline"
+          >
+            {linkText}
+          </Link>
+        );
+      } else {
+        // Render as plain text if URL is not safe
+        parts.push(<span key={`link-${match.index}`}>{linkText}</span>);
+      }
       lastIndex = match.index + match[0].length;
     }
 
-    // Add remaining text
+    // Add remaining text (sanitized)
     if (lastIndex < processedLine.length) {
+      const remainingText = processedLine.slice(lastIndex);
+      const sanitized = sanitizeHtml(remainingText);
       parts.push(
         <span
           key={`text-end`}
-          dangerouslySetInnerHTML={{ __html: processedLine.slice(lastIndex) }}
+          dangerouslySetInnerHTML={{ __html: sanitized }}
         />
       );
     }
@@ -182,7 +210,7 @@ function renderContent(content: string) {
 
     elements.push(
       <p key={index} className="text-body-lg text-[var(--color-text-soft)] mb-6 leading-relaxed">
-        {parts.length > 0 ? parts : <span dangerouslySetInnerHTML={{ __html: processedLine }} />}
+        {parts.length > 0 ? parts : <span dangerouslySetInnerHTML={{ __html: sanitizeHtml(processedLine) }} />}
       </p>
     );
   });

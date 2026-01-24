@@ -190,6 +190,7 @@ export function Lightbox({
                     src={`${src}#toolbar=0&navpanes=0&scrollbar=1`}
                     className="w-full h-full bg-white rounded-lg"
                     title={title}
+                    sandbox="allow-same-origin"
                   />
                 )}
               </div>

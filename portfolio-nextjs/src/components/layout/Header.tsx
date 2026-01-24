@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { mainNavItems } from "@/data/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { DarkModeToggle } from "@/components/ui/DarkModeToggle";
 import {
   mobileMenuItems,
   mobileMenuItem,
@@ -84,7 +85,8 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-2">
+            <DarkModeToggle variant="header" />
             <Button
               asChild
               variant="secondary"
@@ -95,17 +97,19 @@ export function Header() {
           </div>
 
           {/* Mobile Menu */}
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-white"
-              >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
+          <div className="flex items-center gap-2 lg:hidden">
+            <DarkModeToggle variant="header" />
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-white"
+                >
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
             <SheetContent side="right" className="w-full sm:w-[400px] p-0">
               <motion.div
                 className="flex flex-col h-full"
@@ -114,8 +118,8 @@ export function Header() {
                 animate="visible"
               >
                 {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between p-6 border-b border-[var(--color-border)] dark:border-[var(--color-border-strong)]">
-                  <span className="font-display text-xl font-semibold">
+                <div className="flex items-center justify-between p-6 border-b border-[var(--color-border)] dark:border-white/10">
+                  <span className="font-display text-xl font-semibold dark:text-white">
                     Menu
                   </span>
                 </div>
@@ -132,8 +136,8 @@ export function Header() {
                           className={cn(
                             "flex items-center px-4 py-3 text-lg font-medium rounded-lg transition-colors",
                             isActiveLink(item.href)
-                              ? "text-[var(--color-crimson-500)] bg-[var(--color-crimson-100)] dark:bg-[var(--color-crimson-500)]/10"
-                              : "text-[var(--color-text-soft)] hover:text-[var(--color-text)] hover:bg-[var(--color-warm-100)] dark:text-[var(--color-text-muted)] dark:hover:text-white dark:hover:bg-[var(--color-surface)]"
+                              ? "text-[var(--color-crimson-500)] bg-[var(--color-crimson-100)] dark:bg-[var(--color-crimson-500)]/20 dark:text-[var(--color-crimson-400)]"
+                              : "text-[var(--color-text-soft)] hover:text-[var(--color-text)] hover:bg-[var(--color-warm-100)] dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10"
                           )}
                         >
                           {item.label}
@@ -144,7 +148,7 @@ export function Header() {
                 </nav>
 
                 {/* Mobile Menu Footer */}
-                <div className="p-6 border-t border-[var(--color-border)] dark:border-[var(--color-border-strong)]">
+                <div className="p-6 border-t border-[var(--color-border)] dark:border-white/10">
                   <Button asChild className="w-full" size="lg">
                     <Link
                       href="/contact"
@@ -156,7 +160,8 @@ export function Header() {
                 </div>
               </motion.div>
             </SheetContent>
-          </Sheet>
+            </Sheet>
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import { inter, playfair, jetbrainsMono } from "@/lib/fonts";
+import { ThemeProvider } from "@/components/providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -86,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -96,23 +97,30 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        {children}
-        {/* Wrapped in aria-live region for screen reader announcements */}
-        <div role="status" aria-live="polite" aria-atomic="true">
-          <Toaster
-            position="top-center"
-            toastOptions={{
-              style: {
-                background: "var(--color-surface-elevated)",
-                border: "1px solid var(--color-neutral-200)",
-                color: "var(--color-primary-900)",
-              },
-            }}
-          />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          {children}
+          {/* Wrapped in aria-live region for screen reader announcements */}
+          <div role="status" aria-live="polite" aria-atomic="true">
+            <Toaster
+              position="top-center"
+              toastOptions={{
+                style: {
+                  background: "var(--color-surface-elevated)",
+                  border: "1px solid var(--color-neutral-200)",
+                  color: "var(--color-primary-900)",
+                },
+              }}
+            />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
