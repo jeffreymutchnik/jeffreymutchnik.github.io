@@ -27,7 +27,7 @@ export function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/80 mb-4">
               Navigation
             </h3>
             <ul className="space-y-3">
@@ -46,7 +46,7 @@ export function Footer() {
 
           {/* More Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/80 mb-4">
               More
             </h3>
             <ul className="space-y-3">
@@ -65,7 +65,7 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/80 mb-4">
               Contact
             </h3>
             <ul className="space-y-3">
@@ -98,7 +98,7 @@ export function Footer() {
                   <span>LinkedIn</span>
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-white/60">
+              <li className="flex items-center gap-2 text-white/80">
                 <MapPin className="h-4 w-4" />
                 <span>{footerNavItems.contact.location}</span>
               </li>
@@ -108,7 +108,7 @@ export function Footer() {
 
         {/* Footer Bottom */}
         <div className="mt-12 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/60 text-sm">
+          <p className="text-white/80 text-sm">
             &copy; {currentYear} Jeffrey Mutchnik. All rights reserved.
           </p>
 

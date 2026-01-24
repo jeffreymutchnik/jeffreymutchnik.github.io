@@ -171,7 +171,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
             <ScrollReveal>
               <Link
                 href="/case-studies"
-                className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors mb-8"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to Case Studies
@@ -207,7 +207,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                     {/* Role badge */}
                     <Badge
                       variant="outline"
-                      className="border-white/20 text-white/70 bg-white/5 text-body-sm"
+                      className="border-white/20 text-white bg-white/5 text-body-sm"
                     >
                       <Briefcase className="h-3 w-3 mr-1.5" />
                       {getRoleBadge()}
@@ -220,7 +220,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                   <p className="text-h4 text-white/90 font-normal mb-3">
                     {caseStudy.subtitle}
                   </p>
-                  <p className="text-body-lg text-white/70 max-w-2xl">
+                  <p className="text-body-lg text-white/80 max-w-2xl">
                     {caseStudy.description}
                   </p>
                 </ScrollReveal>
@@ -235,7 +235,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                   <span className="block text-display-lg md:text-display-xl font-bold text-white">
                     <CountUpFromString value={primaryStat.value} />
                   </span>
-                  <span className="block text-body-md text-white/70">
+                  <span className="block text-body-md text-white/80">
                     {primaryStat.label}
                   </span>
                 </div>
@@ -292,7 +292,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                         className="flex items-start gap-4 p-4 md:pl-12 bg-[var(--color-bg-subtle)] dark:bg-[var(--color-surface-dark-tertiary)] rounded-lg relative group hover:shadow-md transition-shadow"
                       >
                         {/* Timeline dot */}
-                        <span className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-white dark:bg-[var(--color-surface-dark-primary)] border-2 border-[var(--color-crimson-500)] items-center justify-center">
+                        <span className="hidden md:flex absolute left-2 top-6 w-5 h-5 rounded-full bg-white dark:bg-[var(--color-surface-dark-primary)] border-2 border-[var(--color-crimson-500)] items-center justify-center">
                           <span className="w-2 h-2 rounded-full bg-[var(--color-crimson-500)] group-hover:scale-125 transition-transform" />
                         </span>
 
