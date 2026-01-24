@@ -351,7 +351,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                                 {iconMap[section.icon] || <Database className="h-6 w-6" />}
                               </div>
                               <div>
-                                <span className="text-body-xs text-[var(--color-crimson-500)] font-semibold uppercase tracking-wider">
+                                <span className="text-body-sm text-[var(--color-crimson-500)] font-semibold uppercase tracking-wider">
                                   Step {index + 1}
                                 </span>
                                 <h3 className="text-h4 text-[var(--color-text)] dark:text-white">
@@ -461,7 +461,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <ScrollReveal className="text-center">
-                <h3 className="text-h5 mb-6 text-[var(--color-text-soft)] dark:text-[var(--color-cool-200)]">
+                <h3 className="text-h2 mb-6 text-[var(--color-text-soft)] dark:text-[var(--color-cool-200)]">
                   Technologies & Tools
                 </h3>
                 <div className="flex flex-wrap justify-center gap-3">
@@ -511,7 +511,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                           {/* Quote mark */}
                           <Quote className="absolute top-4 right-4 h-8 w-8 text-[var(--color-crimson-500)]/10 group-hover:text-[var(--color-crimson-500)]/20 transition-colors" />
 
-                          <h4 className="text-h5 mb-3 text-[var(--color-text)] dark:text-white pr-8">
+                          <h4 className="text-h4 mb-3 text-[var(--color-text)] dark:text-white pr-8">
                             {learning.title}
                           </h4>
                           <p className="text-body-md text-[var(--color-text-soft)] dark:text-[var(--color-cool-300)]">
@@ -536,7 +536,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                   <span className="text-body-sm text-[var(--color-text-soft)] block mb-1">
                     Previous
                   </span>
-                  <span className="flex items-center gap-2 text-h5 group-hover:text-[var(--color-crimson-500)] transition-colors text-[var(--color-text)] dark:text-white">
+                  <span className="flex items-center gap-2 text-h4 group-hover:text-[var(--color-crimson-500)] transition-colors text-[var(--color-text)] dark:text-white">
                     <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
                     {prevStudy.company}
                   </span>
@@ -550,7 +550,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                   <span className="text-body-sm text-[var(--color-text-soft)] block mb-1">
                     Next
                   </span>
-                  <span className="flex items-center gap-2 text-h5 group-hover:text-[var(--color-crimson-500)] transition-colors text-[var(--color-text)] dark:text-white">
+                  <span className="flex items-center gap-2 text-h4 group-hover:text-[var(--color-crimson-500)] transition-colors text-[var(--color-text)] dark:text-white">
                     {nextStudy.company}
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>

@@ -228,7 +228,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "ambience",
     title: "Ambience Healthcare",
     company: "Ambience Healthcare",
-    logo: "/images/logos/ambience-logo.png",
+    logo: "/images/logos/ambience-logo.svg",
     subtitle: "GTM Strategy & Rapid HubSpot Implementation",
     category: "AI Healthcare | Series A Startup",
     description:
