@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Database, Target, Globe, Users, Zap, ShoppingCart, Rocket, Settings, Filter, Search, Award, Quote, Briefcase } from "lucide-react";
@@ -38,40 +38,36 @@ const sections = [
   { id: "learnings", label: "Learnings" },
 ];
 
-function StickyProgress({ activeSection }: { activeSection: string }) {
+function FloatingNav({ activeSection, showNav }: { activeSection: string; showNav: boolean }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.5, duration: 0.4 }}
-      className="fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-3"
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: showNav ? 1 : 0, y: showNav ? 0 : -20 }}
+      transition={{ duration: 0.3 }}
+      className="fixed top-24 left-1/2 -translate-x-1/2 z-40 hidden md:block pointer-events-none"
+      style={{ pointerEvents: showNav ? 'auto' : 'none' }}
     >
-      {sections.map((section) => (
-        <a
-          key={section.id}
-          href={`#${section.id}`}
-          className="group flex items-center gap-3"
-          aria-label={`Jump to ${section.label}`}
-        >
-          <span
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-              activeSection === section.id
-                ? "bg-[var(--color-crimson-500)] scale-125"
-                : "bg-[var(--color-cool-300)] dark:bg-[var(--color-cool-600)] group-hover:bg-[var(--color-crimson-400)]"
-            }`}
-          />
-          <span
-            className={`text-body-xs transition-all duration-300 ${
-              activeSection === section.id
-                ? "opacity-100 text-[var(--color-crimson-500)]"
-                : "opacity-0 group-hover:opacity-100 text-[var(--color-text-soft)]"
-            }`}
-          >
-            {section.label}
-          </span>
-        </a>
-      ))}
-    </motion.div>
+      <div className="flex items-center gap-1 bg-white/80 dark:bg-[var(--color-surface-dark-elevated)]/90 backdrop-blur-md rounded-full px-2 py-1.5 shadow-lg border border-[var(--color-border)]">
+        {sections.map((section, index) => (
+          <React.Fragment key={section.id}>
+            <a
+              href={`#${section.id}`}
+              className={`px-3 py-1 text-body-sm rounded-full transition-all ${
+                activeSection === section.id
+                  ? "bg-[var(--color-crimson-500)] text-white"
+                  : "text-[var(--color-text-soft)] hover:text-[var(--color-text)]"
+              }`}
+              aria-label={`Jump to ${section.label}`}
+            >
+              {section.label}
+            </a>
+            {index < sections.length - 1 && (
+              <span className="text-[var(--color-cool-300)] text-xs">•</span>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+    </motion.nav>
   );
 }
 
@@ -84,6 +80,7 @@ interface CaseStudyClientProps {
 export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyClientProps) {
   const heroRef = useRef<HTMLElement>(null);
   const [activeSection, setActiveSection] = useState("hero");
+  const [showNav, setShowNav] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -119,6 +116,16 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
     return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
+  // Track scroll position to show/hide floating nav
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show nav after scrolling past hero (~400px)
+      setShowNav(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Find the primary stat (first one, usually the biggest impact)
   const primaryStat = caseStudy.stats[0];
   const secondaryStats = caseStudy.stats.slice(1);
@@ -141,7 +148,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
   return (
     <>
       <Header />
-      <StickyProgress activeSection={activeSection} />
+      <FloatingNav activeSection={activeSection} showNav={showNav} />
 
       <main id="main-content" className="pt-20">
         {/* Hero Section - Enhanced with gradient and integrated stat */}
@@ -314,7 +321,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                 <span className="text-overline block mb-3 text-[var(--color-crimson-500)]">
                   The Approach
                 </span>
-                <h2 className="text-h2 text-[var(--color-text-soft)]">How I Solved It</h2>
+                <h2 className="text-h2 text-[var(--color-cool-400)]">How I Solved It</h2>
               </ScrollReveal>
 
               <div className="relative">
