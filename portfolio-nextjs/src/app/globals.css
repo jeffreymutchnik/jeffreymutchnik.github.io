@@ -172,10 +172,10 @@
   --color-surface-secondary: #FAF8F3;
   --color-surface-tertiary: #F5F1E8;
   --color-surface-elevated: #FFFFFF;
-  --color-surface-dark-primary: #1B063C;
-  --color-surface-dark-secondary: #1B0E38;
-  --color-surface-dark-tertiary: #1B1634;
-  --color-surface-dark-elevated: #1B1D31;
+  --color-surface-dark-primary: #0A0A0A;
+  --color-surface-dark-secondary: #171717;
+  --color-surface-dark-tertiary: #1F1F1F;
+  --color-surface-dark-elevated: #262626;
 
   /* Semantic (legacy) */
   --color-success-500: #22C55E;
@@ -194,7 +194,7 @@
   --font-mono: "JetBrains Mono", monospace;
 
   /* Shadows (updated for warm palette) */
-  --shadow-glass: 0 8px 32px 0 rgba(27, 6, 60, 0.15);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
   --shadow-glow: 0 0 40px rgba(174, 25, 59, 0.3);
   --shadow-glow-lg: 0 0 60px rgba(174, 25, 59, 0.4);
 
@@ -540,7 +540,7 @@ a {
 }
 
 .dark .card-glass {
-  background: rgba(27, 6, 60, 0.6);
+  background: rgba(31, 31, 31, 0.8);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -676,10 +676,10 @@ a {
    =========================================== */
 
 .dark {
-  --color-bg: #1B063C;
-  --color-bg-subtle: #1B0E38;
-  --color-surface: #1B1634;
-  --color-surface-2: #1B1D31;
+  --color-bg: #0A0A0A;
+  --color-bg-subtle: #171717;
+  --color-surface: #1F1F1F;
+  --color-surface-2: #262626;
   --color-surface-accent: #3D352C;
 
   --color-text: #F5F5F5;
