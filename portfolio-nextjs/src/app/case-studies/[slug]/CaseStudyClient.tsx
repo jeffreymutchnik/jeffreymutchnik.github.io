@@ -207,7 +207,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                     {/* Role badge */}
                     <Badge
                       variant="outline"
-                      className="border-white/20 text-white bg-white/5 text-body-sm"
+                      className="border-white/20 !text-white bg-white/5 text-body-sm"
                     >
                       <Briefcase className="h-3 w-3 mr-1.5" />
                       {getRoleBadge()}
