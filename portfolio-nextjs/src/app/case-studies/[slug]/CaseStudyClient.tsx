@@ -44,7 +44,7 @@ function StickyProgress({ activeSection }: { activeSection: string }) {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.5, duration: 0.4 }}
-      className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-3"
+      className="fixed left-12 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-3"
     >
       {sections.map((section) => (
         <a
@@ -200,7 +200,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                     {/* Role badge */}
                     <Badge
                       variant="outline"
-                      className="border-white/30 text-white/90 bg-white/5 text-body-sm"
+                      className="border-white/20 text-white/70 bg-white/5 text-body-sm"
                     >
                       <Briefcase className="h-3 w-3 mr-1.5" />
                       {getRoleBadge()}
@@ -314,7 +314,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                 <span className="text-overline block mb-3 text-[var(--color-crimson-500)]">
                   The Approach
                 </span>
-                <h2 className="text-h2">How I Solved It</h2>
+                <h2 className="text-h2 text-[var(--color-text-soft)]">How I Solved It</h2>
               </ScrollReveal>
 
               <div className="relative">
