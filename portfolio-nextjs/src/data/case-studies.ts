@@ -2,6 +2,7 @@ export interface CaseStudy {
   slug: string;
   title: string;
   company: string;
+  logo?: string;
   subtitle: string;
   category: string;
   description: string;
@@ -25,6 +26,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "patientiq",
     title: "PatientIQ",
     company: "PatientIQ",
+    logo: "/images/logos/patientiq-logo.svg",
     subtitle: "Building Marketing from Zero to $6M Pipeline",
     category: "B2B SaaS | Clinical Outcomes Platform",
     description:
@@ -124,6 +126,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "aasm",
     title: "AASM",
     company: "American Academy of Sleep Medicine",
+    logo: "/images/logos/aasm-logo.svg",
     subtitle: "Enterprise CRM Migration & Digital Transformation",
     category: "Non-Profit | Medical Association",
     description:
@@ -225,6 +228,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "ambience",
     title: "Ambience Healthcare",
     company: "Ambience Healthcare",
+    logo: "/images/logos/ambience-logo.png",
     subtitle: "GTM Strategy & Rapid HubSpot Implementation",
     category: "AI Healthcare | Series A Startup",
     description:
@@ -301,6 +305,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "cliexa",
     title: "cliexa",
     company: "cliexa",
+    logo: "/images/logos/cliexa-logo.svg",
     subtitle: "SEO & Lead Generation Transformation",
     category: "Healthcare SaaS | Patient Engagement",
     description:
