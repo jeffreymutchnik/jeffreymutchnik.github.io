@@ -1,6 +1,9 @@
+"use client";
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
+import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 
@@ -15,7 +18,7 @@ const buttonVariants = cva(
         destructive:
           "bg-[var(--color-error-500)] text-white hover:bg-[var(--color-error-500)]/90",
         outline:
-          "border border-[#262626] bg-transparent !text-[#262626] hover:bg-[#262626] hover:!text-white dark:border-white/30 dark:!text-white dark:hover:bg-white/10",
+          "border bg-transparent hover:opacity-80",
         secondary:
           "bg-[var(--color-plum-500)] text-white hover:bg-[var(--color-plum-600)]",
         ghost: "text-[var(--color-text-muted)] hover:bg-[var(--color-warm-100)] hover:text-[var(--color-text)] dark:text-[var(--color-text-soft)] dark:hover:bg-[var(--color-surface)] dark:hover:text-white",
@@ -42,12 +45,30 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, style, ...props }, ref) => {
+    const { resolvedTheme } = useTheme()
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+      setMounted(true)
+    }, [])
+
     const Comp = asChild ? Slot : "button"
+
+    // For outline variant, apply theme-aware inline styles
+    const outlineStyles = variant === "outline" && mounted
+      ? {
+          borderColor: resolvedTheme === "dark" ? "rgba(255,255,255,0.3)" : "#262626",
+          color: resolvedTheme === "dark" ? "#ffffff" : "#262626",
+          ...style,
+        }
+      : style
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        style={outlineStyles}
         {...props}
       />
     )

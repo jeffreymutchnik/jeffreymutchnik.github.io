@@ -1,4 +1,7 @@
+"use client";
+
 import * as React from "react"
+import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 
@@ -32,16 +35,29 @@ CardHeader.displayName = "CardHeader"
 const CardTitle = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight !text-[#1f2937] dark:!text-white",
-      className
-    )}
-    {...props}
-  />
-))
+>(({ className, style, ...props }, ref) => {
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Use dark text color for light mode, white for dark mode
+  const textColor = mounted && resolvedTheme === "dark" ? "#ffffff" : "#1f2937"
+
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "text-2xl font-semibold leading-none tracking-tight",
+        className
+      )}
+      style={{ color: textColor, ...style }}
+      {...props}
+    />
+  )
+})
 CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<
