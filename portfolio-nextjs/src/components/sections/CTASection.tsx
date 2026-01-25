@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useTheme } from "next-themes";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 interface CTASectionProps {
@@ -25,7 +26,10 @@ export function CTASection({
   secondaryCta = { label: "View Resume", href: "/resume" },
   variant = "dark",
 }: CTASectionProps) {
+  const { resolvedTheme } = useTheme();
   const isDark = variant === "dark";
+  // For light variant, check if system is in dark mode
+  const useWhiteText = isDark || (variant === "light" && resolvedTheme === "dark");
 
   return (
     <section
@@ -64,18 +68,22 @@ export function CTASection({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={primaryCta.href}
-              className="btn-shimmer inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium bg-white !text-[var(--color-cool-900)] hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200"
+              className={`btn-shimmer inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium shadow-lg hover:shadow-xl transition-all duration-200 ${
+                isDark
+                  ? "bg-white !text-[var(--color-cool-900)] hover:bg-white/90"
+                  : "bg-[var(--color-crimson-500)] !text-white hover:bg-[var(--color-crimson-600)]"
+              }`}
             >
               {primaryCta.label}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
               href={secondaryCta.href}
-              className={`inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium transition-all duration-200 ${
-                isDark
-                  ? "border border-white/30 bg-transparent !text-white hover:bg-white/10"
-                  : "border border-[var(--color-slate)] bg-transparent text-[var(--color-slate)] hover:bg-[var(--color-slate)] hover:text-white"
-              }`}
+              className="inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium transition-all duration-200 border bg-transparent hover:opacity-80"
+              style={{
+                borderColor: useWhiteText ? "rgba(255,255,255,0.3)" : "#262626",
+                color: useWhiteText ? "#ffffff" : "#262626",
+              }}
             >
               {secondaryCta.label}
             </Link>

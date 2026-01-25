@@ -188,7 +188,7 @@
   --color-info-100: #D3E4E5;
 
   /* Fonts */
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-display: "Outfit", system-ui, sans-serif;
   --font-heading: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;

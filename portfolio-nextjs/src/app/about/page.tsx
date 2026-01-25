@@ -7,7 +7,6 @@ import { Header, Footer } from "@/components/layout";
 import { PageHeader } from "@/components/sections";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
 
@@ -245,17 +244,19 @@ export default function AboutPage() {
                 If you&apos;re looking for someone who can combine structure with creativity—and deliver work that&apos;s both practical and polished—I&apos;d love to hear from you.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild size="lg" className="bg-[var(--color-crimson-500)] hover:bg-[var(--color-crimson-600)]">
-                  <Link href="/contact">
-                    Get in Touch
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
-                  <Link href="/resume">
-                    View Resume
-                  </Link>
-                </Button>
+                <Link
+                  href="/contact"
+                  className="btn-shimmer inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium bg-white !text-[var(--color-cool-900)] hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-200"
+                >
+                  Get in Touch
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                <Link
+                  href="/resume"
+                  className="inline-flex items-center justify-center h-12 px-8 rounded-lg text-base font-medium border border-white/30 bg-transparent !text-white hover:bg-white/10 transition-all duration-200"
+                >
+                  View Resume
+                </Link>
               </div>
             </ScrollReveal>
           </div>

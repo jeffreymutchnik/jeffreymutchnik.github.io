@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
-import { inter, playfair, jetbrainsMono } from "@/lib/fonts";
+import { inter, outfit, jetbrainsMono } from "@/lib/fonts";
 import { ThemeProvider } from "@/components/providers";
 import "./globals.css";
 
@@ -95,7 +95,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} font-body antialiased`}
+        className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} font-body antialiased`}
       >
         <ThemeProvider
           attribute="class"
