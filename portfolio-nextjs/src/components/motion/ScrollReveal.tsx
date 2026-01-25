@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView, Variants, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { fadeInUp, fadeInDown, slideInLeft, slideInRight, fadeIn } from "@/lib/animations";
+import { EASING } from "@/lib/constants";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -54,7 +55,7 @@ export function ScrollReveal({
       transition={{
         duration: shouldReduceMotion ? 0 : duration,
         delay: shouldReduceMotion ? 0 : delay,
-        ease: [0.16, 1, 0.3, 1],
+        ease: EASING.smooth,
       }}
     >
       {children}

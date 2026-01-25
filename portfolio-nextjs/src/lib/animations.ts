@@ -1,11 +1,12 @@
 import { Variants } from "framer-motion";
+import { EASING, DURATION, DELAY } from "./constants";
 
 // Fade animations
 export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: DURATION.slow, ease: EASING.easeOut },
   },
 };
 
@@ -14,7 +15,7 @@ export const fadeInUp: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.slow, ease: EASING.smooth },
   },
 };
 
@@ -23,7 +24,7 @@ export const fadeInDown: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.slow, ease: EASING.smooth },
   },
 };
 
@@ -33,7 +34,7 @@ export const slideInLeft: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.slow, ease: EASING.smooth },
   },
 };
 
@@ -42,7 +43,7 @@ export const slideInRight: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.slow, ease: EASING.smooth },
   },
 };
 
@@ -74,7 +75,7 @@ export const staggerItem: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.medium, ease: EASING.smooth },
   },
 };
 
@@ -84,7 +85,7 @@ export const heroTitle: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.verySlow, ease: EASING.smooth },
   },
 };
 
@@ -93,7 +94,7 @@ export const heroSubtitle: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.verySlow, delay: DELAY.medium, ease: EASING.smooth },
   },
 };
 
@@ -102,7 +103,7 @@ export const heroButtons: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.slow, delay: 0.4, ease: EASING.smooth },
   },
 };
 
@@ -156,7 +157,7 @@ export const gradientText = {
 // Count up animation helper
 export const countUpTransition = {
   duration: 2,
-  ease: [0.16, 1, 0.3, 1],
+  ease: EASING.smooth,
 };
 
 // Mobile menu animations
@@ -164,11 +165,11 @@ export const mobileMenuOverlay: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.3 },
+    transition: { duration: DURATION.normal },
   },
   exit: {
     opacity: 0,
-    transition: { duration: 0.2, delay: 0.1 },
+    transition: { duration: DURATION.fast, delay: DELAY.short },
   },
 };
 
@@ -176,7 +177,7 @@ export const mobileMenuPanel: Variants = {
   hidden: { x: "100%" },
   visible: {
     x: 0,
-    transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: DURATION.normal, ease: EASING.smooth },
   },
   exit: {
     x: "100%",

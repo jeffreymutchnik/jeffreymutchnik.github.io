@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import FocusTrap from "focus-trap-react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, AlertCircle, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -33,6 +33,27 @@ export function Lightbox({
   const shouldReduceMotion = useReducedMotion();
   const triggerElement = useRef<HTMLElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const focusTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [pdfError, setPdfError] = useState(false);
+  const [pdfLoading, setPdfLoading] = useState(false);
+
+  // Reset PDF error/loading state when src changes
+  // This is a valid pattern for resetting state based on prop changes
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPdfError(false);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPdfLoading(type === "pdf");
+  }, [src, type]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (focusTimeoutRef.current) {
+        clearTimeout(focusTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Store trigger element for focus return
   useEffect(() => {
@@ -44,11 +65,37 @@ export function Lightbox({
   // Handle close with focus return
   const handleClose = useCallback(() => {
     onClose();
+    // Clear any existing timeout
+    if (focusTimeoutRef.current) {
+      clearTimeout(focusTimeoutRef.current);
+    }
     // Return focus after animation completes
-    setTimeout(() => {
+    focusTimeoutRef.current = setTimeout(() => {
       triggerElement.current?.focus();
     }, shouldReduceMotion ? 0 : 200);
   }, [onClose, shouldReduceMotion]);
+
+  // Handle PDF load events
+  const handlePdfLoad = useCallback(() => {
+    setPdfLoading(false);
+    setPdfError(false);
+  }, []);
+
+  const handlePdfError = useCallback(() => {
+    setPdfLoading(false);
+    setPdfError(true);
+  }, []);
+
+  const handlePdfRetry = useCallback(() => {
+    setPdfError(false);
+    setPdfLoading(true);
+    // Force iframe reload by adding a timestamp
+    const iframe = document.querySelector('iframe[data-lightbox-pdf]') as HTMLIFrameElement;
+    if (iframe) {
+      const baseUrl = src.split('?')[0];
+      iframe.src = `${baseUrl}?t=${Date.now()}#toolbar=0&navpanes=0&scrollbar=1`;
+    }
+  }, [src]);
 
   // Handle keyboard navigation
   const handleKeyDown = useCallback(
@@ -185,13 +232,43 @@ export function Lightbox({
                       priority
                     />
                   </div>
+                ) : pdfError ? (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-lg p-8">
+                    <AlertCircle className="h-16 w-16 text-red-500 mb-4" />
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+                      Failed to load PDF
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-center mb-6 max-w-md">
+                      The PDF document could not be loaded. This might be due to a network issue or the file may be unavailable.
+                    </p>
+                    <Button
+                      onClick={handlePdfRetry}
+                      className="flex items-center gap-2"
+                    >
+                      <RefreshCw className="h-4 w-4" />
+                      Try Again
+                    </Button>
+                  </div>
                 ) : (
-                  <iframe
-                    src={`${src}#toolbar=0&navpanes=0&scrollbar=1`}
-                    className="w-full h-full bg-white rounded-lg"
-                    title={title}
-                    sandbox="allow-same-origin"
-                  />
+                  <div className="relative w-full h-full">
+                    {pdfLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg">
+                        <div className="flex flex-col items-center">
+                          <div className="h-8 w-8 border-4 border-[var(--color-crimson-500)] border-t-transparent rounded-full animate-spin mb-4" />
+                          <span className="text-gray-600 dark:text-gray-300">Loading PDF...</span>
+                        </div>
+                      </div>
+                    )}
+                    <iframe
+                      data-lightbox-pdf
+                      src={`${src}#toolbar=0&navpanes=0&scrollbar=1`}
+                      className="w-full h-full bg-white rounded-lg"
+                      title={title}
+                      sandbox="allow-same-origin"
+                      onLoad={handlePdfLoad}
+                      onError={handlePdfError}
+                    />
+                  </div>
                 )}
               </div>
 

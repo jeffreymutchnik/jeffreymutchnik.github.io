@@ -24,6 +24,17 @@ import {
 
 type SortOption = "newest" | "oldest" | "company" | "category";
 
+// Shimmer loading placeholder - uses CSS animation for efficiency
+function ShimmerPlaceholder({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
+  return (
+    <div className="absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] overflow-hidden">
+      {!shouldReduceMotion && (
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+      )}
+    </div>
+  );
+}
+
 // Hero Featured Card - Large version
 function HeroWorkCard({ item, onClick }: { item: WorkItem; onClick: () => void }) {
   const isPDF = item.type === "pdf";
@@ -46,17 +57,7 @@ function HeroWorkCard({ item, onClick }: { item: WorkItem; onClick: () => void }
           <div className="relative aspect-[16/10] bg-[var(--color-warm-100)] dark:bg-[var(--color-surface)] overflow-hidden">
             {isPDF && item.thumbnail ? (
               <>
-                {isLoading && (
-                  <div className="absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] overflow-hidden">
-                    {!shouldReduceMotion && (
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                      />
-                    )}
-                  </div>
-                )}
+                {isLoading && <ShimmerPlaceholder shouldReduceMotion={shouldReduceMotion} />}
                 <Image
                   src={item.thumbnail}
                   alt={item.title}
@@ -86,17 +87,7 @@ function HeroWorkCard({ item, onClick }: { item: WorkItem; onClick: () => void }
               </div>
             ) : (
               <>
-                {isLoading && (
-                  <div className="absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] overflow-hidden">
-                    {!shouldReduceMotion && (
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                      />
-                    )}
-                  </div>
-                )}
+                {isLoading && <ShimmerPlaceholder shouldReduceMotion={shouldReduceMotion} />}
                 <Image
                   src={item.file}
                   alt={item.title}
@@ -181,17 +172,7 @@ function WorkCardWithMeta({ item, onClick }: { item: WorkItem; onClick: () => vo
           <div className="relative aspect-[4/3] bg-[var(--color-warm-100)] dark:bg-[var(--color-surface)] overflow-hidden">
             {isPDF && item.thumbnail ? (
               <>
-                {isLoading && (
-                  <div className="absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] overflow-hidden">
-                    {!shouldReduceMotion && (
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                      />
-                    )}
-                  </div>
-                )}
+                {isLoading && <ShimmerPlaceholder shouldReduceMotion={shouldReduceMotion} />}
                 <Image
                   src={item.thumbnail}
                   alt={item.title}
@@ -220,17 +201,7 @@ function WorkCardWithMeta({ item, onClick }: { item: WorkItem; onClick: () => vo
               </div>
             ) : (
               <>
-                {isLoading && (
-                  <div className="absolute inset-0 bg-[var(--color-warm-200)] dark:bg-[var(--color-surface-2)] overflow-hidden">
-                    {!shouldReduceMotion && (
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                      />
-                    )}
-                  </div>
-                )}
+                {isLoading && <ShimmerPlaceholder shouldReduceMotion={shouldReduceMotion} />}
                 <Image
                   src={item.file}
                   alt={item.title}

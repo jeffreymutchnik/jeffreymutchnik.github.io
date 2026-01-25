@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { EASING, SPRING, DURATION } from "@/lib/constants";
 
 interface TimelineItem {
   date: string;
@@ -35,9 +36,9 @@ function TimelineEntry({
       initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
       transition={{
-        duration: shouldReduceMotion ? 0 : 0.5,
+        duration: shouldReduceMotion ? 0 : DURATION.medium,
         delay: shouldReduceMotion ? 0 : index * 0.1,
-        ease: [0.16, 1, 0.3, 1],
+        ease: EASING.smooth,
       }}
       className="relative pl-12"
     >
@@ -48,9 +49,9 @@ function TimelineEntry({
           initial={{ scaleY: 0 }}
           animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
           transition={{
-            duration: shouldReduceMotion ? 0 : 0.8,
+            duration: shouldReduceMotion ? 0 : DURATION.verySlow,
             delay: shouldReduceMotion ? 0 : index * 0.1 + 0.3,
-            ease: [0.16, 1, 0.3, 1],
+            ease: EASING.smooth,
           }}
         />
       )}
@@ -81,9 +82,7 @@ function TimelineEntry({
           initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
           animate={isInView ? { scale: 1 } : { scale: 0 }}
           transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 20,
+            ...SPRING.gentle,
             delay: shouldReduceMotion ? 0 : index * 0.1,
           }}
           whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
@@ -98,7 +97,7 @@ function TimelineEntry({
       <motion.div
         className="group"
         whileHover={shouldReduceMotion ? {} : { x: 4 }}
-        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        transition={SPRING.snappy}
       >
         <span className="text-body-sm text-[var(--color-crimson-500)] font-medium">
           {item.date}

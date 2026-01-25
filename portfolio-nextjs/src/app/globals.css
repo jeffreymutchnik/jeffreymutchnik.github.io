@@ -85,6 +85,7 @@
   --color-bg-subtle: #F5F5F5;
   --color-surface: #EFEFEF;
   --color-surface-2: #E8E8E8;
+  --color-surface-raised: #FFFFFF;
   --color-surface-accent: #F2BF9C;
 
   /* Text */
@@ -544,10 +545,14 @@ a {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Shimmer animation for buttons */
+/* Shimmer animation for loading placeholders */
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s infinite linear;
 }
 
 .btn-shimmer {
@@ -680,6 +685,7 @@ a {
   --color-bg-subtle: #171717;
   --color-surface: #1F1F1F;
   --color-surface-2: #262626;
+  --color-surface-raised: #2A2A2A;
   --color-surface-accent: #3D352C;
 
   --color-text: #F5F5F5;

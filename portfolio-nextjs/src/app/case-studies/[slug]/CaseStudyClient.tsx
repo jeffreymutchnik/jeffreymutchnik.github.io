@@ -13,9 +13,13 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
 import { CountUpFromString } from "@/components/motion/CountUp";
 import { CaseStudy } from "@/data/case-studies";
+import { SCROLL_THRESHOLDS, INTERSECTION_MARGINS } from "@/lib/constants";
+
+// Strict icon key type for approach sections
+type IconKey = "database" | "target" | "globe" | "users" | "zap" | "shopping-cart" | "rocket" | "settings" | "filter" | "search" | "award";
 
 // Icon mapping for approach sections
-const iconMap: Record<string, React.ReactNode> = {
+const iconMap: Record<IconKey, React.ReactNode> = {
   database: <Database className="h-6 w-6" />,
   target: <Target className="h-6 w-6" />,
   globe: <Globe className="h-6 w-6" />,
@@ -28,6 +32,11 @@ const iconMap: Record<string, React.ReactNode> = {
   search: <Search className="h-6 w-6" />,
   award: <Award className="h-6 w-6" />,
 };
+
+// Type guard to check if a string is a valid icon key
+function isIconKey(key: string): key is IconKey {
+  return key in iconMap;
+}
 
 // Progress indicator sections
 const sections = [
@@ -90,37 +99,35 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.98]);
 
-  // Track active section
+  // Track active section - consolidated single IntersectionObserver
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    const elements = sections
+      .map(({ id }) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
 
-    sections.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (!element) return;
+    if (elements.length === 0) return;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(id);
-            }
-          });
-        },
-        { rootMargin: "-40% 0px -40% 0px" }
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: INTERSECTION_MARGINS.sectionTracking }
+    );
 
-      observer.observe(element);
-      observers.push(observer);
-    });
+    elements.forEach((element) => observer.observe(element));
 
-    return () => observers.forEach((obs) => obs.disconnect());
+    return () => observer.disconnect();
   }, []);
 
   // Track scroll position to show/hide floating nav
   useEffect(() => {
     const handleScroll = () => {
-      // Show nav after scrolling past hero (~400px)
-      setShowNav(window.scrollY > 400);
+      // Show nav after scrolling past hero
+      setShowNav(window.scrollY > SCROLL_THRESHOLDS.caseStudyNav);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -355,7 +362,7 @@ export function CaseStudyClient({ caseStudy, prevStudy, nextStudy }: CaseStudyCl
                             <div className="flex items-start gap-4 mb-5">
                               {/* Icon with gradient background */}
                               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-crimson-500)]/20 to-[var(--color-crimson-500)]/5 text-[var(--color-crimson-500)] flex items-center justify-center flex-shrink-0">
-                                {iconMap[section.icon] || <Database className="h-6 w-6" />}
+                                {isIconKey(section.icon) ? iconMap[section.icon] : <Database className="h-6 w-6" />}
                               </div>
                               <div>
                                 <span className="text-body-sm text-[var(--color-crimson-500)] font-semibold uppercase tracking-wider">

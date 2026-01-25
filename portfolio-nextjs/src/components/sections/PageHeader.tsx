@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { EASING, DURATION, STAGGER, DELAY } from "@/lib/constants";
 
 interface PageHeaderProps {
   overline?: string;
@@ -22,8 +23,8 @@ export function PageHeader({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.1,
-        delayChildren: shouldReduceMotion ? 0 : 0.1,
+        staggerChildren: shouldReduceMotion ? 0 : STAGGER.normal,
+        delayChildren: shouldReduceMotion ? 0 : DELAY.short,
       },
     },
   };
@@ -34,8 +35,8 @@ export function PageHeader({
       opacity: 1,
       y: 0,
       transition: {
-        duration: shouldReduceMotion ? 0 : 0.5,
-        ease: [0.16, 1, 0.3, 1] as const,
+        duration: shouldReduceMotion ? 0 : DURATION.medium,
+        ease: EASING.smooth,
       },
     },
   };
@@ -68,14 +69,14 @@ export function PageHeader({
                   className="h-px w-8 bg-[var(--color-crimson-500)]"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.3 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : DURATION.medium, delay: shouldReduceMotion ? 0 : DELAY.long }}
                 />
                 <span className="text-overline">{overline}</span>
                 <motion.span
                   className="h-px w-8 bg-[var(--color-crimson-500)]"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.3 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : DURATION.medium, delay: shouldReduceMotion ? 0 : DELAY.long }}
                 />
               </div>
             </motion.div>

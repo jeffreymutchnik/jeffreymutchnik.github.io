@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { Trophy, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { EASING } from "@/lib/constants";
 
 interface HeroProps {
   overline?: string;
@@ -44,7 +45,7 @@ function AnimatedText({ text, className }: { text: string; className?: string })
           transition={{
             duration: 0.4,
             delay: 0.3 + index * 0.03,
-            ease: [0.16, 1, 0.3, 1],
+            ease: EASING.smooth,
           }}
           className="inline-block"
           style={{ display: letter === " " ? "inline" : "inline-block" }}
@@ -142,7 +143,7 @@ export function Hero({
             <MagneticButton strength={40}>
               <Link
                 href={primaryCta.href}
-                className="btn-shimmer inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium bg-[#AE193B] !text-white hover:bg-[#991936] shadow-md hover:shadow-lg transition-all duration-200"
+                className="btn-shimmer inline-flex items-center justify-center h-12 px-8 min-w-[160px] rounded-lg text-base font-medium bg-[var(--color-crimson-500)] !text-white hover:bg-[var(--color-crimson-600)] shadow-md hover:shadow-lg transition-all duration-200"
               >
                 {primaryCta.label}
               </Link>

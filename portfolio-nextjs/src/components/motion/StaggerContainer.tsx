@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView, Variants, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { EASING, DURATION } from "@/lib/constants";
 
 interface StaggerContainerProps {
   children: React.ReactNode;
@@ -64,8 +65,8 @@ export const staggerItemVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      ease: [0.16, 1, 0.3, 1],
+      duration: DURATION.medium,
+      ease: EASING.smooth,
     },
   },
 };
