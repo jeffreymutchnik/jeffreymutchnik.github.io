@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Header, Footer } from "@/components/layout";
 import { PageHeader, CTASection } from "@/components/sections";
 import { Card } from "@/components/ui/card";
@@ -12,6 +11,8 @@ import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContai
 // ============================================================================
 // DATA
 // ============================================================================
+
+const EXPERT_THRESHOLD = 90;
 
 const skillCategories = [
   {
@@ -186,56 +187,17 @@ const experienceYears = [
 // COMPONENTS
 // ============================================================================
 
-// Animated progress bar component
-function AnimatedProgressBar({ level, delay = 0 }: { level: number; delay?: number }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+// Skill card with tiered badge system
+function SkillCard({ category }: { category: typeof skillCategories[0] }) {
   const shouldReduceMotion = useReducedMotion();
 
-  return (
-    <div
-      ref={ref}
-      className="h-2 bg-[var(--color-border)] dark:bg-[var(--color-border-strong)] rounded-full overflow-hidden"
-    >
-      <motion.div
-        className="h-full bg-[var(--color-crimson-500)] rounded-full"
-        initial={{ width: 0 }}
-        animate={{ width: isInView ? `${level}%` : 0 }}
-        transition={{
-          duration: shouldReduceMotion ? 0 : 1,
-          delay: shouldReduceMotion ? 0 : delay,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-      />
-    </div>
-  );
-}
-
-// Animated percentage counter
-function AnimatedPercentage({ value, delay = 0 }: { value: number; delay?: number }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <motion.span
-      ref={ref}
-      className="text-body-xs text-[var(--color-text-soft)] tabular-nums"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isInView ? 1 : 0 }}
-      transition={{ duration: shouldReduceMotion ? 0 : 0.3, delay: shouldReduceMotion ? 0 : delay }}
-    >
-      {isInView || shouldReduceMotion ? value : 0}%
-    </motion.span>
-  );
-}
-
-// Skill card with hover effects - compact version for more skills
-function SkillCard({ category, index }: { category: typeof skillCategories[0]; index: number }) {
-  const shouldReduceMotion = useReducedMotion();
+  // Split skills into tiers
+  const expertSkills = category.skills.filter(s => s.level >= EXPERT_THRESHOLD);
+  const proficientSkills = category.skills.filter(s => s.level < EXPERT_THRESHOLD);
 
   return (
     <motion.div
+      className="h-full"
       whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
     >
@@ -255,18 +217,37 @@ function SkillCard({ category, index }: { category: typeof skillCategories[0]; i
           <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[var(--color-crimson-500)] rounded-full group-hover:w-12 transition-all duration-300" />
         </div>
 
-        {/* Skills with animated bars - more compact */}
-        <div className="space-y-3">
-          {category.skills.map((skill, skillIndex) => (
-            <div key={skillIndex}>
-              <div className="flex justify-between mb-1">
-                <span className="text-body-xs font-medium">{skill.name}</span>
-                <AnimatedPercentage value={skill.level} delay={index * 0.1 + skillIndex * 0.03} />
-              </div>
-              <AnimatedProgressBar level={skill.level} delay={index * 0.1 + skillIndex * 0.03} />
+        {/* Expert tier */}
+        {expertSkills.length > 0 && (
+          <div className="mb-4">
+            <p className="text-body-xs font-medium text-[var(--color-text-soft)] uppercase tracking-wide mb-2">
+              Expert
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {expertSkills.map(skill => (
+                <Badge key={skill.name} className="bg-[var(--color-crimson-500)] text-white text-xs">
+                  {skill.name}
+                </Badge>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
+
+        {/* Proficient tier */}
+        {proficientSkills.length > 0 && (
+          <div>
+            <p className="text-body-xs font-medium text-[var(--color-text-soft)] uppercase tracking-wide mb-2">
+              Proficient
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {proficientSkills.map(skill => (
+                <Badge key={skill.name} variant="secondary" className="text-xs">
+                  {skill.name}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        )}
       </Card>
     </motion.div>
   );
@@ -390,7 +371,7 @@ export default function SkillsPage() {
             <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {skillCategories.map((category, index) => (
                 <StaggerItem key={index}>
-                  <SkillCard category={category} index={index} />
+                  <SkillCard category={category} />
                 </StaggerItem>
               ))}
             </StaggerContainer>
